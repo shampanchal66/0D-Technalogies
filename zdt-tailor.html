@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZDT Tailor - Your Complete Tailor Management Solution</title>
+    <meta name="description" content="ZDT Tailor is a Flutter mobile app for tailors to manage customers, measurements, bills, and deliveries. Coming soon on Google Play.">
+    <meta name="keywords" content="ZDT Tailor, tailor app, billing app, tailor management, measurement tracking, tailor shop">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zdt.com/zdt-tailor.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ZDT Tailor - Your Complete Tailor Management Solution">
+    <meta property="og:description" content="Manage customers, measurements, bills, and deliveries — all in one app. Coming soon on Google Play.">
+    <meta property="og:url" content="https://zdt.com/zdt-tailor.html">
+    <meta property="og:site_name" content="ZDT">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZDT Tailor - Your Complete Tailor Management Solution">
+    <meta name="twitter:description" content="Manage customers, measurements, bills, and deliveries — all in one app.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"MobileApplication","name":"ZDT Tailor","operatingSystem":"Android","applicationCategory":"BusinessApplication","description":"A Flutter mobile app for tailors to manage customers, measurements, bills, and deliveries.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"ZDT"}}
+    </script>
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            font-family:'Poppins',sans-serif;
+            background:#faf7f5;
+            color:#2C1810;
+            line-height:1.7;
+            overflow-x:hidden;
+        }
+        :root{
+            --primary:#2C1810;
+            --primary-light:#4a2c22;
+            --accent:#8B5E3C;
+            --accent-light:#a8805e;
+            --bg:#faf7f5;
+            --card:#f5f0ec;
+            --text:#2C1810;
+            --text-light:#6b5a50;
+            --text-muted:#8f7a6c;
+            --white:#ffffff;
+            --border:#e8e0d8;
+        }
+
+        nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:16px 40px;
+            background:var(--white);
+            border-bottom:1px solid var(--border);
+            position:sticky;
+            top:0;
+            z-index:100;
+        }
+        nav .logo{
+            font-size:1.3rem;
+            font-weight:800;
+            color:var(--primary);
+            letter-spacing:1px;
+        }
+        nav .logo i{color:var(--accent);margin-right:6px}
+        nav a{
+            color:var(--text-light);
+            text-decoration:none;
+            margin-left:24px;
+            font-size:0.85rem;
+            font-weight:500;
+            transition:color 0.3s;
+        }
+        nav a:hover{color:var(--accent)}
+
+        .hero{
+            text-align:center;
+            padding:80px 20px 60px;
+            background:linear-gradient(135deg, #2C1810, #4a2c22);
+            color:var(--white);
+            position:relative;
+            overflow:hidden;
+        }
+        .hero::before{
+            content:'';
+            position:absolute;
+            top:-50%;left:-50%;width:200%;height:200%;
+            background:radial-gradient(circle at 30% 40%, rgba(139,94,60,0.15), transparent 60%);
+        }
+        .hero .content{position:relative;z-index:1}
+        .hero .icon-top{font-size:3rem;margin-bottom:16px;opacity:0.9}
+        .hero h1{font-size:2.8rem;font-weight:800;margin-bottom:4px}
+        .hero .coming-soon{
+            display:inline-block;
+            background:rgba(139,94,60,0.3);
+            color:#d4a574;
+            border:1px solid rgba(139,94,60,0.5);
+            padding:4px 18px;
+            border-radius:20px;
+            font-size:0.7rem;
+            font-weight:700;
+            text-transform:uppercase;
+            letter-spacing:2px;
+            margin-bottom:10px;
+        }
+        .hero .tagline{font-size:1.1rem;color:#d4c5b8;font-weight:300;margin-bottom:28px}
+        .hero .badge{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            background:var(--primary-light);
+            border:1px solid rgba(255,255,255,0.1);
+            padding:12px 28px;
+            border-radius:12px;
+            text-decoration:none;
+            color:var(--white);
+            transition:background 0.3s,transform 0.3s;
+            font-size:0.9rem;
+            cursor:default;
+            opacity:0.8;
+        }
+        .hero .badge i{font-size:1.3rem}
+
+        .container{max-width:1000px;margin:0 auto;padding:60px 20px}
+
+        .section-title{text-align:center;margin-bottom:40px}
+        .section-title h2{font-size:1.8rem;font-weight:700;color:var(--primary)}
+        .section-title p{color:var(--text-muted);font-size:0.95rem;margin-top:4px}
+
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .f-card{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:16px;
+            padding:28px 22px;
+            text-align:center;
+            transition:transform 0.3s,box-shadow 0.3s;
+        }
+        .f-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(44,24,16,0.08)}
+        .f-card .ficon{
+            width:52px;height:52px;
+            background:linear-gradient(135deg, var(--accent-light), var(--accent));
+            border-radius:14px;
+            display:flex;
+            align-items:center;justify-content:center;
+            margin:0 auto 14px;
+            color:var(--white);font-size:1.2rem;
+        }
+        .f-card h3{font-size:1rem;color:var(--primary);margin-bottom:6px}
+        .f-card p{font-size:0.85rem;color:var(--text-muted)}
+
+        .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+        .step .num{
+            width:56px;height:56px;background:var(--primary);color:var(--white);
+            border-radius:50%;display:flex;align-items:center;justify-content:center;
+            margin:0 auto 16px;font-size:1.3rem;font-weight:700;
+        }
+        .step h3{color:var(--primary);font-size:1.05rem;margin-bottom:6px}
+        .step p{color:var(--text-muted);font-size:0.88rem}
+        .step-arrow{color:var(--accent);font-size:1.5rem;display:flex;align-items:center;justify-content:center}
+
+        .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+        .gallery .screenshot{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:16px;
+            overflow:hidden;
+            transition:transform 0.3s,box-shadow 0.3s;
+        }
+        .gallery .screenshot:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(44,24,16,0.1)}
+        .gallery .screenshot img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+        .gallery .screenshot .label{
+            text-align:center;
+            padding:8px;
+            font-size:0.8rem;
+            color:var(--text-muted);
+            font-weight:500;
+        }
+
+        .privacy-section{
+            background:var(--card);
+            border:1px solid var(--border);
+            border-radius:20px;
+            padding:40px;
+            margin-bottom:40px;
+        }
+        .privacy-section h2{font-size:1.3rem;color:var(--primary);margin-bottom:20px}
+        .privacy-section h3{font-size:1rem;color:var(--accent);margin:20px 0 8px}
+        .privacy-section p,.privacy-section li{color:var(--text-light);font-size:0.9rem;line-height:1.8}
+        .privacy-section ul{padding-left:20px;margin-bottom:12px}
+        .privacy-section li{margin-bottom:4px}
+        .privacy-section a{color:var(--accent);text-decoration:none}
+        .privacy-section a:hover{text-decoration:underline}
+        .privacy-section .full-link{text-align:center;margin-top:24px}
+        .privacy-section .full-link a{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            color:var(--accent);
+            font-weight:600;
+            text-decoration:none;
+        }
+        .privacy-section .full-link a:hover{text-decoration:underline}
+
+        .contact-section{text-align:center;padding:40px}
+        .contact-section h2{font-size:1.4rem;color:var(--primary);margin-bottom:8px}
+        .contact-section p{color:var(--text-muted);margin-bottom:20px}
+        .contact-section .email{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:14px 32px;
+            background:var(--primary);
+            color:var(--white);
+            text-decoration:none;
+            border-radius:12px;
+            font-weight:600;
+            transition:background 0.3s,transform 0.3s;
+        }
+        .contact-section .email:hover{background:var(--accent);transform:translateY(-2px)}
+
+        footer{
+            text-align:center;
+            padding:24px 20px;
+            border-top:1px solid var(--border);
+            color:var(--text-muted);
+            font-size:0.85rem;
+        }
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        footer .links{margin-bottom:8px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+        footer .links a{font-size:0.85rem}
+
+        @media(max-width:768px){
+            .features-grid{grid-template-columns:1fr 1fr}
+            .steps{grid-template-columns:1fr;gap:20px}
+            .gallery{grid-template-columns:repeat(2,1fr)}
+            .hero h1{font-size:2rem}
+            nav{padding:14px 20px}
+            nav a{margin-left:14px;font-size:0.8rem}
+            .privacy-section{padding:24px}
+            .step-arrow{transform:rotate(90deg)}
+        }
+        @media(max-width:480px){
+            .features-grid{grid-template-columns:1fr}
+            .gallery{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:600px){
+            .step-arrow{transform:rotate(90deg)}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo"><i class="fas fa-cut"></i> ZDT Tailor</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="zdt-billing.html">ZDT Billing</a>
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#privacy-policy">Privacy</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="content">
+        <div class="icon-top"><i class="fas fa-cut"></i></div>
+        <div class="coming-soon">Coming Soon</div>
+        <h1>ZDT Tailor</h1>
+        <p class="tagline">Your Complete Tailor Management Solution</p>
+        <div class="badge">
+            <i class="fab fa-google-play"></i> Coming Soon on Google Play
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section id="features">
+        <div class="section-title">
+            <h2>Features</h2>
+            <p>Everything you need to run your tailor shop efficiently</p>
+        </div>
+        <div class="features-grid">
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-users"></i></div>
+                <h3>Customer Management</h3>
+                <p>Store customer names, addresses, mobile numbers, and order history in one place.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-ruler"></i></div>
+                <h3>Measurement Tracking</h3>
+                <p>Record detailed measurements with camera/photo support for each customer.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-file-invoice"></i></div>
+                <h3>Bill Generation</h3>
+                <p>Create professional bills and share them via WhatsApp, Telegram, or SMS.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-truck"></i></div>
+                <h3>Delivery Management</h3>
+                <p>Track order status from stitching to delivery with due date reminders.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-chart-line"></i></div>
+                <h3>Dashboard Analytics</h3>
+                <p>View daily, weekly, and monthly reports on orders, revenue, and pending deliveries.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-language"></i></div>
+                <h3>Multi-language Support</h3>
+                <p>Use the app in your preferred language for a comfortable experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" style="margin-top:60px">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>Three simple steps to get started</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Add Customer</h3>
+                <p>Enter customer details — name, address, mobile number, and order type.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>Take Measurements</h3>
+                <p>Record all measurements and capture reference photos using the camera.</p>
+            </div>
+            <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Create Bill</h3>
+                <p>Generate a bill, collect payment, and share it with the customer instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" style="margin-top:60px">
+        <div class="section-title">
+            <h2>Screenshots</h2>
+            <p>Preview of the app interface</p>
+        </div>
+        <div class="gallery">
+            <div class="screenshot">
+                <img src="images/tailor-dashboard.jpg" alt="ZDT Tailor Dashboard" loading="lazy">
+                <div class="label">Dashboard</div>
+            </div>
+            <div class="screenshot">
+                <img src="images/tailor-measurement.jpg" alt="ZDT Tailor Measurement" loading="lazy">
+                <div class="label">Measurement</div>
+            </div>
+            <div class="screenshot">
+                <img src="images/tailor-bill.jpg" alt="ZDT Tailor Bill" loading="lazy">
+                <div class="label">Bill</div>
+            </div>
+            <div class="screenshot">
+                <img src="images/tailor-setting.jpg" alt="ZDT Tailor Settings" loading="lazy">
+                <div class="label">Settings</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy-policy" style="margin-top:60px">
+        <div class="section-title">
+            <h2>Privacy Policy</h2>
+            <p>Last updated: June 2026</p>
+        </div>
+        <div class="privacy-section">
+            <p>This Privacy Policy describes how ZDT Tailor ("we", "our", or "the app") handles your information when you use our mobile application.</p>
+            <h3>1. Information We Collect</h3>
+            <p>The app stores the following information locally on your device:</p>
+            <ul>
+                <li>Customer name, address, and mobile number</li>
+                <li>Measurement data and reference photos</li>
+                <li>Bill/invoice history</li>
+                <li>Order and delivery status information</li>
+            </ul>
+            <h3>2. How Data Is Stored</h3>
+            <p>All data is stored <strong>locally on your device</strong> using SQLite database. No data is uploaded, synced, or transmitted to any cloud server.</p>
+            <h3>3. Data Sharing</h3>
+            <p>We do <strong>not</strong> share, sell, or transmit your data to any third parties. The only external service used is Google AdMob for displaying ads.</p>
+            <h3>4. Advertising</h3>
+            <p>This app uses Google AdMob to serve banner ads. AdMob may collect the device's Advertising ID to serve personalized ads.</p>
+            <h3>5. Camera & Gallery Access</h3>
+            <p>The app may request access to your device's camera and photo gallery to capture measurement reference photos. These photos are stored locally.</p>
+            <h3>6. No Account Required</h3>
+            <p>ZDT Tailor does not require any user account, registration, email, or password.</p>
+            <h3>7. Children's Privacy</h3>
+            <p>This app is intended for general audiences and does not knowingly collect any personal information from children under 13.</p>
+            <h3>8. Contact Us</h3>
+            <p>Email: <a href="mailto:hello.zdtsupport@gmail.com">hello.zdtsupport@gmail.com</a></p>
+            <div class="full-link">
+                <a href="zdt-tailor-privacy.html" target="_blank"><i class="fas fa-external-link-alt"></i> Open Full Privacy Policy Page</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Need Help?</h2>
+        <p>Have questions, feedback, or need support? We're here to help.</p>
+        <a href="mailto:hello.zdtsupport@gmail.com" class="email"><i class="fas fa-envelope"></i> hello.zdtsupport@gmail.com</a>
+    </section>
+</div>
+
+<footer>
+    <div class="links">
+        <a href="index.html">ZDT Home</a>
+        <a href="zdt-tailor-privacy.html">Privacy Policy</a>
+        <a href="mailto:hello.zdtsupport@gmail.com">Contact</a>
+    </div>
+    <p>&copy; 2026 ZDT. All rights reserved. &middot; Package: zdt.tailor</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ZDT</title>
+    <meta name="description" content="Privacy Policy for ZDT. Learn how we handle your information.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zdt.com/privacy.html">
+    <meta property="og:title" content="Privacy Policy - ZDT">
+    <meta property="og:url" content="https://zdt.com/privacy.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#070a14;color:#e0e0e0;line-height:1.7;overflow-x:hidden}
+        #three-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+        .content{position:relative;z-index:1}
+        nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(7,10,20,0.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,42,64,0.5);position:sticky;top:0;z-index:10}
+        nav .logo{font-size:1.6rem;font-weight:800;letter-spacing:4px;background:linear-gradient(135deg,#00d4ff,#7b2ff7,#ff2d95);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 4s ease infinite}
+        @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        nav a{color:#7a8baa;text-decoration:none;margin-left:24px;font-size:0.9rem;transition:color 0.3s}
+        nav a:hover{color:#00d4ff}
+        .container{max-width:800px;margin:0 auto;padding:60px 20px}
+        h1{color:#fff;font-size:2rem;margin-bottom:24px;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+        h2{color:#00d4ff;font-size:1.1rem;margin:24px 0 10px}
+        p{color:#8899bb;margin-bottom:12px;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
+        @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+        h1,p{transform:translateY(20px)}
+        footer{text-align:center;padding:24px 20px;border-top:1px solid rgba(30,42,64,0.4);color:#3a4f6a;font-size:0.85rem}
+        @media(max-width:768px){h1{font-size:1.5rem}nav{padding:14px 20px}nav a{margin-left:12px;font-size:0.8rem}}
+    </style>
+</head>
+<body>
+<canvas id="three-canvas" aria-hidden="true"></canvas>
+<header>
+<nav aria-label="Main navigation">
+<span class="logo" aria-label="ZDT logo">ZDT</span>
+<div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="zdt-billing.html">ZDT Billing</a>
+<a href="zdt-tailor.html">ZDT Tailor</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<div class="container">
+<h1>Privacy Policy</h1>
+<p>Last updated: June 2026</p>
+
+<h2>Information We Collect</h2>
+<p>When you contact us via email, we receive your email address and any information you choose to share in your message. We do not collect personal data through cookies, tracking scripts, or analytics tools on this website.</p>
+
+<h2>How We Use Your Information</h2>
+<p>We use the information you provide solely to respond to your inquiries, provide quotes, and communicate about our services. We do not sell, rent, or share your personal information with third parties.</p>
+
+<h2>Data Security</h2>
+<p>We take reasonable precautions to protect your information. Communications via email are stored securely and are only accessible to authorized personnel.</p>
+
+<h2>Third-Party Services</h2>
+<p>This website uses Three.js (a 3D graphics library) loaded from a CDN. No personal data is transmitted to or collected by this service. We do not use Google Analytics or any other tracking services.</p>
+
+<h2>Your Rights</h2>
+<p>You have the right to request access to, correction of, or deletion of any personal data we hold about you. To exercise these rights, contact us at the email address below.</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:shamppanchal66@gmail.com" style="color:#00d4ff;">shamppanchal66@gmail.com</a>.</p>
+</div>
+</main>
+<footer><p>&copy; 2026 ZDT. All rights reserved. &middot; <a href="zdt-billing.html" style="color:#4a6a8a;text-decoration:none">ZDT Billing</a> &middot; <a href="zdt-tailor.html" style="color:#4a6a8a;text-decoration:none">ZDT Tailor</a> &middot; <a href="privacy.html" style="color:#4a6a8a;text-decoration:none">Privacy Policy</a></p></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const canvas=document.getElementById('three-canvas'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1e3),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+renderer.setSize(window.innerWidth,window.innerHeight);renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+const pG=new THREE.BufferGeometry(),count=1200,pos=new Float32Array(count*3),col=new Float32Array(count*3);
+for(let i=0;i<count*3;i+=3){pos[i]=(Math.random()-.5)*40;pos[i+1]=(Math.random()-.5)*30;pos[i+2]=(Math.random()-.5)*30-5;const c=new THREE.Color().setHSL(.55+Math.random()*.2,.6,.4+Math.random()*.4);col[i]=c.r;col[i+1]=c.g;col[i+2]=c.b}
+pG.setAttribute('position',new THREE.BufferAttribute(pos,3));pG.setAttribute('color',new THREE.BufferAttribute(col,3));
+scene.add(new THREE.Points(pG,new THREE.PointsMaterial({size:.06,vertexColors:true,transparent:true,opacity:.7,blending:THREE.AdditiveBlending,sizeAttenuation:true})));
+camera.position.z=8;let mx=0,my=0;
+document.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth)*2-1;my=-(e.clientY/innerHeight)*2+1});
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+(function animate(){requestAnimationFrame(animate);scene.children[0].rotation.x+=.0001;scene.children[0].rotation.y+=.0003;scene.children[0].rotation.y+=(mx*.3-scene.children[0].rotation.y)*.02;scene.children[0].rotation.x+=(my*.2-scene.children[0].rotation.x)*.02;renderer.render(scene,camera)})();
+</script>
+</body>
+</html>
