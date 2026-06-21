@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZDT - Custom Software, Billing Apps & Web Development</title>
-    <meta name="description" content="ZDT builds custom software, billing applications, and websites. Check out ZDT Billing and ZDT Tailor — coming soon.">
+    <title>ZDT — Custom Software, Billing Apps & Web Development</title>
+    <meta name="description" content="ZDT crafts custom software, billing applications, and websites that solve real problems. Discover ZDT Billing and ZDT Tailor — launching soon.">
     <meta name="keywords" content="ZDT, billing application, tailor app, custom software, web development, mobile apps, ZDT Billing, ZDT Tailor">
     <meta name="author" content="ZDT">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt.com/">
+    <link rel="canonical" href="https://zdt-website.vercel.app/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ZDT - Innovation. Beyond Code.">
-    <meta property="og:description" content="Custom software, billing apps, and web development. ZDT Billing and ZDT Tailor coming soon.">
-    <meta property="og:url" content="https://zdt.com/">
+    <meta property="og:title" content="ZDT — Innovation. Beyond Code.">
+    <meta property="og:description" content="Custom software, billing apps, and web development crafted for modern businesses.">
+    <meta property="og:url" content="https://zdt-website.vercel.app/">
     <meta property="og:site_name" content="ZDT">
+    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ZDT - Innovation. Beyond Code.">
-    <meta name="twitter:description" content="Custom software, billing apps, and web development. Coming soon.">
+    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta name="twitter:title" content="ZDT — Innovation. Beyond Code.">
+    <meta name="twitter:description" content="Custom software, billing apps, and web development crafted for modern businesses.">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "ZDT",
-        "url": "https://zdt.com/",
+        "url": "https://zdt-website.vercel.app/",
         "description": "Custom software, billing applications, and website development.",
-        "email": "shamppanchal66@gmail.com"
+        "email": "shamppanchal66@gmail.com",
+        "foundingDate": "2025"
     }
     </script>
     <script type="application/ld+json">
@@ -37,329 +47,498 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "ZDT",
-        "url": "https://zdt.com/"
+        "url": "https://zdt-website.vercel.app/"
     }
     </script>
 
     <style>
+        :root {
+            --bg-deep: #060912;
+            --bg-card: rgba(15, 23, 42, 0.6);
+            --border-subtle: rgba(30, 42, 64, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-cyan: #38bdf8;
+            --accent-purple: #a78bfa;
+            --accent-pink: #f472b6;
+            --accent-green: #34d399;
+            --gradient-primary: linear-gradient(135deg, #38bdf8, #a78bfa, #f472b6);
+            --gradient-cyan-purple: linear-gradient(135deg, #38bdf8, #a78bfa);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #070a14;
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-secondary);
+            line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         #three-canvas {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100vw;
             height: 100vh;
             z-index: 0;
             pointer-events: none;
         }
-        .content { position: relative; z-index: 1; }
+        header, main, footer { position: relative; z-index: 1; }
+        main { background: radial-gradient(ellipse at 50% 0%, rgba(15,23,42,0.3), transparent 70%); }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 40px;
-            background: rgba(7, 10, 20, 0.8);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(30, 42, 64, 0.5);
+            padding: 20px 48px;
+            background: rgba(6, 9, 18, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
             position: sticky;
             top: 0;
             z-index: 10;
         }
         nav .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: 4px;
-            background: linear-gradient(135deg, #00d4ff, #7b2ff7, #ff2d95);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradShift 4s ease infinite;
+            display: block;
+            height: 40px;
+            width: auto;
+            transition: opacity 0.25s;
         }
+        nav .logo:hover { opacity: 0.85; }
         @keyframes gradShift {
             0%,100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-        nav a {
-            color: #7a8baa;
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        nav .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            margin-left: 28px;
-            font-size: 0.9rem;
-            transition: color 0.3s, text-shadow 0.3s;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.25s ease;
             position: relative;
         }
-        nav a:hover { color: #00d4ff; text-shadow: 0 0 20px rgba(0,212,255,0.3); }
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #00d4ff, #7b2ff7);
-            transition: width 0.3s;
+        nav .nav-links a:hover {
+            color: var(--text-primary);
+            background: rgba(56, 189, 248, 0.06);
         }
-        nav a:hover::after { width: 100%; }
+        nav .nav-links a.active {
+            color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.08);
+        }
 
         .hero {
             text-align: center;
-            padding: 140px 20px 100px;
+            padding: 120px 24px 60px;
             position: relative;
         }
+        .hero .overline {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.2s forwards;
+        }
         .hero h1 {
-            font-size: 7rem;
-            font-weight: 900;
-            letter-spacing: 14px;
-            background: linear-gradient(135deg, #00d4ff, #7b2ff7, #ff2d95, #7b2ff7, #00d4ff);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 6rem;
+            line-height: 1.05;
+            letter-spacing: 2px;
+            background: var(--gradient-primary);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradShift 5s ease infinite;
+            animation: gradShift 6s ease infinite;
             display: inline-block;
-            filter: drop-shadow(0 0 60px rgba(0,212,255,0.15));
-        }
-        .hero .tagline {
-            font-size: 1.2rem;
-            color: #4a5f80;
-            margin-top: 10px;
-            letter-spacing: 6px;
-            text-transform: uppercase;
+            filter: drop-shadow(0 0 80px rgba(56,189,248,0.1));
             opacity: 0;
-            animation: fadeUp 1s 0.5s forwards;
-        }
-        .hero .sub {
-            color: #3a4f6a;
-            margin-top: 8px;
-            font-size: 1rem;
-            opacity: 0;
-            animation: fadeUp 1s 0.8s forwards;
+            animation: fadeUp 0.8s 0.4s forwards, gradShift 6s ease infinite 1.2s;
         }
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
-        .hero .tagline, .hero .sub { transform: translateY(20px); }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .section-title {
+        .hero h1, .hero .tagline, .hero .sub, .hero .hero-cta { transform: translateY(24px); }
+        .hero .tagline {
             font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 16px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.6s forwards;
+        }
+        .hero .sub {
+            max-width: 520px;
+            margin: 20px auto 0;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.8s forwards;
+        }
+        .hero .hero-cta {
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeUp 0.8s 1s forwards;
+        }
+        .hero .hero-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 36px;
+            background: var(--gradient-cyan-purple);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(56,189,248,0.15);
+        }
+        .hero .hero-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(56,189,248,0.25);
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 80px;
+            opacity: 0.3;
+            animation: bounce 2s infinite;
+        }
+        .scroll-indicator span {
+            display: inline-block;
+            width: 1px;
+            height: 40px;
+            background: var(--accent-cyan);
+        }
+        @keyframes bounce {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .container { max-width: 1120px; margin: 0 auto; padding: 40px 24px; }
+        .section-title {
+            font-size: 0.7rem;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 40px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0;
-            transform: translateY(30px);
+            letter-spacing: 5px;
             transition: opacity 0.8s, transform 0.8s;
         }
         .section-title.visible { opacity: 1; transform: translateY(0); }
-        .section-title span { color: #00d4ff; }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 16px;
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .section-heading.visible { opacity: 1; transform: translateY(0); }
+        .section-desc {
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 56px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .section-desc.visible { opacity: 1; transform: translateY(0); }
 
         .projects {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            margin-bottom: 80px;
+            gap: 24px;
+            margin-bottom: 40px;
         }
         .card {
-            background: linear-gradient(145deg, rgba(17, 26, 43, 0.7), rgba(13, 20, 35, 0.7));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(30, 42, 64, 0.5);
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.85), rgba(10, 16, 32, 0.85));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-subtle);
             border-radius: 20px;
-            padding: 40px 32px;
+            padding: 44px 36px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             text-decoration: none;
             display: block;
             position: relative;
             overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 800px;
-            opacity: 0;
-            transform: translateY(40px) scale(0.95);
             transition: opacity 0.8s, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s, box-shadow 0.4s;
         }
         .card.visible { opacity: 1; transform: translateY(0) scale(1); }
         .card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #00d4ff, #7b2ff7, #ff2d95);
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
             opacity: 0;
             transition: opacity 0.4s;
         }
         .card:hover::before { opacity: 1; }
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.1), 0 0 40px rgba(123, 47, 247, 0.05);
-            border-color: rgba(0, 212, 255, 0.3);
-        }
-        .card .glow {
+        .card::after {
+            content: '';
             position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0,212,255,0.06), transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(160deg, rgba(56,189,248,0.1), transparent 40%);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
             pointer-events: none;
-            transition: opacity 0.4s;
             opacity: 0;
+            transition: opacity 0.5s;
         }
-        .card:hover .glow { opacity: 1; }
+        .card:hover::after { opacity: 1; }
+        .card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 24px 64px rgba(56, 189, 248, 0.06), 0 0 40px rgba(167, 139, 250, 0.03);
+            border-color: rgba(56, 189, 248, 0.15);
+        }
+        .card .card-number {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: rgba(56, 189, 248, 0.3);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
         .card .badge {
             display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 5px 16px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 4px 14px;
             border-radius: 20px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 16px;
-            position: relative;
-        }
-        .badge.soon {
-            background: rgba(123, 47, 247, 0.15);
-            color: #b388ff;
-            border: 1px solid rgba(123, 47, 247, 0.3);
-            box-shadow: 0 0 20px rgba(123, 47, 247, 0.1);
+            letter-spacing: 1.2px;
+            margin-bottom: 20px;
+            background: rgba(167, 139, 250, 0.1);
+            color: var(--accent-purple);
+            border: 1px solid rgba(167, 139, 250, 0.2);
         }
         .card h2 {
-            font-size: 1.4rem;
-            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
             margin-bottom: 10px;
             transition: color 0.3s;
         }
-        .card:hover h2 { color: #00d4ff; }
-        .card p { color: #7a8baa; font-size: 0.95rem; line-height: 1.7; }
+        .card:hover h2 { color: var(--accent-cyan); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
         .card .cta {
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #00d4ff;
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: var(--accent-cyan);
             font-weight: 600;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: gap 0.3s;
         }
-        .card:hover .cta { gap: 14px; }
-        .card .cta::after { content: '→'; font-size: 1.1rem; }
+        .card:hover .cta { gap: 12px; }
+        .card .cta::after { content: '→'; font-size: 1.1rem; transition: transform 0.3s; }
+        .card:hover .cta::after { transform: translateX(2px); }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 80px 0;
+            padding: 48px 24px;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .stat-item {
+            text-align: center;
+            transition: opacity 0.8s, transform 0.8s;
+        }
+        .stat-item.visible { opacity: 1; transform: translateY(0); }
+        .stat-item .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradShift 4s ease infinite;
+        }
+        .stat-item .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-bottom: 80px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
         .service-card {
-            background: rgba(17, 26, 43, 0.5);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(30, 42, 64, 0.4);
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 40px 24px;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
+            padding: 36px 28px;
+            text-align: left;
             transition: opacity 0.8s, transform 0.8s, border-color 0.4s, box-shadow 0.4s;
         }
         .service-card.visible { opacity: 1; transform: translateY(0); }
         .service-card:hover {
-            border-color: rgba(0, 212, 255, 0.3);
-            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.06);
-            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.04);
+            transform: translateY(-4px);
         }
-        .service-card.visible:hover { transform: translateY(-6px); }
+        .service-card.visible:hover { transform: translateY(-4px); }
         .service-card .icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 18px;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 47, 247, 0.1));
-            border-radius: 16px;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 20px;
+            background: rgba(56, 189, 248, 0.06);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.3s;
         }
         .service-card:hover .icon {
-            transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+            background: rgba(56, 189, 248, 0.12);
+            transform: scale(1.05);
         }
-        .service-card h3 { color: #ffffff; margin-bottom: 8px; font-size: 1.05rem; }
-        .service-card p { color: #7a8baa; font-size: 0.9rem; line-height: 1.7; }
+        .service-card .icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-cyan);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .service-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .service-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
 
         .contact {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, rgba(15, 23, 41, 0.6), rgba(26, 35, 56, 0.6));
-            backdrop-filter: blur(12px);
+            padding: 64px 40px;
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.8), rgba(20, 15, 40, 0.8));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 20px;
-            border: 1px solid rgba(30, 42, 64, 0.4);
+            border: 1px solid var(--border-subtle);
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
             transition: opacity 0.8s, transform 0.8s;
-        }
-        .contact.visible { opacity: 1; transform: translateY(0); }
-        .contact h2 { color: #ffffff; font-size: 1.6rem; margin-bottom: 10px; }
-        .contact p { color: #7a8baa; margin-bottom: 24px; }
-        .contact .email {
-            display: inline-block;
-            padding: 14px 40px;
-            background: linear-gradient(135deg, #00d4ff, #7b2ff7);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
         }
-        .contact .email::before {
+        .contact.visible { opacity: 1; transform: translateY(0); }
+        .contact::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            transition: left 0.5s;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+            opacity: 0.4;
         }
-        .contact .email:hover::before { left: 100%; }
-        .contact .email:hover { transform: scale(1.04); box-shadow: 0 8px 30px rgba(0, 212, 255, 0.25); }
-        .contact .email-note { display: block; margin-top: 12px; color: #4a5f80; font-size: 0.85rem; }
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .contact p { color: var(--text-muted); margin-bottom: 28px; font-size: 0.95rem; }
+        .contact .email-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 40px;
+            background: var(--gradient-cyan-purple);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(56,189,248,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact .email-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+            transition: left 0.6s;
+        }
+        .contact .email-btn:hover::before { left: 100%; }
+        .contact .email-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 36px rgba(56,189,248,0.25);
+        }
+        .contact .email-note { display: block; margin-top: 14px; color: var(--text-muted); font-size: 0.8rem; opacity: 0.6; }
 
         footer {
             text-align: center;
-            padding: 24px 20px;
-            border-top: 1px solid rgba(30, 42, 64, 0.4);
-            color: #3a4f6a;
-            font-size: 0.85rem;
+            padding: 32px 24px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            opacity: 0.7;
         }
-        footer a { color: #4a6a8a; text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: #00d4ff; }
+        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--accent-cyan); }
 
         @media (max-width: 768px) {
+            nav { padding: 16px 20px; flex-direction: column; gap: 12px; }
+            nav .nav-links { flex-wrap: wrap; justify-content: center; gap: 4px; }
+            nav .nav-links a { padding: 6px 12px; font-size: 0.75rem; }
+            .hero { padding: 80px 20px 40px; }
+            .hero h1 { font-size: 3.2rem; letter-spacing: 0; }
+            .hero .tagline { font-size: 0.8rem; letter-spacing: 4px; }
             .projects { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; letter-spacing: 8px; }
-            nav { padding: 14px 20px; }
-            nav a { margin-left: 14px; font-size: 0.8rem; }
+            .stats { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 48px 20px; }
+            .section-heading { font-size: 1.6rem; }
+            .contact { padding: 48px 24px; }
+            .contact h2 { font-size: 1.3rem; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.4rem; }
         }
     </style>
 </head>
@@ -368,11 +547,11 @@
 
     <header>
         <nav aria-label="Main navigation">
-            <span class="logo" aria-label="ZDT logo">ZDT</span>
-            <div>
-                <a href="index.html" aria-label="Home">Home</a>
-                <a href="#projects" aria-label="Our projects">Projects</a>
-                <a href="services.html" aria-label="Our services">Services</a>
+            <a href="index.html"><img src="images/zdt-logo.png" alt="ZDT Technologies logo" class="logo"></a>
+            <div class="nav-links">
+                <a href="index.html" class="active" aria-label="Home">Home</a>
+                <a href="#projects" aria-label="Our work">Our Work</a>
+                <a href="#services" aria-label="Our services">Services</a>
                 <a href="zdt-billing.html" aria-label="ZDT Billing app">ZDT Billing</a>
                 <a href="zdt-tailor.html" aria-label="ZDT Tailor app">ZDT Tailor</a>
                 <a href="contact.html" aria-label="Contact us">Contact</a>
@@ -382,58 +561,91 @@
 
     <main>
         <section class="hero" aria-label="Company introduction">
+            <p class="overline">Crafting Digital Excellence</p>
             <h1>ZDT</h1>
             <p class="tagline">Innovation. Beyond Code.</p>
-            <p class="sub">Building powerful tools for modern businesses</p>
+            <p class="sub">We design and engineer purpose-built software that transforms how businesses operate — from intelligent billing systems to complete shop management solutions.</p>
+            <div class="hero-cta">
+                <a href="#projects">Explore Our Work</a>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true"><span></span></div>
         </section>
 
         <div class="container">
             <section id="projects" aria-label="Our projects">
-                <h2 class="section-title">Our <span>Projects</span></h2>
+                <p class="section-title">Our Work</p>
+                <h2 class="section-heading">Built for impact</h2>
+                <p class="section-desc">Every product we ship is crafted with precision, purpose, and an obsessive attention to detail.</p>
                 <div class="projects">
                     <a href="zdt-billing.html" class="card" aria-label="ZDT Billing Application details">
-                        <div class="glow"></div>
-                        <span class="badge soon">Coming Soon</span>
-                        <h2>ZDT Billing Application</h2>
-                        <p>A powerful billing solution for modern businesses. Streamline invoicing, track payments, and manage finances with ease.</p>
-                        <span class="cta">Learn More</span>
+                        <p class="card-number">01</p>
+                        <span class="badge">Coming Soon</span>
+                        <h2>ZDT Billing</h2>
+                        <p>A streamlined invoicing and billing platform for modern businesses. Generate invoices, manage inventory, track payments, and gain real-time financial clarity — all from one place.</p>
+                        <span class="cta">Discover the app</span>
                     </a>
                     <a href="zdt-tailor.html" class="card" aria-label="ZDT Tailor details">
-                        <div class="glow"></div>
-                        <span class="badge soon">Coming Soon</span>
+                        <p class="card-number">02</p>
+                        <span class="badge">Coming Soon</span>
                         <h2>ZDT Tailor</h2>
-                        <p>A complete tailor shop management app. Manage customers, measurements, bills, and deliveries — all in one place.</p>
-                        <span class="cta">Learn More</span>
+                        <p>An end-to-end management system built exclusively for tailor shops. Track customer measurements, manage orders, generate bills, and streamline deliveries — all in one intuitive app.</p>
+                        <span class="cta">Discover the app</span>
                     </a>
                 </div>
             </section>
 
             <section id="services" aria-label="Our services">
-                <h2 class="section-title">Our <span>Services</span></h2>
+                <p class="section-title">What We Do</p>
+                <h2 class="section-heading">Expertise that delivers</h2>
+                <p class="section-desc">From concept to deployment, we bring the right tools and talent to every project.</p>
                 <div class="services-grid">
                     <article class="service-card">
-                        <div class="icon" aria-hidden="true">&#128187;</div>
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                        </div>
                         <h3>Custom Applications</h3>
-                        <p>Tailor-made desktop and mobile applications built for your unique business needs.</p>
+                        <p>Tailor-made desktop and mobile applications engineered to solve your specific business challenges — no off-the-shelf compromises.</p>
                     </article>
                     <article class="service-card">
-                        <div class="icon" aria-hidden="true">&#128202;</div>
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
                         <h3>Custom Software</h3>
-                        <p>End-to-end development from architecture to deployment and maintenance.</p>
+                        <p>End-to-end software development — from architecture and prototyping to deployment, testing, and long-term maintenance.</p>
                     </article>
                     <article class="service-card">
-                        <div class="icon" aria-hidden="true">&#127760;</div>
+                        <div class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
                         <h3>Custom Websites</h3>
-                        <p>Modern, responsive websites that drive results and represent your brand.</p>
+                        <p>Modern, performance-optimized websites that communicate your brand with clarity and drive measurable results.</p>
                     </article>
                 </div>
             </section>
 
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Products Shipped</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Focus on Quality</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support & Dedication</div>
+                </div>
+            </div>
+
             <section id="contact" class="contact" aria-label="Contact us">
-                <h2>Let's Build Something Together</h2>
-                <p>Have a project in mind? Reach out and we'll bring your ideas to life.</p>
-                <a href="mailto:shamppanchal66@gmail.com" class="email" aria-label="Email us at shamppanchal66@gmail.com">shamppanchal66@gmail.com</a>
-                <span class="email-note">Click to send us an email</span>
+                <h2>Let's create something exceptional</h2>
+                <p>Have a project, idea, or challenge you'd like to discuss? We're always open to conversations that matter.</p>
+                <a href="mailto:shamppanchal66@gmail.com" class="email-btn" aria-label="Email us at shamppanchal66@gmail.com">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    shamppanchal66@gmail.com
+                </a>
+                <span class="email-note">We typically respond within 24 hours</span>
             </section>
         </div>
     </main>
@@ -442,7 +654,7 @@
         <p>&copy; 2026 ZDT. All rights reserved. &middot; <a href="zdt-billing.html">ZDT Billing</a> &middot; <a href="zdt-tailor.html">ZDT Tailor</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script>
         const canvas = document.getElementById('three-canvas');
         const scene = new THREE.Scene();
@@ -452,24 +664,24 @@
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         const particlesGeo = new THREE.BufferGeometry();
-        const count = 1800;
+        const count = 1400;
         const positions = new Float32Array(count * 3);
         const colors = new Float32Array(count * 3);
         for (let i = 0; i < count * 3; i += 3) {
             positions[i] = (Math.random() - 0.5) * 40;
             positions[i+1] = (Math.random() - 0.5) * 30;
             positions[i+2] = (Math.random() - 0.5) * 30 - 5;
-            const c = new THREE.Color().setHSL(0.55 + Math.random() * 0.2, 0.6, 0.4 + Math.random() * 0.4);
+            const c = new THREE.Color().setHSL(0.55 + Math.random() * 0.2, 0.5, 0.3 + Math.random() * 0.4);
             colors[i] = c.r; colors[i+1] = c.g; colors[i+2] = c.b;
         }
         particlesGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
         particlesGeo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
         const particlesMat = new THREE.PointsMaterial({
-            size: 0.06,
+            size: 0.05,
             vertexColors: true,
             transparent: true,
-            opacity: 0.8,
+            opacity: 0.6,
             blending: THREE.AdditiveBlending,
             sizeAttenuation: true,
         });
@@ -477,26 +689,26 @@
         scene.add(particleSystem);
 
         const shapes = [];
-        const shapeColors = [0x00d4ff, 0x7b2ff7, 0xff2d95, 0x00c853];
-        for (let i = 0; i < 12; i++) {
-            const geo = i % 3 === 0 ? new THREE.IcosahedronGeometry(0.15, 0) :
-                       i % 3 === 1 ? new THREE.OctahedronGeometry(0.12, 0) :
-                                     new THREE.TorusGeometry(0.1, 0.04, 8, 12);
+        const shapeColors = [0x38bdf8, 0xa78bfa, 0xf472b6, 0x34d399];
+        for (let i = 0; i < 10; i++) {
+            const geo = i % 3 === 0 ? new THREE.IcosahedronGeometry(0.12, 0) :
+                       i % 3 === 1 ? new THREE.OctahedronGeometry(0.1, 0) :
+                                     new THREE.TorusGeometry(0.08, 0.03, 8, 12);
             const mat = new THREE.MeshBasicMaterial({
                 color: shapeColors[i % shapeColors.length],
                 transparent: true,
-                opacity: 0.15 + Math.random() * 0.15,
+                opacity: 0.1 + Math.random() * 0.12,
                 wireframe: Math.random() > 0.5,
             });
             const mesh = new THREE.Mesh(geo, mat);
             mesh.position.set(
-                (Math.random() - 0.5) * 25,
-                (Math.random() - 0.5) * 18,
-                (Math.random() - 0.5) * 15 - 8
+                (Math.random() - 0.5) * 22,
+                (Math.random() - 0.5) * 16,
+                (Math.random() - 0.5) * 12 - 6
             );
             mesh.userData = {
-                speed: 0.1 + Math.random() * 0.3,
-                rotSpeed: 0.005 + Math.random() * 0.02,
+                speed: 0.08 + Math.random() * 0.25,
+                rotSpeed: 0.003 + Math.random() * 0.015,
                 floatOffset: Math.random() * Math.PI * 2,
             };
             scene.add(mesh);
@@ -519,17 +731,17 @@
 
         function animate() {
             requestAnimationFrame(animate);
-            particleSystem.rotation.x += 0.0001;
-            particleSystem.rotation.y += 0.0003;
+            particleSystem.rotation.x += 0.00008;
+            particleSystem.rotation.y += 0.0002;
             shapes.forEach((mesh) => {
                 mesh.rotation.x += mesh.userData.rotSpeed;
                 mesh.rotation.y += mesh.userData.rotSpeed * 1.3;
-                const floatY = Math.sin(Date.now() * 0.001 * mesh.userData.speed + mesh.userData.floatOffset) * 0.3;
+                const floatY = Math.sin(Date.now() * 0.001 * mesh.userData.speed + mesh.userData.floatOffset) * 0.2;
                 mesh.position.y += (mesh.userData.baseY || 0) + floatY - mesh.position.y * 0.02;
                 if (!mesh.userData.baseY) mesh.userData.baseY = mesh.position.y;
             });
-            const targetX = mouseX * 0.3;
-            const targetY = mouseY * 0.2;
+            const targetX = mouseX * 0.25;
+            const targetY = mouseY * 0.15;
             particleSystem.rotation.y += (targetX - particleSystem.rotation.y) * 0.02;
             particleSystem.rotation.x += (targetY - particleSystem.rotation.x) * 0.02;
             renderer.render(scene, camera);
@@ -543,23 +755,7 @@
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.section-title, .card, .service-card, .contact').forEach(el => observer.observe(el));
-
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = -(y - centerY) / 15;
-                const rotateY = (x - centerX) / 15;
-                card.style.transform = `translateY(-8px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
+        document.querySelectorAll('.section-title, .section-heading, .section-desc, .card, .service-card, .contact, .stat-item').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

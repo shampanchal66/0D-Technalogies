@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zdt.com/sitemap.xml
+Sitemap: https://zdt-website.vercel.app/sitemap.xml

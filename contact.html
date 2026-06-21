@@ -6,19 +6,29 @@
     <title>Contact Us - ZDT | Get in Touch</title>
     <meta name="description" content="Contact ZDT for custom software, billing applications, and website development. Email us at shamppanchal66@gmail.com.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt.com/contact.html">
+    <link rel="canonical" href="https://zdt-website.vercel.app/contact.html">
     <meta property="og:title" content="Contact Us - ZDT">
     <meta property="og:description" content="Get in touch with ZDT for custom software and web development.">
-    <meta property="og:url" content="https://zdt.com/contact.html">
+    <meta property="og:url" content="https://zdt-website.vercel.app/contact.html">
+    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#070a14;color:#e0e0e0;line-height:1.6;overflow-x:hidden}
         #three-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
         .content{position:relative;z-index:1}
         nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(7,10,20,0.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,42,64,0.5);position:sticky;top:0;z-index:10}
-        nav .logo{font-size:1.6rem;font-weight:800;letter-spacing:4px;background:linear-gradient(135deg,#00d4ff,#7b2ff7,#ff2d95);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 4s ease infinite}
+        nav .logo {
+    display: block;
+    height: 40px;
+    width: auto;
+    transition: opacity 0.25s;
+}
+nav .logo:hover { opacity: 0.8; }
         @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
         nav a{color:#7a8baa;text-decoration:none;margin-left:24px;font-size:0.9rem;transition:color 0.3s}
         nav a:hover{color:#00d4ff}
@@ -49,7 +59,7 @@
 <canvas id="three-canvas" aria-hidden="true"></canvas>
 <header>
 <nav aria-label="Main navigation">
-<span class="logo" aria-label="ZDT logo">ZDT</span>
+<a href="index.html"><img src="images/zdt-logo.png" alt="ZDT Technologies logo" class="logo"></a>
 <div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -97,3 +107,6 @@ addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updat
 </script>
 </body>
 </html>
+
+
+

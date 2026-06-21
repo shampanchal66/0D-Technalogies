@@ -7,19 +7,23 @@
     <meta name="description" content="ZDT Tailor is a Flutter mobile app for tailors to manage customers, measurements, bills, and deliveries. Coming soon on Google Play.">
     <meta name="keywords" content="ZDT Tailor, tailor app, billing app, tailor management, measurement tracking, tailor shop">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt.com/zdt-tailor.html">
+    <link rel="canonical" href="https://zdt-website.vercel.app/zdt-tailor.html">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="ZDT Tailor - Your Complete Tailor Management Solution">
     <meta property="og:description" content="Manage customers, measurements, bills, and deliveries — all in one app. Coming soon on Google Play.">
-    <meta property="og:url" content="https://zdt.com/zdt-tailor.html">
+    <meta property="og:url" content="https://zdt-website.vercel.app/zdt-tailor.html">
+    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="ZDT">
 
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
     <meta name="twitter:title" content="ZDT Tailor - Your Complete Tailor Management Solution">
     <meta name="twitter:description" content="Manage customers, measurements, bills, and deliveries — all in one app.">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✂</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,13 +69,13 @@
             top:0;
             z-index:100;
         }
-        nav .logo{
-            font-size:1.3rem;
-            font-weight:800;
-            color:var(--primary);
-            letter-spacing:1px;
+        nav .logo {
+            display: block;
+            height: 32px;
+            width: auto;
+            transition: opacity 0.25s;
         }
-        nav .logo i{color:var(--accent);margin-right:6px}
+        nav .logo:hover { opacity: 0.8; }
         nav a{
             color:var(--text-light);
             text-decoration:none;
@@ -129,6 +133,9 @@
             opacity:0.8;
         }
         .hero .badge i{font-size:1.3rem}
+        .hero .download-btn{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:14px 36px;background:var(--accent);color:var(--white);text-decoration:none;border-radius:12px;font-weight:600;font-size:0.95rem;transition:background 0.3s,transform 0.3s,box-shadow 0.3s;box-shadow:0 4px 20px rgba(139,94,60,0.25)}
+        .hero .download-btn:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 8px 30px rgba(139,94,60,0.35)}
+        .hero .download-btn i{font-size:1.2rem}
 
         .container{max-width:1000px;margin:0 auto;padding:60px 20px}
 
@@ -280,11 +287,11 @@
         <div class="coming-soon">Coming Soon</div>
         <h1>ZDT Tailor</h1>
         <p class="tagline">Your Complete Tailor Management Solution</p>
-        <div class="badge">
-            <i class="fab fa-google-play"></i> Coming Soon on Google Play
-        </div>
+        <div class="badge"><i class="fas fa-clock"></i> Coming Soon &middot; In Verification</div>
+        <a href="https://github.com/shampanchal66/ZDT-website/releases/download/v1.0.0/zdt-tailor.apk" class="download-btn"><i class="fas fa-download"></i> Download APK</a>
     </div>
 </section>
+
 
 <div class="container">
     <section id="features">
@@ -430,3 +437,5 @@
 
 </body>
 </html>
+
+

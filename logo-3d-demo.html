@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZDT Technologies — 3D Logo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #060912;
+            overflow: hidden;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        canvas { display: block; }
+        .overlay {
+            position: fixed;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+        .overlay .name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 6px;
+            color: #f1f5f9;
+            text-transform: uppercase;
+        }
+        .overlay .name span {
+            background: linear-gradient(135deg, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .overlay .tagline {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.4);
+            letter-spacing: 3px;
+            margin-top: 6px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="name"><span>ZDT</span> Technologies</div>
+        <div class="tagline">Applications &middot; Websites &middot; Software</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0.3, 6.5);
+        camera.lookAt(0, 0, 0);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        renderer.physicallyCorrectLights = true;
+        document.body.prepend(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // ---- HEXAGONAL PRISM ----
+        const hexGeo = new THREE.CylinderGeometry(1.8, 1.8, 2.4, 6, 1, true);
+        const hexMat = new THREE.MeshPhysicalMaterial({
+            color: 0x0a1628,
+            metalness: 0.6,
+            roughness: 0.2,
+            transparent: true,
+            opacity: 0.35,
+            side: THREE.DoubleSide,
+            envMapIntensity: 0.8,
+            clearcoat: 0.3,
+            clearcoatRoughness: 0.4,
+        });
+        const hexMesh = new THREE.Mesh(hexGeo, hexMat);
+        group.add(hexMesh);
+
+        const capGeo = new THREE.CircleGeometry(1.8, 6);
+        const capMat = new THREE.MeshPhysicalMaterial({
+            color: 0x0a1628,
+            metalness: 0.5,
+            roughness: 0.3,
+            transparent: true,
+            opacity: 0.25,
+            side: THREE.DoubleSide,
+        });
+        const topCap = new THREE.Mesh(capGeo.clone(), capMat);
+        topCap.position.y = 1.2;
+        topCap.rotation.x = -Math.PI / 2;
+        group.add(topCap);
+        const botCap = new THREE.Mesh(capGeo.clone(), capMat);
+        botCap.position.y = -1.2;
+        botCap.rotation.x = Math.PI / 2;
+        group.add(botCap);
+
+        // ---- GLOWING EDGES ----
+        const edgesGeo = new THREE.EdgesGeometry(new THREE.CylinderGeometry(1.8, 1.8, 2.4, 6));
+        const edgeMat = new THREE.LineBasicMaterial({
+            color: 0x38bdf8,
+            transparent: true,
+            opacity: 0.5,
+        });
+        const edgeLines = new THREE.LineSegments(edgesGeo, edgeMat);
+        group.add(edgeLines);
+
+        // ---- 3D Z LETTER ----
+        const zShape = new THREE.Shape();
+        const zw = 2.4, zh = 1.6, zt = 0.08;
+        zShape.moveTo(-zw / 2, zh / 2);
+        zShape.lineTo(zw / 2, zh / 2);
+        zShape.lineTo(zw / 2, zh / 2 - zt);
+        zShape.lineTo(-zw / 2 + zh - zt, -zh / 2 + zt);
+        zShape.lineTo(zw / 2 - zt, -zh / 2 + zt);
+        zShape.lineTo(zw / 2 - zt, -zh / 2);
+        zShape.lineTo(-zw / 2, -zh / 2);
+        zShape.lineTo(-zw / 2, -zh / 2 + zt);
+        zShape.lineTo(zw / 2 - zh + zt, zh / 2 - zt);
+        zShape.lineTo(-zw / 2 + zt, zh / 2 - zt);
+        zShape.closePath();
+
+        const zGeo = new THREE.ExtrudeGeometry(zShape, {
+            depth: 0.18,
+            bevelEnabled: true,
+            bevelThickness: 0.04,
+            bevelSize: 0.04,
+            bevelSegments: 4,
+        });
+        zGeo.center();
+        const zMat = new THREE.MeshPhysicalMaterial({
+            color: 0x38bdf8,
+            emissive: 0x38bdf8,
+            emissiveIntensity: 0.25,
+            metalness: 0.7,
+            roughness: 0.15,
+            transparent: true,
+            opacity: 0.9,
+        });
+        const zMesh = new THREE.Mesh(zGeo, zMat);
+        zMesh.position.z = 0.05;
+        group.add(zMesh);
+
+        // Z letter edges glow
+        const zEdgesGeo = new THREE.EdgesGeometry(zGeo);
+        const zEdgeMat = new THREE.LineBasicMaterial({
+            color: 0x7dd3fc,
+            transparent: true,
+            opacity: 0.6,
+        });
+        const zEdges = new THREE.LineSegments(zEdgesGeo, zEdgeMat);
+        zEdges.position.copy(zMesh.position);
+        group.add(zEdges);
+
+        // ---- ORBITING RING (cyan) ----
+        const ringCount = 120;
+        const ringGeo1 = new THREE.BufferGeometry();
+        const ringPos1 = new Float32Array(ringCount * 3);
+        for (let i = 0; i < ringCount; i++) {
+            const angle = (i / ringCount) * Math.PI * 2;
+            const radius = 2.4 + Math.random() * 0.6;
+            ringPos1[i * 3] = Math.cos(angle) * radius;
+            ringPos1[i * 3 + 1] = (Math.random() - 0.5) * 1.2;
+            ringPos1[i * 3 + 2] = Math.sin(angle) * radius;
+        }
+        ringGeo1.setAttribute('position', new THREE.BufferAttribute(ringPos1, 3));
+        const ringMat1 = new THREE.PointsMaterial({
+            color: 0x38bdf8,
+            size: 0.03,
+            transparent: true,
+            opacity: 0.5,
+            blending: THREE.AdditiveBlending,
+            sizeAttenuation: true,
+        });
+        const ringPoints = new THREE.Points(ringGeo1, ringMat1);
+        group.add(ringPoints);
+
+        // ---- ORBITING RING (purple, inner) ----
+        const ringCount2 = 60;
+        const ringGeo2 = new THREE.BufferGeometry();
+        const ringPos2 = new Float32Array(ringCount2 * 3);
+        for (let i = 0; i < ringCount2; i++) {
+            const angle = (i / ringCount2) * Math.PI * 2;
+            const radius = 2.0;
+            ringPos2[i * 3] = Math.cos(angle + 0.3) * radius;
+            ringPos2[i * 3 + 1] = Math.sin(angle * 2) * 0.15;
+            ringPos2[i * 3 + 2] = Math.sin(angle + 0.3) * radius;
+        }
+        ringGeo2.setAttribute('position', new THREE.BufferAttribute(ringPos2, 3));
+        const ringMat2 = new THREE.PointsMaterial({
+            color: 0xa78bfa,
+            size: 0.02,
+            transparent: true,
+            opacity: 0.4,
+            blending: THREE.AdditiveBlending,
+            sizeAttenuation: true,
+        });
+        const ringPoints2 = new THREE.Points(ringGeo2, ringMat2);
+        group.add(ringPoints2);
+
+        // ---- ICOSAHEDRON ORBIT (pink accent) ----
+        const icoGeo = new THREE.IcosahedronGeometry(0.12, 0);
+        const icoMat = new THREE.MeshBasicMaterial({
+            color: 0xf472b6,
+            transparent: true,
+            opacity: 0.3,
+            wireframe: true,
+        });
+        const icoMesh = new THREE.Mesh(icoGeo, icoMat);
+        icoMesh.position.set(2.8, 0.6, 0);
+        group.add(icoMesh);
+        const icoMesh2 = icoMesh.clone();
+        icoMesh2.material = icoMat.clone();
+        icoMesh2.material.color.setHex(0x34d399);
+        icoMesh2.position.set(-2.6, -0.5, 0.8);
+        group.add(icoMesh2);
+
+        // ---- AMBIENT PARTICLES ----
+        const bgCount = 400;
+        const bgGeo = new THREE.BufferGeometry();
+        const bgPos = new Float32Array(bgCount * 3);
+        for (let i = 0; i < bgCount * 3; i++)
+            bgPos[i] = (Math.random() - 0.5) * 20;
+        bgGeo.setAttribute('position', new THREE.BufferAttribute(bgPos, 3));
+        const bgMat = new THREE.PointsMaterial({
+            color: 0x38bdf8,
+            size: 0.02,
+            transparent: true,
+            opacity: 0.2,
+            blending: THREE.AdditiveBlending,
+            sizeAttenuation: true,
+        });
+        const bgParticles = new THREE.Points(bgGeo, bgMat);
+        scene.add(bgParticles);
+
+        // ---- LIGHTS ----
+        scene.add(new THREE.AmbientLight(0x222244, 0.5));
+        const dl1 = new THREE.DirectionalLight(0x38bdf8, 1.0);
+        dl1.position.set(2, 3, 4);
+        scene.add(dl1);
+        const dl2 = new THREE.DirectionalLight(0xa78bfa, 0.6);
+        dl2.position.set(-3, -1, 2);
+        scene.add(dl2);
+        const pl = new THREE.PointLight(0x38bdf8, 0.3, 10);
+        pl.position.set(0, 3, 0);
+        scene.add(pl);
+
+        // ---- MOUSE ----
+        let mouseX = 0, mouseY = 0;
+        let targetRX = 0, targetRY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+        document.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                mouseX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(e.touches[0].clientY / window.innerHeight) * 2 + 1;
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // ---- ANIMATION ----
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const t = clock.getElapsedTime();
+
+            group.rotation.y += 0.004;
+            group.position.y = Math.sin(t * 0.4) * 0.08;
+
+            targetRX += (mouseY * 0.15 - targetRX) * 0.03;
+            targetRY += (mouseX * 0.25 - targetRY) * 0.03;
+            group.rotation.x += (targetRX - group.rotation.x) * 0.02;
+            group.rotation.z += (-targetRY * 0.05 - group.rotation.z) * 0.02;
+
+            ringPoints.rotation.y += 0.008;
+            ringPoints.rotation.x = Math.sin(t * 0.2) * 0.05;
+            ringPoints2.rotation.y -= 0.012;
+            ringPoints2.rotation.x = Math.sin(t * 0.15 + 1) * 0.03;
+
+            const pulse = 0.4 + Math.sin(t * 1.5) * 0.15;
+            edgeMat.opacity = pulse;
+            zEdgeMat.opacity = pulse * 0.8;
+
+            icoMesh.rotation.x += 0.02;
+            icoMesh.rotation.y += 0.03;
+            icoMesh.position.x = Math.cos(t * 0.5) * 2.8;
+            icoMesh.position.z = Math.sin(t * 0.5) * 2.8;
+            icoMesh2.rotation.x -= 0.015;
+            icoMesh2.rotation.y += 0.02;
+            icoMesh2.position.x = Math.cos(t * 0.4 + 2) * 2.6;
+            icoMesh2.position.z = Math.sin(t * 0.4 + 2) * 2.6;
+
+            bgParticles.rotation.y += 0.0003;
+            pl.position.x = Math.sin(t * 0.3) * 3;
+            pl.position.z = Math.cos(t * 0.3) * 3;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>

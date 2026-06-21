@@ -6,13 +6,17 @@
     <title>ZDT Billing - Smart Invoicing & Billing for Small Businesses | ZDT</title>
     <meta name="description" content="ZDT Billing — a billing/invoicing app for small businesses. Create bills, track stock, manage customers. Coming soon on Google Play.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt.com/zdt-billing.html">
+    <link rel="canonical" href="https://zdt-website.vercel.app/zdt-billing.html">
     <meta property="og:title" content="ZDT Billing - Smart Invoicing & Billing for Small Businesses">
     <meta property="og:description" content="Create bills, track stock, manage customers. Coming soon on Google Play.">
-    <meta property="og:url" content="https://zdt.com/zdt-billing.html">
+    <meta property="og:url" content="https://zdt-website.vercel.app/zdt-billing.html">
+    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
     <meta name="twitter:title" content="ZDT Billing - Smart Invoicing & Billing for Small Businesses">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -26,8 +30,13 @@
         :root{--primary:#0f1729;--accent:#2563eb;--accent-light:#60a5fa;--bg:#f8f9fc;--card:#ffffff;--border:#e8edf4;--text-muted:#6b7280}
 
         nav{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-        nav .logo{font-size:1.3rem;font-weight:800;color:var(--primary);letter-spacing:1px}
-        nav .logo i{color:var(--accent);margin-right:6px}
+nav .logo {
+    display: block;
+    height: 32px;
+    width: auto;
+    transition: opacity 0.25s;
+}
+nav .logo:hover { opacity: 0.8; }
         nav a{color:var(--text-muted);text-decoration:none;margin-left:24px;font-size:0.85rem;font-weight:500;transition:color 0.3s}
         nav a:hover{color:var(--accent)}
 
@@ -40,6 +49,9 @@
         .hero .tagline{font-size:1.1rem;color:#94a3b8;font-weight:300;margin-bottom:28px}
         .hero .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);padding:12px 28px;border-radius:12px;color:#fff;font-size:0.9rem;cursor:default;opacity:0.8}
         .hero .badge i{font-size:1.3rem}
+        .hero .download-btn{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:14px 36px;background:var(--accent);color:#fff;text-decoration:none;border-radius:12px;font-weight:600;font-size:0.95rem;transition:background 0.3s,transform 0.3s,box-shadow 0.3s;box-shadow:0 4px 20px rgba(37,99,235,0.25)}
+        .hero .download-btn:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.35)}
+        .hero .download-btn i{font-size:1.2rem}
 
         .container{max-width:1000px;margin:0 auto;padding:60px 20px}
         .section-title{text-align:center;margin-bottom:40px}
@@ -111,7 +123,8 @@
         <div class="coming-soon">Coming Soon</div>
         <h1>ZDT Billing</h1>
         <p class="tagline">Smart Invoicing & Billing for Small Businesses</p>
-        <div class="badge"><i class="fab fa-google-play"></i> Coming Soon on Google Play</div>
+        <div class="badge"><i class="fas fa-clock"></i> Coming Soon &middot; In Verification</div>
+        <a href="https://github.com/shampanchal66/ZDT-website/releases/download/v1.0.0/zdt-billing.apk" class="download-btn"><i class="fas fa-download"></i> Download APK</a>
     </div>
 </section>
 
@@ -202,3 +215,5 @@
 
 </body>
 </html>
+
+
