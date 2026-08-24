@@ -612,9 +612,8 @@
         const service=fd.get('service');
         const message=fd.get('message');
         const body=`Hi, I'm ${name} (${email}).%0AService needed: ${service}%0AProject details: ${message}`;
-        window.open(`mailto:shamppanchal66@gmail.com?subject=New Project Inquiry from ${name}&body=${body}`);
+        location.href=`mailto:shamppanchal66@gmail.com?subject=New Project Inquiry from ${name}&body=${body}`;
         this.reset();
-        alert('Opening your email client...');
     });
 </script>
 
