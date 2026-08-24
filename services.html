@@ -3,101 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Custom Software, Apps & Websites | ZDT</title>
-    <meta name="description" content="ZDT offers custom application development, software engineering, and website design. Tailored solutions for your business.">
+    <title>Services - Custom Software, Apps & Websites | 0D Technologies</title>
+    <meta name="description" content="0D Technologies offers custom application development, software engineering, and website design. Tailored solutions for your business.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt-website.vercel.app/services.html">
-    <meta property="og:title" content="Services - ZDT">
+    <link rel="canonical" href="https://0dtechnologies.com/services.html">
+    <meta property="og:title" content="Services - 0D Technologies">
     <meta property="og:description" content="Custom application development, software engineering, and website design.">
-    <meta property="og:url" content="https://zdt-website.vercel.app/services.html">
-    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:url" content="https://0dtechnologies.com/services.html">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta name="twitter:image" content="https://0dtechnologies.com/og-image.svg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-deep: #060912;
+            --border-subtle: rgba(30, 42, 64, 0.4);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-cyan: #38bdf8;
+            --accent-purple: #a78bfa;
+            --gradient-primary: linear-gradient(135deg, #38bdf8, #a78bfa, #f472b6);
+            --gradient-cyan-purple: linear-gradient(135deg, #38bdf8, #a78bfa);
+        }
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#070a14;color:#e0e0e0;line-height:1.6;overflow-x:hidden}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg-deep);color:var(--text-secondary);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
         #three-canvas{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
         .content{position:relative;z-index:1}
-        nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:rgba(7,10,20,0.8);backdrop-filter:blur(16px);border-bottom:1px solid rgba(30,42,64,0.5);position:sticky;top:0;z-index:10}
-        nav .logo {
-    display: block;
-    height: 40px;
-    width: auto;
-    transition: opacity 0.25s;
-}
-nav .logo:hover { opacity: 0.8; }
-        @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-        nav a{color:#7a8baa;text-decoration:none;margin-left:24px;font-size:0.9rem;transition:color 0.3s}
-        nav a:hover{color:#00d4ff}
-        .hero{text-align:center;padding:90px 20px 60px}
-        .hero h1{font-size:2.8rem;color:#fff;margin-bottom:10px;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
-        .hero p{color:#7a8baa;max-width:600px;margin:0 auto;opacity:0;animation:fadeUp 0.8s 0.4s forwards}
+        nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(6,9,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-subtle);position:sticky;top:0;z-index:10}
+        nav .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+        nav .logo img{height:40px;width:auto}
+        nav a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s}
+        nav a:hover{color:var(--accent-cyan)}
+        .nav-links{display:flex;align-items:center;gap:8px}
+        .nav-links a{padding:8px 16px;border-radius:8px}
+        .nav-links a:hover{background:rgba(56,189,248,0.06);color:var(--text-primary)}
+        .nav-links a.active{color:var(--accent-cyan);background:rgba(56,189,248,0.08)}
+        .nav-cta{padding:10px 24px!important;background:var(--gradient-cyan-purple)!important;color:#fff!important;border-radius:10px!important;font-weight:600!important}
         @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-        .hero h1,.hero p{transform:translateY(20px)}
-        .container{max-width:1000px;margin:0 auto;padding:50px 20px 60px}
-        .back-link{display:inline-flex;align-items:center;gap:6px;color:#7a8baa;text-decoration:none;margin-bottom:30px;font-size:0.9rem;transition:color 0.3s}
-        .back-link:hover{color:#00d4ff}
-        .service{border:1px solid rgba(30,42,64,0.4);border-radius:16px;padding:32px;margin-bottom:20px;transition:border-color 0.3s,box-shadow 0.3s}
-        .service:hover{border-color:rgba(0,212,255,0.3);box-shadow:0 8px 30px rgba(0,212,255,0.06)}
-        .service .icon{font-size:2rem;margin-bottom:10px}
-        .service h2{color:#00d4ff;font-size:1.2rem;margin-bottom:8px}
-        .service p{color:#8899bb;font-size:0.92rem;line-height:1.7}
-        .pricing-note{text-align:center;padding:40px;background:rgba(17,26,43,0.5);border:1px solid rgba(30,42,64,0.4);border-radius:16px;margin-top:30px}
-        .pricing-note h2{color:#fff;font-size:1.3rem;margin-bottom:8px}
-        .pricing-note p{color:#7a8baa}
-        .pricing-note a{color:#00d4ff;text-decoration:none}
-        footer{text-align:center;padding:24px 20px;border-top:1px solid rgba(30,42,64,0.4);color:#3a4f6a;font-size:0.85rem}
-        @media(max-width:768px){.hero h1{font-size:2rem}nav{padding:14px 20px}nav a{margin-left:12px;font-size:0.8rem}}
+
+        .hero{text-align:center;padding:100px 20px 60px}
+        .hero .overline{font-size:0.7rem;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--accent-cyan);margin-bottom:16px;opacity:0;animation:fadeUp 0.8s 0.2s forwards}
+        .hero h1{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--text-primary);margin-bottom:16px;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
+        .hero p{color:var(--text-muted);max-width:600px;margin:0 auto;opacity:0;animation:fadeUp 0.8s 0.4s forwards;font-size:1.05rem}
+        .hero h1,.hero p,.hero .overline{transform:translateY(20px)}
+
+        .container{max-width:1000px;margin:0 auto;padding:50px 20px 80px}
+        .back-link{display:inline-flex;align-items:center;gap:6px;color:var(--text-muted);text-decoration:none;margin-bottom:32px;font-size:0.9rem;transition:color 0.3s}
+        .back-link:hover{color:var(--accent-cyan)}
+
+        .service{background:rgba(15,23,42,0.65);backdrop-filter:blur(12px);border:1px solid var(--border-subtle);border-radius:16px;padding:36px;margin-bottom:20px;transition:border-color 0.3s,box-shadow 0.3s,transform 0.3s}
+        .service:hover{border-color:rgba(56,189,248,0.2);box-shadow:0 12px 40px rgba(56,189,248,0.04);transform:translateY(-3px)}
+        .service .icon-wrap{width:52px;height:52px;background:rgba(56,189,248,0.06);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.5rem;transition:background 0.3s}
+        .service:hover .icon-wrap{background:rgba(56,189,248,0.12)}
+        .service h2{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text-primary);margin-bottom:10px}
+        .service p{color:var(--text-muted);font-size:0.92rem;line-height:1.8}
+        .service .features{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+        .service .features span{padding:5px 14px;background:rgba(56,189,248,0.05);border:1px solid rgba(56,189,248,0.1);border-radius:20px;font-size:0.78rem;color:var(--text-secondary);font-weight:500}
+
+        .cta-box{text-align:center;padding:48px;background:rgba(15,23,42,0.65);backdrop-filter:blur(12px);border:1px solid var(--border-subtle);border-radius:20px;margin-top:40px;position:relative;overflow:hidden}
+        .cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gradient-primary);opacity:0.4}
+        .cta-box h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text-primary);margin-bottom:10px}
+        .cta-box p{color:var(--text-muted);margin-bottom:24px;font-size:0.95rem}
+        .cta-box a{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;background:var(--gradient-cyan-purple);color:#fff;text-decoration:none;border-radius:12px;font-weight:600;font-size:0.9rem;transition:all 0.3s;box-shadow:0 4px 24px rgba(56,189,248,0.15)}
+        .cta-box a:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(56,189,248,0.25)}
+
+        footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border-subtle);color:var(--text-muted);font-size:0.85rem}
+        footer a{color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+        footer a:hover{color:var(--accent-cyan)}
+
+        @media(max-width:768px){
+            .hero h1{font-size:2rem}
+            nav{padding:16px 20px;flex-direction:column;gap:12px}
+            .nav-links{flex-wrap:wrap;justify-content:center;gap:4px}
+            .nav-links a{padding:6px 12px;font-size:0.75rem}
+        }
     </style>
 </head>
 <body>
 <canvas id="three-canvas" aria-hidden="true"></canvas>
+<div class="content">
 <header>
 <nav aria-label="Main navigation">
-<a href="index.html"><img src="images/zdt-logo.png" alt="ZDT Technologies logo" class="logo"></a>
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="zdt-billing.html">ZDT Billing</a>
-<a href="zdt-tailor.html">ZDT Tailor</a>
-<a href="contact.html">Contact</a>
-</div>
+    <a href="index.html" class="logo"><img src="images/zdt-logo.png" alt="0D Technologies logo"></a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="zdt-billing.html">0D Billing</a>
+        <a href="zdt-tailor.html">0D Tailor</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
 </nav>
 </header>
+
 <main>
-<section class="hero"><h1>Our Services</h1><p>We build tailored digital solutions that help your business grow.</p></section>
+<section class="hero">
+    <p class="overline">Our Services</p>
+    <h1>We build tailored digital solutions</h1>
+    <p>From custom applications to enterprise software and modern websites — we deliver excellence at every stage.</p>
+</section>
+
 <div class="container">
-<a href="index.html" class="back-link" aria-label="Back to home page">&larr; Back to Home</a>
+    <a href="index.html" class="back-link">&larr; Back to Home</a>
 
-<div class="service">
-<div class="icon">&#128187;</div>
-<h2>Custom Applications</h2>
-<p>We design and develop desktop and mobile applications tailored to your specific business needs. Whether it's a customer-facing app or an internal tool, we handle everything from UI/UX design to backend development, testing, and deployment. Platforms: Windows, Android, iOS, and web.</p>
-</div>
+    <div class="service">
+        <div class="icon-wrap">&#128187;</div>
+        <h2>Custom Applications</h2>
+        <p>We design and develop desktop and mobile applications tailored to your specific business needs. Whether it's a customer-facing app or an internal tool, we handle everything from UI/UX design to backend development, testing, and deployment.</p>
+        <div class="features">
+            <span>Android</span><span>iOS</span><span>Windows</span><span>macOS</span><span>Cross-Platform</span><span>UI/UX Design</span>
+        </div>
+    </div>
 
-<div class="service">
-<div class="icon">&#128202;</div>
-<h2>Custom Software</h2>
-<p>From small utilities to enterprise-grade systems, we build software that streamlines your operations. Our services include requirements analysis, system architecture, database design, API development, and ongoing maintenance. We use modern stacks to ensure performance, security, and scalability.</p>
-</div>
+    <div class="service">
+        <div class="icon-wrap">&#128202;</div>
+        <h2>Custom Software</h2>
+        <p>From small utilities to enterprise-grade systems, we build software that streamlines your operations. Our services include requirements analysis, system architecture, database design, API development, and ongoing maintenance.</p>
+        <div class="features">
+            <span>Architecture</span><span>Database Design</span><span>API Development</span><span>Testing</span><span>Maintenance</span><span>Scalable</span>
+        </div>
+    </div>
 
-<div class="service">
-<div class="icon">&#127760;</div>
-<h2>Website Development</h2>
-<p>We create responsive, fast, and SEO-optimized websites that represent your brand and drive results. From simple landing pages to full-featured web applications, we use cutting-edge technologies to deliver a seamless experience across all devices. Includes hosting setup and domain configuration support.</p>
-</div>
+    <div class="service">
+        <div class="icon-wrap">&#127760;</div>
+        <h2>Website Development</h2>
+        <p>We create responsive, fast, and SEO-optimized websites that represent your brand and drive results. From simple landing pages to full-featured web applications, we use cutting-edge technologies to deliver a seamless experience.</p>
+        <div class="features">
+            <span>Responsive</span><span>SEO Optimized</span><span>Fast Loading</span><span>Modern Design</span><span>E-Commerce</span><span>CMS</span>
+        </div>
+    </div>
 
-<div class="pricing-note">
-<h2>Interested in Working With Us?</h2>
-<p>Every project is unique. <a href="contact.html">Contact us</a> with your requirements and we'll provide a free consultation and estimate.</p>
-</div>
+    <div class="cta-box">
+        <h2>Interested in Working With Us?</h2>
+        <p>Every project is unique. Contact us with your requirements and we'll provide a free consultation and estimate.</p>
+        <a href="contact.html">Get Free Consultation &rarr;</a>
+    </div>
 </div>
 </main>
-<footer><p>&copy; 2026 ZDT. All rights reserved. &middot; <a href="privacy.html" style="color:#4a6a8a;text-decoration:none">Privacy Policy</a></p></footer>
+
+<footer>
+    <p>&copy; 2026 0D Technologies. All rights reserved. &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="contact.html">Contact</a></p>
+</footer>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 const canvas=document.getElementById('three-canvas'),scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1e3),renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
@@ -113,6 +168,3 @@ addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updat
 </script>
 </body>
 </html>
-
-
-

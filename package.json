@@ -1,7 +1,7 @@
 {
-  "name": "zdt-website",
-  "version": "1.0.0",
-  "description": "ZDT company website - custom software, billing apps & web development",
+  "name": "0d-technologies-website",
+  "version": "2.0.0",
+  "description": "0D Technologies (0th Dimension Technologies) official website - custom software, billing apps & web development",
   "scripts": {
     "dev": "vercel dev"
   }

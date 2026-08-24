@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZDT — Custom Software, Billing Apps & Web Development</title>
-    <meta name="description" content="ZDT crafts custom software, billing applications, and websites that solve real problems. Discover ZDT Billing and ZDT Tailor — launching soon.">
-    <meta name="keywords" content="ZDT, billing application, tailor app, custom software, web development, mobile apps, ZDT Billing, ZDT Tailor">
-    <meta name="author" content="ZDT">
+    <title>0D Technologies — Custom Software, Apps & Web Development</title>
+    <meta name="description" content="0D Technologies (0th Dimension Technologies) crafts custom software, billing applications, and websites that solve real problems. Discover 0D Billing and 0D Tailor.">
+    <meta name="keywords" content="0D Technologies, 0th Dimension Technologies, ZDT, billing application, tailor app, custom software, web development, mobile apps">
+    <meta name="author" content="0D Technologies">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://zdt-website.vercel.app/">
+    <link rel="canonical" href="https://0dtechnologies.com/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ZDT — Innovation. Beyond Code.">
+    <meta property="og:title" content="0D Technologies — Innovation. Beyond Code.">
     <meta property="og:description" content="Custom software, billing apps, and web development crafted for modern businesses.">
-    <meta property="og:url" content="https://zdt-website.vercel.app/">
-    <meta property="og:site_name" content="ZDT">
-    <meta property="og:image" content="https://zdt-website.vercel.app/og-image.svg">
+    <meta property="og:url" content="https://0dtechnologies.com/">
+    <meta property="og:site_name" content="0D Technologies">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://zdt-website.vercel.app/og-image.svg">
-    <meta name="twitter:title" content="ZDT — Innovation. Beyond Code.">
+    <meta name="twitter:image" content="https://0dtechnologies.com/og-image.svg">
+    <meta name="twitter:title" content="0D Technologies — Innovation. Beyond Code.">
     <meta name="twitter:description" content="Custom software, billing apps, and web development crafted for modern businesses.">
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -36,8 +36,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "ZDT",
-        "url": "https://zdt-website.vercel.app/",
+        "name": "0D Technologies",
+        "alternateName": ["0th Dimension Technologies", "ZDT"],
+        "url": "https://0dtechnologies.com/",
         "description": "Custom software, billing applications, and website development.",
         "email": "shamppanchal66@gmail.com",
         "foundingDate": "2025"
@@ -47,8 +48,8 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "ZDT",
-        "url": "https://zdt-website.vercel.app/"
+        "name": "0D Technologies",
+        "url": "https://0dtechnologies.com/"
     }
     </script>
 
@@ -88,6 +89,7 @@
         header, main, footer { position: relative; z-index: 1; }
         main { background: radial-gradient(ellipse at 50% 0%, rgba(15,23,42,0.3), transparent 70%); }
 
+        /* ── NAV ── */
         nav {
             display: flex;
             justify-content: space-between;
@@ -102,12 +104,21 @@
             z-index: 10;
         }
         nav .logo {
-            display: block;
-            height: 40px;
-            width: auto;
-            transition: opacity 0.25s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
         }
-        nav .logo:hover { opacity: 0.85; }
+        nav .logo img { height: 40px; width: auto; }
+        nav .logo-text {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         @keyframes gradShift {
             0%,100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -125,7 +136,6 @@
             font-weight: 500;
             border-radius: 8px;
             transition: all 0.25s ease;
-            position: relative;
         }
         nav .nav-links a:hover {
             color: var(--text-primary);
@@ -135,10 +145,22 @@
             color: var(--accent-cyan);
             background: rgba(56, 189, 248, 0.08);
         }
+        .nav-cta {
+            padding: 10px 24px !important;
+            background: var(--gradient-cyan-purple) !important;
+            color: #fff !important;
+            border-radius: 10px !important;
+            font-weight: 600 !important;
+        }
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(56,189,248,0.25);
+        }
 
+        /* ── HERO ── */
         .hero {
             text-align: center;
-            padding: 120px 24px 60px;
+            padding: 140px 24px 80px;
             position: relative;
         }
         .hero .overline {
@@ -171,7 +193,7 @@
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
         }
-        .hero h1, .hero .tagline, .hero .sub, .hero .hero-cta { transform: translateY(24px); }
+        .hero h1, .hero .tagline, .hero .sub, .hero .hero-cta, .hero .hero-badges { transform: translateY(24px); }
         .hero .tagline {
             font-size: 1.1rem;
             color: var(--text-muted);
@@ -183,17 +205,43 @@
             animation: fadeUp 0.8s 0.6s forwards;
         }
         .hero .sub {
-            max-width: 520px;
+            max-width: 580px;
             margin: 20px auto 0;
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 300;
             line-height: 1.8;
             opacity: 0;
             animation: fadeUp 0.8s 0.8s forwards;
         }
+        .hero .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.9s forwards;
+        }
+        .hero .hero-badges span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.12);
+            border-radius: 24px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        .hero .hero-badges span i { color: var(--accent-cyan); font-size: 0.85rem; }
         .hero .hero-cta {
             margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
             opacity: 0;
             animation: fadeUp 0.8s 1s forwards;
         }
@@ -202,18 +250,29 @@
             align-items: center;
             gap: 8px;
             padding: 14px 36px;
-            background: var(--gradient-cyan-purple);
-            color: #fff;
             text-decoration: none;
             border-radius: 12px;
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+        }
+        .hero .hero-cta .btn-primary {
+            background: var(--gradient-cyan-purple);
+            color: #fff;
             box-shadow: 0 4px 24px rgba(56,189,248,0.15);
         }
-        .hero .hero-cta a:hover {
+        .hero .hero-cta .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 40px rgba(56,189,248,0.25);
+        }
+        .hero .hero-cta .btn-secondary {
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            color: var(--accent-cyan);
+        }
+        .hero .hero-cta .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.12);
+            transform: translateY(-2px);
         }
 
         .scroll-indicator {
@@ -233,6 +292,7 @@
             50% { transform: translateY(8px); }
         }
 
+        /* ── CONTAINER ── */
         .container { max-width: 1120px; margin: 0 auto; padding: 40px 24px; }
         .section-title {
             font-size: 0.7rem;
@@ -265,6 +325,168 @@
         }
         .section-desc.visible { opacity: 1; transform: translateY(0); }
 
+        /* ── ABOUT STRIP ── */
+        .about-strip {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        .about-strip .about-content { transition: opacity 0.8s, transform 0.8s; }
+        .about-strip .about-content.visible { opacity: 1; transform: translateY(0); }
+        .about-strip .about-visual { transition: opacity 0.8s, transform 0.8s; }
+        .about-strip .about-visual.visible { opacity: 1; transform: translateY(0); }
+        .about-strip .overline {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent-cyan);
+            margin-bottom: 16px;
+        }
+        .about-strip h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .about-strip p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        .about-strip .about-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            transition: gap 0.3s;
+        }
+        .about-strip .about-link:hover { gap: 12px; }
+        .about-visual-card {
+            background: linear-gradient(160deg, rgba(15, 23, 42, 0.85), rgba(10, 16, 32, 0.85));
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 48px 36px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about-visual-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+        }
+        .about-visual-card .big-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradShift 4s ease infinite;
+            line-height: 1;
+        }
+        .about-visual-card .big-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .about-visual-card .mini-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .about-visual-card .mini-stat {
+            padding: 16px;
+            background: rgba(56, 189, 248, 0.04);
+            border-radius: 12px;
+            border: 1px solid rgba(56, 189, 248, 0.08);
+        }
+        .about-visual-card .mini-stat .num {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .about-visual-card .mini-stat .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* ── SERVICES ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: left;
+            transition: opacity 0.8s, transform 0.8s, border-color 0.4s, box-shadow 0.4s;
+        }
+        .service-card.visible { opacity: 1; transform: translateY(0); }
+        .service-card:hover {
+            border-color: rgba(56, 189, 248, 0.2);
+            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.04);
+            transform: translateY(-4px);
+        }
+        .service-card.visible:hover { transform: translateY(-4px); }
+        .service-card .icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            background: rgba(56, 189, 248, 0.06);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .service-card:hover .icon {
+            background: rgba(56, 189, 248, 0.12);
+            transform: scale(1.05);
+        }
+        .service-card .icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent-cyan);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .service-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
+
+        /* ── PRODUCTS ── */
         .projects {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -274,12 +496,10 @@
         .card {
             background: linear-gradient(160deg, rgba(15, 23, 42, 0.85), rgba(10, 16, 32, 0.85));
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-subtle);
             border-radius: 20px;
             padding: 44px 36px;
             cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             text-decoration: none;
             display: block;
             position: relative;
@@ -348,6 +568,13 @@
         }
         .card:hover h2 { color: var(--accent-cyan); }
         .card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; }
+        .card .platforms {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            display: flex;
+            gap: 14px;
+        }
         .card .cta {
             margin-top: 24px;
             font-size: 0.8rem;
@@ -359,12 +586,13 @@
             transition: gap 0.3s;
         }
         .card:hover .cta { gap: 12px; }
-        .card .cta::after { content: '→'; font-size: 1.1rem; transition: transform 0.3s; }
+        .card .cta::after { content: '\2192'; font-size: 1.1rem; transition: transform 0.3s; }
         .card:hover .cta::after { transform: translateX(2px); }
 
+        /* ── STATS ── */
         .stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             margin: 80px 0;
             padding: 48px 24px;
@@ -378,7 +606,7 @@
         .stat-item.visible { opacity: 1; transform: translateY(0); }
         .stat-item .stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             background: var(--gradient-primary);
             background-size: 200% 200%;
@@ -396,76 +624,62 @@
             text-transform: uppercase;
         }
 
-        .services-grid {
+        /* ── WHY CHOOSE US ── */
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             margin-bottom: 40px;
         }
-        .service-card {
+        .why-card {
             background: rgba(15, 23, 42, 0.65);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--border-subtle);
             border-radius: 16px;
-            padding: 36px 28px;
-            text-align: left;
-            transition: opacity 0.8s, transform 0.8s, border-color 0.4s, box-shadow 0.4s;
+            padding: 32px 28px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: opacity 0.8s, transform 0.8s, border-color 0.4s;
         }
-        .service-card.visible { opacity: 1; transform: translateY(0); }
-        .service-card:hover {
-            border-color: rgba(56, 189, 248, 0.2);
-            box-shadow: 0 12px 40px rgba(56, 189, 248, 0.04);
-            transform: translateY(-4px);
+        .why-card.visible { opacity: 1; transform: translateY(0); }
+        .why-card:hover {
+            border-color: rgba(56, 189, 248, 0.15);
         }
-        .service-card.visible:hover { transform: translateY(-4px); }
-        .service-card .icon {
-            width: 44px;
-            height: 44px;
-            margin-bottom: 20px;
+        .why-card .why-icon {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
             background: rgba(56, 189, 248, 0.06);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
+            font-size: 1.3rem;
         }
-        .service-card:hover .icon {
-            background: rgba(56, 189, 248, 0.12);
-            transform: scale(1.05);
-        }
-        .service-card .icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: var(--accent-cyan);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .service-card h3 {
+        .why-card h3 {
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        .service-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.8; }
+        .why-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.7; }
 
-        .contact {
+        /* ── CTA ── */
+        .cta-section {
             text-align: center;
-            padding: 64px 40px;
+            padding: 80px 40px;
             background: linear-gradient(160deg, rgba(15, 23, 42, 0.8), rgba(20, 15, 40, 0.8));
             backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid var(--border-subtle);
             margin-bottom: 20px;
             transition: opacity 0.8s, transform 0.8s;
             position: relative;
             overflow: hidden;
         }
-        .contact.visible { opacity: 1; transform: translateY(0); }
-        .contact::before {
+        .cta-section.visible { opacity: 1; transform: translateY(0); }
+        .cta-section::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0;
@@ -473,15 +687,15 @@
             background: var(--gradient-primary);
             opacity: 0.4;
         }
-        .contact h2 {
+        .cta-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
-        .contact p { color: var(--text-muted); margin-bottom: 28px; font-size: 0.95rem; }
-        .contact .email-btn {
+        .cta-section p { color: var(--text-muted); margin-bottom: 32px; font-size: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-section .email-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -497,7 +711,7 @@
             position: relative;
             overflow: hidden;
         }
-        .contact .email-btn::before {
+        .cta-section .email-btn::before {
             content: '';
             position: absolute;
             top: 0; left: -100%;
@@ -505,41 +719,102 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
             transition: left 0.6s;
         }
-        .contact .email-btn:hover::before { left: 100%; }
-        .contact .email-btn:hover {
+        .cta-section .email-btn:hover::before { left: 100%; }
+        .cta-section .email-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 36px rgba(56,189,248,0.25);
         }
-        .contact .email-note { display: block; margin-top: 14px; color: var(--text-muted); font-size: 0.8rem; opacity: 0.6; }
 
+        /* ── FOOTER ── */
         footer {
-            text-align: center;
-            padding: 32px 24px;
+            padding: 48px 24px 32px;
             border-top: 1px solid var(--border-subtle);
+        }
+        .footer-grid {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .footer-logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+        .footer-col h4 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        .footer-col a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--accent-cyan); }
+        .footer-bottom {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom p {
             color: var(--text-muted);
             font-size: 0.8rem;
-            opacity: 0.7;
         }
-        footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        footer a:hover { color: var(--accent-cyan); }
+        .footer-bottom a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+        .footer-bottom a:hover { color: var(--accent-cyan); }
 
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .about-strip { grid-template-columns: 1fr; gap: 32px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
         @media (max-width: 768px) {
             nav { padding: 16px 20px; flex-direction: column; gap: 12px; }
             nav .nav-links { flex-wrap: wrap; justify-content: center; gap: 4px; }
             nav .nav-links a { padding: 6px 12px; font-size: 0.75rem; }
-            .hero { padding: 80px 20px 40px; }
+            .hero { padding: 100px 20px 50px; }
             .hero h1 { font-size: 3.2rem; letter-spacing: 0; }
             .hero .tagline { font-size: 0.8rem; letter-spacing: 4px; }
             .projects { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: 1fr; gap: 32px; }
+            .why-grid { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
             .container { padding: 48px 20px; }
             .section-heading { font-size: 1.6rem; }
-            .contact { padding: 48px 24px; }
-            .contact h2 { font-size: 1.3rem; }
+            .cta-section { padding: 48px 24px; }
+            .cta-section h2 { font-size: 1.4rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 2.4rem; }
+            .stats { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -548,14 +823,17 @@
 
     <header>
         <nav aria-label="Main navigation">
-            <a href="index.html"><img src="images/zdt-logo.png" alt="ZDT Technologies logo" class="logo"></a>
+            <a href="index.html" class="logo">
+                <img src="images/zdt-logo.png" alt="0D Technologies logo" class="logo-img">
+            </a>
             <div class="nav-links">
-                <a href="index.html" class="active" aria-label="Home">Home</a>
-                <a href="#projects" aria-label="Our work">Our Work</a>
-                <a href="#services" aria-label="Our services">Services</a>
-                <a href="zdt-billing.html" aria-label="ZDT Billing app">ZDT Billing</a>
-                <a href="zdt-tailor.html" aria-label="ZDT Tailor app">ZDT Tailor</a>
-                <a href="contact.html" aria-label="Contact us">Contact</a>
+                <a href="index.html" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#products">Products</a>
+                <a href="zdt-billing.html">0D Billing</a>
+                <a href="zdt-tailor.html">0D Tailor</a>
+                <a href="contact.html" class="nav-cta">Contact Us</a>
             </div>
         </nav>
     </header>
@@ -563,39 +841,61 @@
     <main>
         <section class="hero" aria-label="Company introduction">
             <p class="overline">Crafting Digital Excellence</p>
-            <h1>ZDT</h1>
+            <h1>0D Technologies</h1>
             <p class="tagline">Innovation. Beyond Code.</p>
             <p class="sub">We design and engineer purpose-built software that transforms how businesses operate — from intelligent billing systems to complete shop management solutions.</p>
+            <div class="hero-badges">
+                <span><i class="fab fa-android"></i> Android Apps</span>
+                <span><i class="fab fa-windows"></i> Windows Software</span>
+                <span><i class="fas fa-globe"></i> Web Development</span>
+                <span><i class="fas fa-code"></i> Custom Solutions</span>
+            </div>
             <div class="hero-cta">
-                <a href="#projects">Explore Our Work</a>
+                <a href="#products" class="btn-primary">Explore Our Work</a>
+                <a href="contact.html" class="btn-secondary">Get in Touch</a>
             </div>
             <div class="scroll-indicator" aria-hidden="true"><span></span></div>
         </section>
 
         <div class="container">
-            <section id="projects" aria-label="Our projects">
-                <p class="section-title">Our Work</p>
-                <h2 class="section-heading">Built for impact</h2>
-                <p class="section-desc">Every product we ship is crafted with precision, purpose, and an obsessive attention to detail.</p>
-                <div class="projects">
-                    <a href="zdt-billing.html" class="card" aria-label="ZDT Billing Application details">
-                        <p class="card-number">01</p>
-                        <span class="badge">Coming Soon</span>
-                        <h2>ZDT Billing</h2>
-                        <p>A streamlined invoicing and billing platform for modern businesses. Generate invoices, manage inventory, track payments, and gain real-time financial clarity — all from one place.</p>
-                        <p style="margin-top:10px;font-size:0.75rem;color:var(--accent-cyan);display:flex;gap:14px"><span><i class="fab fa-android"></i> Android</span><span><i class="fab fa-windows"></i> Windows</span></p>
-                        <span class="cta">Download now</span>
-                    </a>
-                    <a href="zdt-tailor.html" class="card" aria-label="ZDT Tailor details">
-                        <p class="card-number">02</p>
-                        <span class="badge">Coming Soon</span>
-                        <h2>ZDT Tailor</h2>
-                        <p>An end-to-end management system built exclusively for tailor shops. Track customer measurements, manage orders, generate bills, and streamline deliveries — all in one intuitive app.</p>
-                        <span class="cta">Discover the app</span>
-                    </a>
+            <!-- ABOUT -->
+            <section id="about" aria-label="About 0D Technologies">
+                <div class="about-strip">
+                    <div class="about-content">
+                        <p class="overline">Who We Are</p>
+                        <h2>Building the future, one solution at a time</h2>
+                        <p>0D Technologies (0th Dimension Technologies) is a software development company focused on creating practical, high-quality digital solutions. From billing applications to custom business software and websites, we bring ideas to life with clean code and thoughtful design.</p>
+                        <p>Our mission is to simplify workflows for businesses of all sizes through modern, reliable technology. We believe the best tools are the ones that just work — no clutter, no complexity, just results.</p>
+                        <a href="about.html" class="about-link">Learn more about us</a>
+                    </div>
+                    <div class="about-visual">
+                        <div class="about-visual-card">
+                            <div class="big-number">0D</div>
+                            <div class="big-label">Zero Defects. Total Precision.</div>
+                            <div class="mini-stats">
+                                <div class="mini-stat">
+                                    <div class="num">3+</div>
+                                    <div class="label">Products Shipped</div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="num">100%</div>
+                                    <div class="label">Quality Focus</div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="num">24/7</div>
+                                    <div class="label">Dedication</div>
+                                </div>
+                                <div class="mini-stat">
+                                    <div class="num">3+</div>
+                                    <div class="label">Platforms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
+            <!-- SERVICES -->
             <section id="services" aria-label="Our services">
                 <p class="section-title">What We Do</p>
                 <h2 class="section-heading">Expertise that delivers</h2>
@@ -623,8 +923,37 @@
                         <p>Modern, performance-optimized websites that communicate your brand with clarity and drive measurable results.</p>
                     </article>
                 </div>
+                <div style="text-align:center;margin-top:16px">
+                    <a href="services.html" class="about-link" style="display:inline-flex">View all services <span style="margin-left:4px">&rarr;</span></a>
+                </div>
             </section>
 
+            <!-- PRODUCTS -->
+            <section id="products" aria-label="Our products" style="margin-top:80px">
+                <p class="section-title">Our Work</p>
+                <h2 class="section-heading">Built for impact</h2>
+                <p class="section-desc">Every product we ship is crafted with precision, purpose, and an obsessive attention to detail.</p>
+                <div class="projects">
+                    <a href="zdt-billing.html" class="card" aria-label="0D Billing Application details">
+                        <p class="card-number">01</p>
+                        <span class="badge">Available Now</span>
+                        <h2>0D Billing</h2>
+                        <p>A streamlined invoicing and billing platform for modern businesses. Generate invoices, manage inventory, track payments, and gain real-time financial clarity — all from one place.</p>
+                        <p class="platforms"><span><i class="fab fa-android"></i> Android</span><span><i class="fab fa-windows"></i> Windows</span></p>
+                        <span class="cta">Download now</span>
+                    </a>
+                    <a href="zdt-tailor.html" class="card" aria-label="0D Tailor details">
+                        <p class="card-number">02</p>
+                        <span class="badge">Available Now</span>
+                        <h2>0D Tailor</h2>
+                        <p>An end-to-end management system built exclusively for tailor shops. Track customer measurements, manage orders, generate bills, and streamline deliveries — all in one intuitive app.</p>
+                        <p class="platforms"><span><i class="fab fa-android"></i> Android</span></p>
+                        <span class="cta">Discover the app</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- STATS -->
             <div class="stats">
                 <div class="stat-item">
                     <div class="stat-number">3+</div>
@@ -635,25 +964,93 @@
                     <div class="stat-label">Focus on Quality</div>
                 </div>
                 <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Platforms Supported</div>
+                </div>
+                <div class="stat-item">
                     <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support & Dedication</div>
+                    <div class="stat-label">Dedication</div>
                 </div>
             </div>
 
-            <section id="contact" class="contact" aria-label="Contact us">
+            <!-- WHY CHOOSE US -->
+            <section id="why" aria-label="Why choose us">
+                <p class="section-title">Why Choose Us</p>
+                <h2 class="section-heading">Built different</h2>
+                <p class="section-desc">We don't just write code — we engineer solutions that make a real difference.</p>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon">&#128269;</div>
+                        <div>
+                            <h3>Simplicity First</h3>
+                            <p>We build tools that are intuitive and easy to use, removing unnecessary complexity so you can focus on what matters.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">&#9889;</div>
+                        <div>
+                            <h3>Rock-Solid Reliability</h3>
+                            <p>Our applications are built to perform — stable, fast, and dependable every single time you need them.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">&#128640;</div>
+                        <div>
+                            <h3>Modern Technology</h3>
+                            <p>We stay ahead of the curve, using modern tech stacks to deliver future-proof solutions that scale with your business.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon">&#129309;</div>
+                        <div>
+                            <h3>Client-Centric Approach</h3>
+                            <p>Every project starts with understanding your unique needs. We listen first, then build exactly what you need.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section id="contact" class="cta-section" aria-label="Contact us">
                 <h2>Let's create something exceptional</h2>
                 <p>Have a project, idea, or challenge you'd like to discuss? We're always open to conversations that matter.</p>
-                <a href="mailto:shamppanchal66@gmail.com" class="email-btn" aria-label="Email us at shamppanchal66@gmail.com">
+                <a href="mailto:shamppanchal66@gmail.com" class="email-btn" aria-label="Email us">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     shamppanchal66@gmail.com
                 </a>
-                <span class="email-note">We typically respond within 24 hours</span>
+                <p style="margin-top:14px;font-size:0.8rem;opacity:0.5">We typically respond within 24 hours</p>
             </section>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 ZDT. All rights reserved. &middot; <a href="zdt-billing.html">ZDT Billing</a> &middot; <a href="zdt-tailor.html">ZDT Tailor</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">0D TECHNOLOGIES</div>
+                <p>Crafting digital excellence through custom software, intelligent applications, and modern web solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Products</h4>
+                <a href="zdt-billing.html">0D Billing</a>
+                <a href="zdt-tailor.html">0D Tailor</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="zdt-billing-privacy.html">Billing Privacy</a>
+                <a href="zdt-tailor-privacy.html">Tailor Privacy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 0D Technologies. All rights reserved.</p>
+            <p><a href="mailto:shamppanchal66@gmail.com">shamppanchal66@gmail.com</a></p>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
@@ -757,7 +1154,7 @@
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.section-title, .section-heading, .section-desc, .card, .service-card, .contact, .stat-item').forEach(el => observer.observe(el));
+        document.querySelectorAll('.section-title, .section-heading, .section-desc, .card, .service-card, .cta-section, .stat-item, .why-card, .about-content, .about-visual').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
