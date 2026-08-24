@@ -3,6 +3,7 @@
     <url><loc>https://0dtechnologies.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
     <url><loc>https://0dtechnologies.com/about.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
     <url><loc>https://0dtechnologies.com/services.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+    <url><loc>https://0dtechnologies.com/hire-us.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
     <url><loc>https://0dtechnologies.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
     <url><loc>https://0dtechnologies.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
     <url><loc>https://0dtechnologies.com/zdt-billing.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>

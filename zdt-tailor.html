@@ -8,7 +8,6 @@
     <meta name="keywords" content="0D Tailor, tailor app, billing app, tailor management, measurement tracking, tailor shop">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://0dtechnologies.com/zdt-tailor.html">
-
     <meta property="og:type" content="website">
     <meta property="og:title" content="0D Tailor - Your Complete Tailor Management Solution">
     <meta property="og:description" content="Manage customers, measurements, bills, and deliveries — all in one app.">
@@ -17,261 +16,117 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="0D Technologies">
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://0dtechnologies.com/og-image.svg">
     <meta name="twitter:title" content="0D Tailor - Your Complete Tailor Management Solution">
     <meta name="twitter:description" content="Manage customers, measurements, bills, and deliveries — all in one app.">
-
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"MobileApplication","name":"0D Tailor","operatingSystem":"Android","applicationCategory":"BusinessApplication","description":"A Flutter mobile app for tailors to manage customers, measurements, bills, and deliveries.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"0D Technologies"}}
     </script>
-
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
-        body{
-            font-family:'Poppins',sans-serif;
-            background:#faf7f5;
-            color:#2C1810;
-            line-height:1.7;
-            overflow-x:hidden;
-        }
-        :root{
-            --primary:#2C1810;
-            --primary-light:#4a2c22;
-            --accent:#8B5E3C;
-            --accent-light:#a8805e;
-            --bg:#faf7f5;
-            --card:#f5f0ec;
-            --text:#2C1810;
-            --text-light:#6b5a50;
-            --text-muted:#8f7a6c;
-            --white:#ffffff;
-            --border:#e8e0d8;
-        }
+        body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e2e8f0;line-height:1.7;overflow-x:hidden}
+        :root{--primary:#0a0e1a;--accent:#ec4899;--accent-light:#f9a8d4;--violet:#7c3aed;--cyan:#06b6d4;--amber:#f59e0b;--card:rgba(15,23,42,0.6);--border:rgba(236,72,153,0.15);--text-muted:#94a3b8}
 
-        nav{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:16px 40px;
-            background:var(--white);
-            border-bottom:1px solid var(--border);
-            position:sticky;
-            top:0;
-            z-index:100;
-        }
-        nav .logo {
-            display: block;
-            height: 32px;
-            width: auto;
-            transition: opacity 0.25s;
-        }
-        nav .logo:hover { opacity: 0.8; }
-        nav a{
-            color:var(--text-light);
-            text-decoration:none;
-            margin-left:24px;
-            font-size:0.85rem;
-            font-weight:500;
-            transition:color 0.3s;
-        }
-        nav a:hover{color:var(--accent)}
+        nav{display:flex;justify-content:space-between;align-items:center;padding:16px 40px;background:rgba(10,14,26,0.85);backdrop-filter:blur(20px) saturate(1.8);-webkit-backdrop-filter:blur(20px) saturate(1.8);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+        nav .logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;text-decoration:none}
+        nav .logo img{height:32px;width:auto}
+        nav .nav-links{display:flex;align-items:center;gap:8px}
+        nav a{color:var(--text-muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s,padding 0.3s;padding:8px 14px;border-radius:10px}
+        nav a:hover{color:#fff;background:rgba(236,72,153,0.15)}
+        nav .cta-btn{background:var(--accent);color:#fff;padding:10px 22px;border-radius:10px;font-weight:600;border:none;cursor:pointer;text-decoration:none;transition:all 0.3s}
+        nav .cta-btn:hover{background:#db2777;transform:translateY(-1px)}
 
-        .hero{
-            text-align:center;
-            padding:80px 20px 60px;
-            background:linear-gradient(135deg, #2C1810, #4a2c22);
-            color:var(--white);
-            position:relative;
-            overflow:hidden;
-        }
-        .hero::before{
-            content:'';
-            position:absolute;
-            top:-50%;left:-50%;width:200%;height:200%;
-            background:radial-gradient(circle at 30% 40%, rgba(139,94,60,0.15), transparent 60%);
-        }
+        .hero{text-align:center;padding:100px 20px 80px;background:linear-gradient(135deg,#0a0e1a,#1a0a2e);color:#fff;position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(236,72,153,0.25),rgba(124,58,237,0.1),transparent 70%);transform:translate(-50%,-50%);animation:glow 8s ease-in-out infinite}
+        @keyframes glow{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.7}50%{transform:translate(-50%,-50%) scale(1.2);opacity:1}}
         .hero .content{position:relative;z-index:1}
-        .hero .icon-top{font-size:3rem;margin-bottom:16px;opacity:0.9}
-        .hero h1{font-size:2.8rem;font-weight:800;margin-bottom:4px}
-        .hero .coming-soon{
-            display:inline-block;
-            background:rgba(139,94,60,0.3);
-            color:#d4a574;
-            border:1px solid rgba(139,94,60,0.5);
-            padding:4px 18px;
-            border-radius:20px;
-            font-size:0.7rem;
-            font-weight:700;
-            text-transform:uppercase;
-            letter-spacing:2px;
-            margin-bottom:10px;
-        }
-        .hero .tagline{font-size:1.1rem;color:#d4c5b8;font-weight:300;margin-bottom:28px}
-        .hero .badge{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            background:var(--primary-light);
-            border:1px solid rgba(255,255,255,0.1);
-            padding:12px 28px;
-            border-radius:12px;
-            text-decoration:none;
-            color:var(--white);
-            transition:background 0.3s,transform 0.3s;
-            font-size:0.9rem;
-            cursor:default;
-            opacity:0.8;
-        }
-        .hero .badge i{font-size:1.3rem}
-        .hero .download-btn{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:14px 36px;background:var(--accent);color:var(--white);text-decoration:none;border-radius:12px;font-weight:600;font-size:0.95rem;transition:background 0.3s,transform 0.3s,box-shadow 0.3s;box-shadow:0 4px 20px rgba(139,94,60,0.25)}
-        .hero .download-btn:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 8px 30px rgba(139,94,60,0.35)}
+        .hero .icon-top{font-size:3.5rem;margin-bottom:16px;opacity:0.9}
+        .hero h1{font-family:'Outfit',sans-serif;font-size:3rem;font-weight:800;margin-bottom:6px}
+        .hero h1 span{background:linear-gradient(135deg,var(--accent),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(236,72,153,0.2);color:var(--accent-light);border:1px solid rgba(236,72,153,0.4);padding:8px 22px;border-radius:30px;font-size:0.8rem;font-weight:600;margin-bottom:16px}
+        .hero .tagline{font-size:1.1rem;color:#94a3b8;font-weight:300;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+        .hero .download-btn{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:16px 36px;background:var(--accent);color:var(--white);text-decoration:none;border-radius:14px;font-weight:600;font-size:0.95rem;transition:all 0.3s;box-shadow:0 4px 25px rgba(236,72,153,0.3);border:1px solid rgba(236,72,153,0.4)}
+        .hero .download-btn:hover{background:#db2777;transform:translateY(-2px);box-shadow:0 8px 35px rgba(236,72,153,0.4)}
         .hero .download-btn i{font-size:1.2rem}
 
-        .container{max-width:1000px;margin:0 auto;padding:60px 20px}
-
-        .section-title{text-align:center;margin-bottom:40px}
-        .section-title h2{font-size:1.8rem;font-weight:700;color:var(--primary)}
-        .section-title p{color:var(--text-muted);font-size:0.95rem;margin-top:4px}
+        .container{max-width:1100px;margin:0 auto;padding:80px 20px}
+        .section-title{text-align:center;margin-bottom:50px}
+        .section-title h2{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;margin-bottom:6px}
+        .section-title h2 span{background:linear-gradient(135deg,var(--accent),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .section-title p{color:var(--text-muted);font-size:0.95rem}
 
         .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-        .f-card{
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:16px;
-            padding:28px 22px;
-            text-align:center;
-            transition:transform 0.3s,box-shadow 0.3s;
-        }
-        .f-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(44,24,16,0.08)}
-        .f-card .ficon{
-            width:52px;height:52px;
-            background:linear-gradient(135deg, var(--accent-light), var(--accent));
-            border-radius:14px;
-            display:flex;
-            align-items:center;justify-content:center;
-            margin:0 auto 14px;
-            color:var(--white);font-size:1.2rem;
-        }
-        .f-card h3{font-size:1rem;color:var(--primary);margin-bottom:6px}
+        .f-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px 24px;text-align:center;transition:transform 0.3s,border-color 0.3s;backdrop-filter:blur(10px)}
+        .f-card:hover{transform:translateY(-4px);border-color:rgba(236,72,153,0.4)}
+        .f-card .ficon{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--violet));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:1.3rem}
+        .f-card h3{font-family:'Outfit',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:6px}
         .f-card p{font-size:0.85rem;color:var(--text-muted)}
 
         .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
-        .step .num{
-            width:56px;height:56px;background:var(--primary);color:var(--white);
-            border-radius:50%;display:flex;align-items:center;justify-content:center;
-            margin:0 auto 16px;font-size:1.3rem;font-weight:700;
-        }
-        .step h3{color:var(--primary);font-size:1.05rem;margin-bottom:6px}
+        .step .num{width:60px;height:60px;background:linear-gradient(135deg,var(--accent),var(--violet));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.3rem;font-weight:700;font-family:'Outfit',sans-serif}
+        .step h3{font-family:'Outfit',sans-serif;color:#fff;font-size:1.05rem;margin-bottom:6px}
         .step p{color:var(--text-muted);font-size:0.88rem}
         .step-arrow{color:var(--accent);font-size:1.5rem;display:flex;align-items:center;justify-content:center}
 
         .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-        .gallery .screenshot{
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:16px;
-            overflow:hidden;
-            transition:transform 0.3s,box-shadow 0.3s;
-        }
-        .gallery .screenshot:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(44,24,16,0.1)}
+        .gallery .screenshot{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform 0.3s}
+        .gallery .screenshot:hover{transform:translateY(-4px)}
         .gallery .screenshot img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
-        .gallery .screenshot .label{
-            text-align:center;
-            padding:8px;
-            font-size:0.8rem;
-            color:var(--text-muted);
-            font-weight:500;
-        }
+        .gallery .screenshot .label{text-align:center;padding:10px;font-size:0.8rem;color:var(--text-muted);font-weight:500}
 
-        .privacy-section{
-            background:var(--card);
-            border:1px solid var(--border);
-            border-radius:20px;
-            padding:40px;
-            margin-bottom:40px;
-        }
-        .privacy-section h2{font-size:1.3rem;color:var(--primary);margin-bottom:20px}
-        .privacy-section h3{font-size:1rem;color:var(--accent);margin:20px 0 8px}
-        .privacy-section p,.privacy-section li{color:var(--text-light);font-size:0.9rem;line-height:1.8}
+        .privacy-section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;margin-bottom:40px;backdrop-filter:blur(10px)}
+        .privacy-section h2{font-family:'Outfit',sans-serif;font-size:1.3rem;color:#fff;margin-bottom:20px}
+        .privacy-section h3{font-family:'Outfit',sans-serif;font-size:1rem;color:var(--accent);margin:20px 0 8px}
+        .privacy-section p,.privacy-section li{color:var(--text-muted);font-size:0.9rem;line-height:1.8}
         .privacy-section ul{padding-left:20px;margin-bottom:12px}
         .privacy-section li{margin-bottom:4px}
         .privacy-section a{color:var(--accent);text-decoration:none}
         .privacy-section a:hover{text-decoration:underline}
         .privacy-section .full-link{text-align:center;margin-top:24px}
-        .privacy-section .full-link a{
-            display:inline-flex;
-            align-items:center;
-            gap:8px;
-            color:var(--accent);
-            font-weight:600;
-            text-decoration:none;
-        }
+        .privacy-section .full-link a{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:600;text-decoration:none}
         .privacy-section .full-link a:hover{text-decoration:underline}
 
-        .contact-section{text-align:center;padding:40px}
-        .contact-section h2{font-size:1.4rem;color:var(--primary);margin-bottom:8px}
-        .contact-section p{color:var(--text-muted);margin-bottom:20px}
-        .contact-section .email{
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-            padding:14px 32px;
-            background:var(--primary);
-            color:var(--white);
-            text-decoration:none;
-            border-radius:12px;
-            font-weight:600;
-            transition:background 0.3s,transform 0.3s;
-        }
-        .contact-section .email:hover{background:var(--accent);transform:translateY(-2px)}
+        .contact-section{text-align:center;padding:50px}
+        .contact-section h2{font-family:'Outfit',sans-serif;font-size:1.6rem;margin-bottom:8px}
+        .contact-section h2 span{background:linear-gradient(135deg,var(--accent),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .contact-section p{color:var(--text-muted);margin-bottom:24px}
+        .contact-section .email{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--accent);color:#fff;text-decoration:none;border-radius:14px;font-weight:600;transition:all 0.3s;box-shadow:0 4px 25px rgba(236,72,153,0.3)}
+        .contact-section .email:hover{background:#db2777;transform:translateY(-2px);box-shadow:0 8px 35px rgba(236,72,153,0.4)}
 
-        footer{
-            text-align:center;
-            padding:24px 20px;
-            border-top:1px solid var(--border);
-            color:var(--text-muted);
-            font-size:0.85rem;
-        }
+        footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.85rem}
         footer a{color:var(--accent);text-decoration:none}
         footer a:hover{text-decoration:underline}
         footer .links{margin-bottom:8px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-        footer .links a{font-size:0.85rem}
 
         @media(max-width:768px){
             .features-grid{grid-template-columns:1fr 1fr}
             .steps{grid-template-columns:1fr;gap:20px}
             .gallery{grid-template-columns:repeat(2,1fr)}
-            .hero h1{font-size:2rem}
+            .hero h1{font-size:2.2rem}
             nav{padding:14px 20px}
-            nav a{margin-left:14px;font-size:0.8rem}
-            .privacy-section{padding:24px}
+            nav .nav-links{display:none}
             .step-arrow{transform:rotate(90deg)}
         }
         @media(max-width:480px){
             .features-grid{grid-template-columns:1fr}
             .gallery{grid-template-columns:1fr 1fr}
         }
-        @media(max-width:600px){
-            .step-arrow{transform:rotate(90deg)}
-        }
     </style>
 </head>
 <body>
 
 <nav>
-    <div class="logo"><i class="fas fa-cut"></i> 0D Tailor</div>
-    <div>
+    <a href="index.html" class="logo"><img src="favicon.svg" alt="0D"> 0D Tailor</a>
+    <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="hire-us.html">Hire Us</a>
         <a href="zdt-billing.html">0D Billing</a>
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
@@ -284,19 +139,17 @@
 <section class="hero">
     <div class="content">
         <div class="icon-top"><i class="fas fa-cut"></i></div>
-        <div class="coming-soon">Coming Soon</div>
-        <h1>0D Tailor</h1>
-        <p class="tagline">Your Complete Tailor Management Solution</p>
         <div class="badge"><i class="fas fa-clock"></i> Coming Soon &middot; In Verification</div>
-        <a href="https://github.com/shampanchal66/ZDT-website/releases/download/v1.0.0/zdt-tailor.apk" class="download-btn"><i class="fas fa-download"></i> Download APK</a>
+        <h1><span>0D Tailor</span></h1>
+        <p class="tagline">Your Complete Tailor Management Solution</p>
+        <a href="https://github.com/shampanchal66/0D-Technalogies/releases/download/v1.0.0/zdt-tailor.apk" class="download-btn"><i class="fas fa-download"></i> Download APK</a>
     </div>
 </section>
-
 
 <div class="container">
     <section id="features">
         <div class="section-title">
-            <h2>Features</h2>
+            <h2><span>Features</span></h2>
             <p>Everything you need to run your tailor shop efficiently</p>
         </div>
         <div class="features-grid">
@@ -333,9 +186,9 @@
         </div>
     </section>
 
-    <section id="how-it-works" style="margin-top:60px">
+    <section id="how-it-works" style="margin-top:80px">
         <div class="section-title">
-            <h2>How It Works</h2>
+            <h2><span>How It Works</span></h2>
             <p>Three simple steps to get started</p>
         </div>
         <div class="steps">
@@ -359,9 +212,9 @@
         </div>
     </section>
 
-    <section id="screenshots" style="margin-top:60px">
+    <section id="screenshots" style="margin-top:80px">
         <div class="section-title">
-            <h2>Screenshots</h2>
+            <h2><span>Screenshots</span></h2>
             <p>Preview of the app interface</p>
         </div>
         <div class="gallery">
@@ -384,9 +237,9 @@
         </div>
     </section>
 
-    <section id="privacy-policy" style="margin-top:60px">
+    <section id="privacy-policy" style="margin-top:80px">
         <div class="section-title">
-            <h2>Privacy Policy</h2>
+            <h2><span>Privacy Policy</span></h2>
             <p>Last updated: June 2026</p>
         </div>
         <div class="privacy-section">
@@ -420,7 +273,7 @@
     </section>
 
     <section id="contact" class="contact-section">
-        <h2>Need Help?</h2>
+        <h2><span>Need Help?</span></h2>
         <p>Have questions, feedback, or need support? We're here to help.</p>
         <a href="mailto:hello.zdtsupport@gmail.com" class="email"><i class="fas fa-envelope"></i> hello.zdtsupport@gmail.com</a>
     </section>
@@ -437,5 +290,3 @@
 
 </body>
 </html>
-
-

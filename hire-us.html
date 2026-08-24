@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Us — 0D Technologies</title>
+    <meta name="description" content="Need a website, mobile app, or custom software? 0D Technologies builds digital products that solve real problems. Let's talk.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://0dtechnologies.com/hire-us.html">
+    <meta property="og:title" content="Hire Us — 0D Technologies">
+    <meta property="og:description" content="Custom websites, mobile apps, and software — built for your business.">
+    <meta property="og:url" content="https://0dtechnologies.com/hire-us.html">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://0dtechnologies.com/og-image.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{
+            --bg:#0a0e1a;
+            --surface:#111827;
+            --surface2:#1a1f35;
+            --border:rgba(255,255,255,0.06);
+            --text:#f8fafc;
+            --text2:#94a3b8;
+            --text3:#64748b;
+            --violet:#7c3aed;
+            --violet-light:#a78bfa;
+            --pink:#ec4899;
+            --pink-light:#f9a8d4;
+            --cyan:#06b6d4;
+            --cyan-light:#67e8f9;
+            --lime:#84cc16;
+            --amber:#f59e0b;
+            --grad1:linear-gradient(135deg,#7c3aed,#ec4899);
+            --grad2:linear-gradient(135deg,#06b6d4,#7c3aed);
+            --grad3:linear-gradient(135deg,#ec4899,#f59e0b);
+            --font:'Outfit',system-ui,sans-serif;
+            --ease:cubic-bezier(0.16,1,0.3,1);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        a{color:inherit;text-decoration:none}
+
+        /* ── CURSOR ── */
+        .cur{position:fixed;width:16px;height:16px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:width .3s,height .3s,background .3s;transform:translate(-50%,-50%)}
+        .cur.big{width:48px;height:48px;background:rgba(124,58,237,0.4)}
+        @media(max-width:768px){.cur{display:none}body{cursor:auto}}
+
+        /* ── NOISE ── */
+        body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9998}
+
+        /* ── FLOATING SHAPES ── */
+        .shapes{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+        .shapes .shape{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12}
+        .shapes .s1{width:500px;height:500px;background:var(--violet);top:-5%;left:-5%;animation:float1 25s ease-in-out infinite}
+        .shapes .s2{width:400px;height:400px;background:var(--pink);bottom:10%;right:-8%;animation:float2 20s ease-in-out infinite}
+        .shapes .s3{width:350px;height:350px;background:var(--cyan);top:40%;left:50%;animation:float3 22s ease-in-out infinite}
+        .shapes .s4{width:250px;height:250px;background:var(--amber);top:20%;right:20%;animation:float1 18s ease-in-out infinite reverse}
+        @keyframes float1{0%,100%{transform:translate(0,0)}25%{transform:translate(80px,-50px)}50%{transform:translate(-40px,70px)}75%{transform:translate(50px,30px)}}
+        @keyframes float2{0%,100%{transform:translate(0,0)}33%{transform:translate(-60px,-40px)}66%{transform:translate(40px,50px)}}
+        @keyframes float3{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,-60px)}}
+
+        /* ── NAV ── */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 clamp(20px,4vw,48px);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,26,.7);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border)}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:var(--text);letter-spacing:-0.5px}
+        .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:#fff;position:relative}
+        .logo .mark::after{content:'';position:absolute;inset:0;border-radius:10px;background:linear-gradient(135deg,rgba(255,255,255,.25),transparent)}
+        .nav-links{display:flex;align-items:center;gap:2px}
+        .nav-links a{padding:8px 16px;font-size:.82rem;font-weight:500;color:var(--text3);border-radius:8px;transition:all .25s}
+        .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+        .nav-links a.on{color:var(--violet-light)}
+        .nav-btn{padding:10px 24px!important;background:var(--grad1)!important;color:#fff!important;border-radius:10px!important;font-weight:700!important;font-size:.82rem!important;box-shadow:0 4px 20px rgba(124,58,237,.3)}
+        .nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(124,58,237,.45)!important}
+        .mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+        /* ── REVEAL ── */
+        .r{opacity:0;transform:translateY(50px);transition:all .9s var(--ease)}.r.v{opacity:1;transform:translateY(0)}.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}.rd5{transition-delay:.5s}
+
+        /* ── HERO ── */
+        .hero{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:160px 24px 80px;position:relative}
+        .hero .tag{font-size:.7rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--violet-light);margin-bottom:14px}
+        .hero h1{font-weight:900;font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.02;letter-spacing:-3px;color:var(--text);max-width:800px}
+        .hero h1 .g1{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{margin-top:24px;font-size:1.1rem;color:var(--text3);max-width:520px;line-height:1.8}
+        .hero-btns{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:14px;font-weight:700;font-size:.9rem;transition:all .3s var(--ease);border:none;cursor:pointer}
+        .btn-fill{background:var(--grad1);color:#fff;box-shadow:0 4px 24px rgba(124,58,237,.25)}
+        .btn-fill:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(124,58,237,.4)}
+        .btn-out{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,.12)}
+        .btn-out:hover{border-color:var(--violet);background:rgba(124,58,237,.06);transform:translateY(-3px)}
+
+        /* ── CONTAINER ── */
+        .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+        .sec{padding:clamp(80px,10vw,140px) 0}
+        .tag{font-size:.7rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--violet-light);margin-bottom:14px}
+        .h2{font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:var(--text);letter-spacing:-1.5px;line-height:1.12;margin-bottom:14px}
+        .desc{font-size:1rem;color:var(--text3);max-width:500px;line-height:1.8}
+
+        /* ── SERVICES ── */
+        .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+        .svc{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;transition:all .5s var(--ease)}
+        .svc::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),var(--violet),transparent 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .5s;pointer-events:none}
+        .svc:hover::before{opacity:1}
+        .svc:hover{border-color:rgba(124,58,237,.2);transform:translateY(-4px)}
+        .svc .icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+        .svc .icon-v{background:rgba(124,58,237,.1);color:var(--violet-light)}
+        .svc .icon-p{background:rgba(236,72,153,.1);color:var(--pink-light)}
+        .svc .icon-c{background:rgba(6,182,212,.1);color:var(--cyan-light)}
+        .svc .icon-a{background:rgba(245,158,11,.1);color:var(--amber)}
+        .svc .icon-l{background:rgba(132,204,22,.1);color:var(--lime)}
+        .svc h3{font-weight:700;font-size:1.15rem;color:var(--text);margin-bottom:8px}
+        .svc p{font-size:.88rem;color:var(--text3);line-height:1.75}
+        .svc .price{display:inline-block;margin-top:16px;padding:6px 16px;border-radius:20px;font-size:.75rem;font-weight:700;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--text2)}
+
+        /* ── PORTFOLIO ── */
+        .portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}
+        .port-item{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;position:relative;overflow:hidden;transition:all .5s var(--ease)}
+        .port-item::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),var(--pink),transparent 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .5s;pointer-events:none}
+        .port-item:hover::before{opacity:1}
+        .port-item:hover{border-color:rgba(236,72,153,.2);transform:translateY(-4px)}
+        .port-item .badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+        .badge-v{background:rgba(124,58,237,.12);color:var(--violet-light);border:1px solid rgba(124,58,237,.2)}
+        .badge-p{background:rgba(236,72,153,.12);color:var(--pink-light);border:1px solid rgba(236,72,153,.2)}
+        .badge-c{background:rgba(6,182,212,.12);color:var(--cyan-light);border:1px solid rgba(6,182,212,.2)}
+        .port-item h3{font-weight:700;font-size:1.2rem;color:var(--text);margin-bottom:8px}
+        .port-item p{font-size:.88rem;color:var(--text3);line-height:1.75}
+        .port-item .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+        .port-item .tags span{padding:4px 12px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.05);color:var(--text3);border:1px solid var(--border)}
+
+        /* ── PROCESS ── */
+        .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+        .step{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;position:relative;transition:all .4s var(--ease)}
+        .step:hover{border-color:rgba(124,58,237,.2);transform:translateY(-4px)}
+        .step .num{font-size:2.8rem;font-weight:900;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px}
+        .step h3{font-weight:700;font-size:.95rem;color:var(--text);margin-bottom:6px}
+        .step p{font-size:.8rem;color:var(--text3);line-height:1.7}
+        .step::after{content:'';position:absolute;top:50%;right:-10px;width:20px;height:2px;background:var(--border)}
+        .step:last-child::after{display:none}
+
+        /* ── PRICING ── */
+        .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+        .price-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px 28px;text-align:center;position:relative;overflow:hidden;transition:all .5s var(--ease)}
+        .price-card.featured{border-color:rgba(124,58,237,.3)}
+        .price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad1)}
+        .price-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,.3)}
+        .price-card .tier{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--violet-light);margin-bottom:12px}
+        .price-card .amount{font-size:2.4rem;font-weight:900;color:var(--text);margin-bottom:4px}
+        .price-card .period{font-size:.8rem;color:var(--text3);margin-bottom:24px}
+        .price-card ul{list-style:none;text-align:left;margin-bottom:28px}
+        .price-card ul li{padding:8px 0;font-size:.85rem;color:var(--text2);display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)}
+        .price-card ul li:last-child{border-bottom:none}
+        .price-card ul li i{color:var(--lime);font-size:.75rem}
+        .price-card .btn{width:100%;justify-content:center}
+
+        /* ── TESTIMONIALS ── */
+        .testis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
+        .testi{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;transition:all .4s var(--ease)}
+        .testi:hover{border-color:rgba(124,58,237,.2);transform:translateY(-3px)}
+        .testi .stars{color:var(--amber);font-size:.8rem;margin-bottom:12px;letter-spacing:2px}
+        .testi p{font-size:.88rem;color:var(--text2);line-height:1.75;font-style:italic;margin-bottom:16px}
+        .testi .author{display:flex;align-items:center;gap:12px}
+        .testi .author .avatar{width:40px;height:40px;border-radius:50%;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff}
+        .testi .author .name{font-weight:700;font-size:.85rem;color:var(--text)}
+        .testi .author .role{font-size:.72rem;color:var(--text3)}
+
+        /* ── FAQ ── */
+        .faq{max-width:700px;margin:56px auto 0}
+        .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .3s}
+        .faq-item:hover{border-color:rgba(124,58,237,.2)}
+        .faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--text);font-size:.92rem}
+        .faq-q i{color:var(--violet-light);transition:transform .3s;font-size:.8rem}
+        .faq-item.open .faq-q i{transform:rotate(180deg)}
+        .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .3s;padding:0 24px}
+        .faq-item.open .faq-a{max-height:300px;padding:0 24px 20px}
+        .faq-a p{font-size:.85rem;color:var(--text3);line-height:1.8}
+
+        /* ── CTA ── */
+        .cta{padding:80px 40px;background:var(--surface);border:1px solid var(--border);border-radius:24px;text-align:center;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:var(--grad1);border-radius:50%;filter:blur(120px);opacity:.08}
+        .cta .h2{margin-bottom:12px}
+        .cta .desc{margin:0 auto 32px;text-align:center}
+
+        /* ── FOOTER ── */
+        footer{padding:64px 24px 32px;border-top:1px solid var(--border)}
+        .f-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+        .f-brand .f-logo{font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .f-brand .f-mark{width:28px;height:28px;border-radius:7px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:#fff}
+        .f-brand p{font-size:.85rem;color:var(--text3);max-width:280px;line-height:1.7}
+        .f-col h4{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+        .f-col a{display:block;font-size:.85rem;color:var(--text3);padding:4px 0;transition:color .2s}
+        .f-col a:hover{color:var(--violet-light)}
+        .f-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--text3)}
+        .f-social{display:flex;gap:16px}
+        .f-social a{color:var(--text3);transition:color .2s}
+        .f-social a:hover{color:var(--violet-light)}
+
+        @media(max-width:900px){
+            .services,.pricing,.testis{grid-template-columns:1fr 1fr}
+            .portfolio{grid-template-columns:1fr}
+            .steps{grid-template-columns:1fr 1fr}
+            .f-grid{grid-template-columns:1fr 1fr}
+            .nav-links{display:none}
+            .mobile-toggle{display:block}
+        }
+        @media(max-width:600px){
+            .services,.pricing,.testis{grid-template-columns:1fr}
+            .steps{grid-template-columns:1fr}
+            .f-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<div class="cur" id="cursor"></div>
+
+<div class="shapes">
+    <div class="shape s1"></div>
+    <div class="shape s2"></div>
+    <div class="shape s3"></div>
+    <div class="shape s4"></div>
+</div>
+
+<nav>
+    <a href="index.html" class="logo"><div class="mark">0D</div> 0D Technologies</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="hire-us.html" class="on">Hire Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="hire-us.html" class="nav-btn">Get a Quote</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"><i class="fas fa-bars"></i></button>
+</nav>
+
+<section class="hero">
+    <div class="r">
+        <div class="tag">Let's Build Together</div>
+    </div>
+    <h1 class="r rd1">We Turn Your <span class="g1">Ideas</span> Into Digital Products</h1>
+    <p class="r rd2">Websites, mobile apps, custom software — built with care, shipped with precision. Tell us what you need, we'll make it happen.</p>
+    <div class="hero-btns r rd3">
+        <a href="#contact-form" class="btn btn-fill"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+        <a href="#portfolio" class="btn btn-out"><i class="fas fa-eye"></i> See Our Work</a>
+    </div>
+</section>
+
+<div class="wrap">
+    <!-- SERVICES -->
+    <section class="sec" id="services">
+        <div class="r">
+            <div class="tag">What We Build</div>
+            <div class="h2">Services We Offer</div>
+            <p class="desc">From idea to launch — we handle the full stack.</p>
+        </div>
+        <div class="services">
+            <div class="svc r rd1">
+                <div class="icon icon-v"><i class="fas fa-globe"></i></div>
+                <h3>Websites</h3>
+                <p>Landing pages, business sites, e-commerce — fast, responsive, and designed to convert visitors into customers.</p>
+                <div class="price">From $300</div>
+            </div>
+            <div class="svc r rd2">
+                <div class="icon icon-p"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobile Apps</h3>
+                <p>Android & iOS apps built with Flutter or native. Clean UI, smooth performance, Play Store ready.</p>
+                <div class="price">From $1,500</div>
+            </div>
+            <div class="svc r rd3">
+                <div class="icon icon-c"><i class="fas fa-cogs"></i></div>
+                <h3>Custom Software</h3>
+                <p>Billing systems, inventory tools, CRM, dashboards — tailored to how your business actually works.</p>
+                <div class="price">From $2,000</div>
+            </div>
+            <div class="svc r rd1">
+                <div class="icon icon-a"><i class="fas fa-paint-brush"></i></div>
+                <h3>UI/UX Design</h3>
+                <p>Wireframes, mockups, and prototypes that make your product intuitive and visually striking.</p>
+                <div class="price">From $200</div>
+            </div>
+            <div class="svc r rd2">
+                <div class="icon icon-l"><i class="fas fa-server"></i></div>
+                <h3>APIs & Backend</h3>
+                <p>REST APIs, databases, authentication, cloud deployment — the invisible engine behind your app.</p>
+                <div class="price">From $500</div>
+            </div>
+            <div class="svc r rd3">
+                <div class="icon icon-v"><i class="fas fa-wrench"></i></div>
+                <h3>Maintenance & Fixes</h3>
+                <p>Bug fixes, speed optimization, feature updates — we keep your product running smooth after launch.</p>
+                <div class="price">From $100</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="sec" id="portfolio">
+        <div class="r">
+            <div class="tag">Our Work</div>
+            <div class="h2">What We've Built</div>
+            <p class="desc">Real projects, real results.</p>
+        </div>
+        <div class="portfolio">
+            <div class="port-item r rd1">
+                <div class="badge badge-v">Mobile App</div>
+                <h3>0D Billing</h3>
+                <p>Smart invoicing and billing app for small businesses. Product management, bill history, share via WhatsApp. Android + Windows.</p>
+                <div class="tags">
+                    <span>Flutter</span>
+                    <span>SQLite</span>
+                    <span>Android</span>
+                    <span>Windows</span>
+                </div>
+            </div>
+            <div class="port-item r rd2">
+                <div class="badge badge-p">Mobile App</div>
+                <h3>0D Tailor</h3>
+                <p>Complete tailor management — customers, measurements, bills, deliveries. Camera support, multi-language, dashboard analytics.</p>
+                <div class="tags">
+                    <span>Flutter</span>
+                    <span>SQLite</span>
+                    <span>Camera API</span>
+                    <span>Android</span>
+                </div>
+            </div>
+            <div class="port-item r rd3">
+                <div class="badge badge-c">Website</div>
+                <h3>0D Technologies Site</h3>
+                <p>This very website — custom designed with vibrant aesthetics, scroll animations, floating shapes, and mouse-tracking effects.</p>
+                <div class="tags">
+                    <span>HTML/CSS/JS</span>
+                    <span>Three.js</span>
+                    <span>Vercel</span>
+                </div>
+            </div>
+            <div class="port-item r rd4">
+                <div class="badge badge-v">Custom Software</div>
+                <h3>Business Tooling</h3>
+                <p>Invoicing systems, stock tracking, customer databases — built for real-world small business workflows.</p>
+                <div class="tags">
+                    <span>Node.js</span>
+                    <span>Python</span>
+                    <span>SQLite</span>
+                    <span>REST API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="sec" id="process">
+        <div class="r">
+            <div class="tag">How We Work</div>
+            <div class="h2">From Idea to Launch</div>
+            <p class="desc">Simple, transparent, no surprises.</p>
+        </div>
+        <div class="steps">
+            <div class="step r rd1">
+                <div class="num">01</div>
+                <h3>Tell Us Your Idea</h3>
+                <p>Share what you need — a napkin sketch is fine. We'll ask the right questions.</p>
+            </div>
+            <div class="step r rd2">
+                <div class="num">02</div>
+                <h3>Plan & Design</h3>
+                <p>We create wireframes and a clear roadmap. You approve before we write code.</p>
+            </div>
+            <div class="step r rd3">
+                <div class="num">03</div>
+                <h3>Build & Test</h3>
+                <p>We develop in sprints, show progress weekly, and test everything thoroughly.</p>
+            </div>
+            <div class="step r rd4">
+                <div class="num">04</div>
+                <h3>Launch & Support</h3>
+                <p>We deploy, help with stores/listings, and stick around for fixes and updates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="sec" id="pricing">
+        <div class="r">
+            <div class="tag">Pricing</div>
+            <div class="h2">Transparent Pricing</div>
+            <p class="desc">No hidden fees. Pay for what you get.</p>
+        </div>
+        <div class="pricing">
+            <div class="price-card r rd1">
+                <div class="tier">Starter</div>
+                <div class="amount">$300+</div>
+                <div class="period">one-time</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Single page landing site</li>
+                    <li><i class="fas fa-check"></i> Responsive design</li>
+                    <li><i class="fas fa-check"></i> Contact form</li>
+                    <li><i class="fas fa-check"></i> 1 revision round</li>
+                    <li><i class="fas fa-check"></i> Delivered in 3-5 days</li>
+                </ul>
+                <a href="#contact-form" class="btn btn-out">Get Started</a>
+            </div>
+            <div class="price-card featured r rd2">
+                <div class="tier">Business</div>
+                <div class="amount">$1,000+</div>
+                <div class="period">one-time</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Multi-page website (up to 8)</li>
+                    <li><i class="fas fa-check"></i> Custom design & branding</li>
+                    <li><i class="fas fa-check"></i> SEO optimized</li>
+                    <li><i class="fas fa-check"></i> CMS integration</li>
+                    <li><i class="fas fa-check"></i> Delivered in 2-4 weeks</li>
+                </ul>
+                <a href="#contact-form" class="btn btn-fill">Get Started</a>
+            </div>
+            <div class="price-card r rd3">
+                <div class="tier">App / Custom</div>
+                <div class="amount">$2,000+</div>
+                <div class="period">project-based</div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Mobile app (Android/iOS)</li>
+                    <li><i class="fas fa-check"></i> Custom software/dashboard</li>
+                    <li><i class="fas fa-check"></i> Backend & database</li>
+                    <li><i class="fas fa-check"></i> Play Store deployment</li>
+                    <li><i class="fas fa-check"></i> 30 days free support</li>
+                </ul>
+                <a href="#contact-form" class="btn btn-out">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="sec" id="testimonials">
+        <div class="r">
+            <div class="tag">Reviews</div>
+            <div class="h2">What Clients Say</div>
+        </div>
+        <div class="testis">
+            <div class="testi r rd1">
+                <div class="stars"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                <p>"They built our billing app from scratch. Clean code, on time, and they actually listened to what we needed."</p>
+                <div class="author">
+                    <div class="avatar">R</div>
+                    <div>
+                        <div class="name">Ravi Kumar</div>
+                        <div class="role">Small Business Owner</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi r rd2">
+                <div class="stars"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                <p>"Professional, responsive, and the final product exceeded expectations. Highly recommend for app development."</p>
+                <div class="author">
+                    <div class="avatar">S</div>
+                    <div>
+                        <div class="name">Sneha Patel</div>
+                        <div class="role">Startup Founder</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi r rd3">
+                <div class="stars"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i></div>
+                <p>"Great website delivered fast. The design is modern and my customers love the new look. Worth every penny."</p>
+                <div class="author">
+                    <div class="avatar">A</div>
+                    <div>
+                        <div class="name">Amit Sharma</div>
+                        <div class="role">Restaurant Owner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="sec" id="faq">
+        <div class="r" style="text-align:center">
+            <div class="tag">FAQ</div>
+            <div class="h2">Common Questions</div>
+        </div>
+        <div class="faq">
+            <div class="faq-item r rd1">
+                <div class="faq-q">How long does a project take? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a"><p>Depends on scope. A landing page: 3-5 days. A full website: 2-4 weeks. A mobile app: 4-8 weeks. We'll give you a timeline before starting.</p></div>
+            </div>
+            <div class="faq-item r rd2">
+                <div class="faq-q">Do you work with clients outside India? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a"><p>Absolutely. We work with clients globally. Communication happens via email, WhatsApp, or video calls — whatever works for you.</p></div>
+            </div>
+            <div class="faq-item r rd3">
+                <div class="faq-q">What's your payment structure? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a"><p>50% upfront to start, 50% on delivery. For larger projects, we can split into milestone payments.</p></div>
+            </div>
+            <div class="faq-item r rd4">
+                <div class="faq-q">Do you provide hosting and domain? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a"><p>We can help you set up hosting (Vercel, Netlify, AWS) and domain. These are separate costs — we'll guide you to the cheapest reliable options.</p></div>
+            </div>
+            <div class="faq-item r rd5">
+                <div class="faq-q">Can you fix or improve my existing website/app? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-a"><p>Yes. We do redesigns, bug fixes, speed optimization, and feature additions. Share what you have and we'll assess it.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA + CONTACT FORM -->
+    <section class="sec" id="contact-form">
+        <div class="cta r">
+            <div class="tag">Start a Project</div>
+            <div class="h2">Tell Us About Your Project</div>
+            <p class="desc">Fill out the form below and we'll get back to you within 24 hours with a free estimate.</p>
+            <form id="projectForm" style="max-width:600px;margin:0 auto;text-align:left">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+                    <input type="text" name="name" placeholder="Your Name" required style="padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.88rem;outline:none;transition:border-color .3s">
+                    <input type="email" name="email" placeholder="Your Email" required style="padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.88rem;outline:none;transition:border-color .3s">
+                </div>
+                <select name="service" required style="width:100%;padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text2);font-family:var(--font);font-size:.88rem;outline:none;margin-bottom:12px;appearance:none">
+                    <option value="">What do you need?</option>
+                    <option>Website</option>
+                    <option>Mobile App</option>
+                    <option>Custom Software</option>
+                    <option>UI/UX Design</option>
+                    <option>Bug Fix / Maintenance</option>
+                    <option>Other</option>
+                </select>
+                <textarea name="message" rows="4" placeholder="Tell us about your project — features, timeline, budget..." required style="width:100%;padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.88rem;outline:none;resize:vertical;margin-bottom:16px"></textarea>
+                <button type="submit" class="btn btn-fill" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+            <p style="margin-top:16px;font-size:.8rem;color:var(--text3)">Or email us directly at <a href="mailto:shamppanchal66@gmail.com" style="color:var(--violet-light)">shamppanchal66@gmail.com</a></p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="f-grid">
+        <div class="f-brand">
+            <div class="f-logo"><div class="f-mark">0D</div> 0D Technologies</div>
+            <p>Crafting custom software, apps, and websites that solve real problems.</p>
+        </div>
+        <div class="f-col">
+            <h4>Products</h4>
+            <a href="zdt-billing.html">0D Billing</a>
+            <a href="zdt-tailor.html">0D Tailor</a>
+        </div>
+        <div class="f-col">
+            <h4>Company</h4>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="hire-us.html">Hire Us</a>
+        </div>
+        <div class="f-col">
+            <h4>Legal</h4>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="zdt-billing-privacy.html">Billing Privacy</a>
+            <a href="zdt-tailor-privacy.html">Tailor Privacy</a>
+        </div>
+    </div>
+    <div class="f-bottom">
+        <p>&copy; 2026 0D Technologies. All rights reserved.</p>
+        <div class="f-social">
+            <a href="mailto:shamppanchal66@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/shampanchal66/0D-Technalogies"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Cursor
+    const cur=document.getElementById('cursor');
+    if(window.innerWidth>768){
+        document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+        document.querySelectorAll('a,button,.svc,.port-item,.step,.price-card,.testi,.faq-item').forEach(el=>{
+            el.addEventListener('mouseenter',()=>cur.classList.add('big'));
+            el.addEventListener('mouseleave',()=>cur.classList.remove('big'));
+        });
+    }
+
+    // Mouse glow on cards
+    document.querySelectorAll('.svc,.port-item,.price-card,.testi').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+            const r=card.getBoundingClientRect();
+            card.style.setProperty('--mx',(e.clientX-r.left)+'px');
+            card.style.setProperty('--my',(e.clientY-r.top)+'px');
+        });
+    });
+
+    // Scroll reveal
+    const obs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}});
+    },{threshold:0.1});
+    document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-q').forEach(q=>{
+        q.addEventListener('click',()=>{
+            const item=q.parentElement;
+            const wasOpen=item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+            if(!wasOpen) item.classList.add('open');
+        });
+    });
+
+    // Form submission
+    document.getElementById('projectForm').addEventListener('submit',function(e){
+        e.preventDefault();
+        const fd=new FormData(this);
+        const name=fd.get('name');
+        const email=fd.get('email');
+        const service=fd.get('service');
+        const message=fd.get('message');
+        const body=`Hi, I'm ${name} (${email}).%0AService needed: ${service}%0AProject details: ${message}`;
+        window.open(`mailto:shamppanchal66@gmail.com?subject=New Project Inquiry from ${name}&body=${body}`);
+        this.reset();
+        alert('Opening your email client...');
+    });
+</script>
+
+</body>
+</html>
