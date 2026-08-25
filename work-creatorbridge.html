@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorBridge India — Influencer Marketing Agency Website | 0D Technologies</title>
+    <meta name="description" content="CreatorBridge India — influencer marketing agency website. Creator-brand matching, campaign management, UGC production. Built by 0D Technologies.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://0dtechnologies.com/work-creatorbridge.html">
+    <meta property="og:title" content="CreatorBridge India — Influencer Marketing Agency Website">
+    <meta property="og:description" content="Influencer marketing agency website built by 0D Technologies.">
+    <meta property="og:url" content="https://0dtechnologies.com/work-creatorbridge.html">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--bg:#0a0e1a;--surface:#111827;--border:rgba(255,255,255,0.06);--text:#f8fafc;--text2:#94a3b8;--text3:#64748b;--violet:#7c3aed;--violet-light:#a78bfa;--pink:#ec4899;--pink-light:#f9a8d4;--cyan:#06b6d4;--cyan-light:#67e8f9;--lime:#84cc16;--amber:#f59e0b;--grad1:linear-gradient(135deg,#ec4899,#f59e0b);--font:'Outfit',system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1)}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.7;overflow-x:hidden}
+        a{color:inherit;text-decoration:none}
+        .cur{position:fixed;width:16px;height:16px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:width .3s,height .3s,background .3s;transform:translate(-50%,-50%)}
+        .cur.big{width:48px;height:48px;background:rgba(236,72,153,0.4)}
+        @media(max-width:768px){.cur{display:none}body{cursor:auto}}
+        body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9998}
+        .shapes{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+        .shapes .shape{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12}
+        .shapes .s1{width:500px;height:500px;background:var(--pink);top:-5%;left:-5%;animation:float1 25s ease-in-out infinite}
+        .shapes .s2{width:400px;height:400px;background:var(--amber);bottom:10%;right:-8%;animation:float2 20s ease-in-out infinite}
+        @keyframes float1{0%,100%{transform:translate(0,0)}25%{transform:translate(80px,-50px)}50%{transform:translate(-40px,70px)}75%{transform:translate(50px,30px)}}
+        @keyframes float2{0%,100%{transform:translate(0,0)}33%{transform:translate(-60px,-40px)}66%{transform:translate(40px,50px)}}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 clamp(20px,4vw,48px);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,26,.7);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border)}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:var(--text)}
+        .logo .mark{width:34px;height:34px;border-radius:10px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:#fff}
+        .nav-links{display:flex;align-items:center;gap:2px}
+        .nav-links a{padding:8px 16px;font-size:.82rem;font-weight:500;color:var(--text3);border-radius:8px;transition:all .25s}
+        .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+        .nav-links a.on{color:var(--pink-light)}
+        .nav-btn{padding:10px 24px!important;background:var(--grad1)!important;color:#fff!important;border-radius:10px!important;font-weight:700!important;font-size:.82rem!important}
+        .mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+        .r{opacity:0;transform:translateY(50px);transition:all .9s var(--ease)}.r.v{opacity:1;transform:translateY(0)}.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+        .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+        .sec{padding:clamp(60px,8vw,100px) 0}
+        .tag{font-size:.7rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--pink-light);margin-bottom:14px}
+        .h2{font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:var(--text);letter-spacing:-1.5px;line-height:1.12;margin-bottom:14px}
+        .desc{font-size:1rem;color:var(--text3);max-width:600px;line-height:1.8}
+        .hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:160px 24px 60px;position:relative}
+        .hero .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 18px;border-radius:100px;background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.25);font-size:.78rem;font-weight:600;color:var(--pink-light);margin-bottom:20px}
+        .hero h1{font-weight:900;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-2px;color:var(--text)}
+        .hero h1 .g1{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{margin-top:20px;font-size:1.05rem;color:var(--text3);max-width:550px}
+        .hero-btns{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:12px;font-weight:700;font-size:.88rem;transition:all .3s var(--ease);border:none;cursor:pointer}
+        .btn-fill{background:var(--grad1);color:#fff;box-shadow:0 4px 24px rgba(236,72,153,.25)}
+        .btn-fill:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(236,72,153,.4)}
+        .btn-out{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,.12)}
+        .btn-out:hover{border-color:var(--pink);background:rgba(236,72,153,.06);transform:translateY(-3px)}
+        .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+        .feat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:all .4s var(--ease)}
+        .feat:hover{border-color:rgba(236,72,153,.2);transform:translateY(-3px)}
+        .feat .ico{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto 14px}
+        .ico-v{background:rgba(124,58,237,.1);color:var(--violet-light)}
+        .ico-p{background:rgba(236,72,153,.1);color:var(--pink-light)}
+        .ico-c{background:rgba(6,182,212,.1);color:var(--cyan-light)}
+        .ico-a{background:rgba(245,158,11,.1);color:var(--amber)}
+        .feat h3{font-weight:700;font-size:1rem;color:var(--text);margin-bottom:6px}
+        .feat p{font-size:.85rem;color:var(--text3)}
+        .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:60px}
+        .detail-text h3{font-weight:700;font-size:1.3rem;color:var(--text);margin-bottom:12px}
+        .detail-text p{font-size:.92rem;color:var(--text3);line-height:1.8;margin-bottom:16px}
+        .detail-text ul{list-style:none;margin-bottom:20px}
+        .detail-text ul li{padding:6px 0;font-size:.88rem;color:var(--text2);display:flex;align-items:center;gap:10px}
+        .detail-text ul li i{color:var(--lime);font-size:.75rem}
+        .detail-visual{background:var(--surface);border:1px solid var(--border);border-radius:20px;height:350px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+        .detail-visual .icon{font-size:6rem;opacity:.3}
+        .detail-visual::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(236,72,153,.05),rgba(245,158,11,.05))}
+        .tech-stack{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+        .tech-stack span{padding:6px 16px;border-radius:8px;font-size:.78rem;font-weight:600;background:rgba(255,255,255,.05);color:var(--text2);border:1px solid var(--border)}
+        .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--pink-light);font-weight:600;font-size:.88rem;margin-bottom:40px;transition:gap .3s}
+        .back-link:hover{gap:12px}
+        .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:20px;overflow:hidden;margin:60px 0}
+        .stat{background:var(--bg);padding:40px 20px;text-align:center}
+        .stat .n{font-size:2.2rem;font-weight:900;color:var(--text);line-height:1}
+        .stat .l{font-size:.72rem;color:var(--text3);margin-top:8px;text-transform:uppercase;letter-spacing:1.5px}
+        footer{padding:64px 24px 32px;border-top:1px solid var(--border)}
+        .f-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+        .f-brand .f-logo{font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .f-brand .f-mark{width:28px;height:28px;border-radius:7px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:#fff}
+        .f-brand p{font-size:.85rem;color:var(--text3);max-width:280px;line-height:1.7}
+        .f-col h4{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+        .f-col a{display:block;font-size:.85rem;color:var(--text3);padding:4px 0;transition:color .2s}
+        .f-col a:hover{color:var(--pink-light)}
+        .f-bottom{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);text-align:center;font-size:.78rem;color:var(--text3)}
+        @media(max-width:900px){.features{grid-template-columns:1fr 1fr}.detail-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.f-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.mobile-toggle{display:block}}
+        @media(max-width:600px){.features{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.f-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<div class="cur" id="cursor"></div>
+<div class="shapes"><div class="shape s1"></div><div class="shape s2"></div></div>
+
+<nav>
+    <a href="index.html" class="logo"><div class="mark">0D</div> 0D Technologies</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="work.html" class="on">Our Work</a>
+        <a href="hire-us.html">Hire Us</a>
+        <a href="hire-us.html" class="nav-btn">Get a Quote</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"><i class="fas fa-bars"></i></button>
+</nav>
+
+<section class="hero">
+    <div class="r">
+        <div class="badge"><i class="fas fa-bullhorn"></i> Website &middot; Live</div>
+    </div>
+    <h1 class="r rd1"><span class="g1">CreatorBridge</span> India</h1>
+    <p class="r rd2">Full-service influencer marketing agency website. Creator-brand matching, campaign management, UGC production, and pan-India creator network.</p>
+    <div class="hero-btns r rd3">
+        <a href="https://creatorbridge-india.vercel.app/" target="_blank" class="btn btn-fill"><i class="fas fa-play"></i> Visit Website</a>
+        <a href="work.html" class="btn btn-out"><i class="fas fa-arrow-left"></i> Back to Work</a>
+    </div>
+</section>
+
+<div class="wrap">
+    <a href="work.html" class="back-link r"><i class="fas fa-arrow-left"></i> Back to All Work</a>
+
+    <!-- STATS -->
+    <div class="stats r">
+        <div class="stat"><div class="n">100+</div><div class="l">Brand Campaigns</div></div>
+        <div class="stat"><div class="n">4,500+</div><div class="l">Creators Onboarded</div></div>
+        <div class="stat"><div class="n">22</div><div class="l">Niche Verticals</div></div>
+        <div class="stat"><div class="n">12.4%</div><div class="l">Avg Engagement</div></div>
+    </div>
+
+    <section class="sec" style="padding-top:0">
+        <div class="r">
+            <div class="tag">What We Built</div>
+            <div class="h2">Full-Stack Agency Website</div>
+        </div>
+        <div class="features">
+            <div class="feat r rd1">
+                <div class="ico ico-p"><i class="fas fa-users"></i></div>
+                <h3>Creator Registration</h3>
+                <p>Multi-step form for creators to submit profiles, niches, platforms, and rates. Dynamic platform fields.</p>
+            </div>
+            <div class="feat r rd2">
+                <div class="ico ico-v"><i class="fas fa-building"></i></div>
+                <h3>Brand Inquiry Form</h3>
+                <p>Brands submit campaign briefs — niche, budget, goals. Auto-matched to creators in the network.</p>
+            </div>
+            <div class="feat r rd3">
+                <div class="ico ico-c"><i class="fas fa-tachometer-alt"></i></div>
+                <h3>Campaign Dashboard</h3>
+                <p>Live dashboard UI showing campaign status, creator matches, engagement stats, and reach metrics.</p>
+            </div>
+            <div class="feat r rd1">
+                <div class="ico ico-a"><i class="fas fa-chart-line"></i></div>
+                <h3>Animated Counters</h3>
+                <p>Scroll-triggered number animations — campaigns delivered, creators onboarded, niches covered.</p>
+            </div>
+            <div class="feat r rd2">
+                <div class="ico ico-p"><i class="fas fa-scroll"></i></div>
+                <h3>Marquee Ticker</h3>
+                <p>Infinite scrolling niche ticker — Beauty, Fashion, FMCG, Gaming, Travel, and 17 more categories.</p>
+            </div>
+            <div class="feat r rd3">
+                <div class="ico ico-v"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Fully Responsive</h3>
+                <p>Optimized for mobile, tablet, and desktop. Smooth experience on every device.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="detail-grid">
+            <div class="detail-text r">
+                <h3>Behind the Build</h3>
+                <p>A complete agency website with working forms, dynamic UI, and professional design — built from scratch without frameworks.</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Dual registration forms — creators + brands</li>
+                    <li><i class="fas fa-check"></i> Dynamic platform fields (add/remove)</li>
+                    <li><i class="fas fa-check"></i> Live campaign monitor UI</li>
+                    <li><i class="fas fa-check"></i> Scroll-triggered animations</li>
+                    <li><i class="fas fa-check"></i> Testimonials carousel</li>
+                    <li><i class="fas fa-check"></i> FAQ accordion</li>
+                </ul>
+                <div class="tech-stack">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>Vanilla JS</span>
+                    <span>Forms</span>
+                    <span>Vercel</span>
+                </div>
+            </div>
+            <div class="detail-visual r rd2">
+                <div class="icon" style="color:var(--pink-light)"><i class="fas fa-bullhorn"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" style="padding-top:0">
+        <div style="text-align:center" class="r">
+            <div class="tag">See It Live</div>
+            <div class="h2">Visit CreatorBridge India</div>
+            <p class="desc" style="margin:0 auto 32px">Experience the full website — forms, dashboard, animations, and more.</p>
+            <div class="hero-btns">
+                <a href="https://creatorbridge-india.vercel.app/" target="_blank" class="btn btn-fill"><i class="fas fa-play"></i> Visit Website</a>
+                <a href="hire-us.html" class="btn btn-out"><i class="fas fa-handshake"></i> Want One Like This?</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="f-grid">
+        <div class="f-brand"><div class="f-logo"><div class="f-mark">0D</div> 0D Technologies</div><p>Crafting custom software, apps, and websites that solve real problems.</p></div>
+        <div class="f-col"><h4>Products</h4><a href="zdt-billing.html">0D Billing</a><a href="zdt-tailor.html">0D Tailor</a></div>
+        <div class="f-col"><h4>Company</h4><a href="about.html">About</a><a href="work.html">Our Work</a><a href="hire-us.html">Hire Us</a></div>
+        <div class="f-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+    </div>
+    <div class="f-bottom"><p>&copy; 2026 0D Technologies. All rights reserved.</p></div>
+</footer>
+
+<script>
+const cur=document.getElementById('cursor');if(window.innerWidth>768){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button,.feat').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
