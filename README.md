@@ -41,4 +41,4 @@ Hosted on **Vercel** — automatically deployed from the `main` branch.
 
 ## Contact
 
-Email: [shamppanchal66@gmail.com](mailto:shamppanchal66@gmail.com)
+Email: [shampanchal66@gmail.com](mailto:shampanchal66@gmail.com)
