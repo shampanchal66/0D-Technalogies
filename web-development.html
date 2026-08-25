@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Web Development | Websites & Web Apps | 0D Technologies</title>
+    <meta name="description" content="0D Technologies is a custom website developer specializing in modern web development — landing pages, business websites, web apps, and e-commerce solutions.">
+    <meta name="keywords" content="web development, custom website developer, website development, web apps, e-commerce website, landing page design, responsive website, custom web development services">
+    <meta name="author" content="0D Technologies">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://0dtechnologies.com/web-development.html">
+    <meta property="og:title" content="Custom Web Development | Websites & Web Apps | 0D Technologies">
+    <meta property="og:description" content="Custom website developer building modern, fast, responsive websites — landing pages, business sites, web apps, and e-commerce.">
+    <meta property="og:url" content="https://0dtechnologies.com/web-development.html">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom Web Development | Websites & Web Apps | 0D Technologies">
+    <meta name="twitter:description" content="Custom website developer specializing in modern, fast, responsive websites.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Web Development","provider":{"@type":"Organization","name":"0D Technologies","url":"https://0dtechnologies.com"},"areaServed":"IN","description":"Custom web development services including landing pages, business websites, web apps, and e-commerce solutions.","name":"Custom Web Development Services"}</script>
+    <style>
+        :root{--bg:#0a0e1a;--surface:#111827;--surface2:#1a1f35;--border:rgba(255,255,255,0.06);--text:#f8fafc;--text2:#94a3b8;--text3:#64748b;--violet:#7c3aed;--violet-light:#a78bfa;--pink:#ec4899;--pink-light:#f9a8d4;--cyan:#06b6d4;--cyan-light:#67e8f9;--lime:#84cc16;--amber:#f59e0b;--grad1:linear-gradient(135deg,#7c3aed,#ec4899);--grad2:linear-gradient(135deg,#06b6d4,#7c3aed);--font:'Outfit',system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--fs-xs:.75rem;--fs-sm:.85rem;--fs-base:.95rem;--fs-md:1.1rem;--fs-lg:1.5rem;--fs-xl:2rem;--fs-2xl:clamp(2.2rem,5vw,3.5rem);--fs-3xl:clamp(2.8rem,7.5vw,6.5rem);--r-sm:8px;--r-md:14px;--r-lg:20px;--r-xl:24px;--r-full:100px}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        body{font-family:var(--font);background:var(--bg);color:var(--text2);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        a{color:inherit;text-decoration:none}
+
+        /* CURSOR */
+        .cur{position:fixed;width:16px;height:16px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:width .3s,height .3s,background .3s;transform:translate(-50%,-50%)}
+        .cur.big{width:48px;height:48px;background:rgba(124,58,237,0.4)}
+        @media(max-width:768px){.cur{display:none}body{cursor:auto}}
+
+        /* NOISE */
+        body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9998}
+
+        /* FLOATING SHAPES */
+        .shapes{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+        .shapes .shape{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12}
+        .shapes .s1{width:500px;height:500px;background:var(--violet);top:-5%;left:-5%;animation:float1 25s ease-in-out infinite}
+        .shapes .s2{width:400px;height:400px;background:var(--pink);bottom:10%;right:-8%;animation:float2 20s ease-in-out infinite}
+        .shapes .s3{width:350px;height:350px;background:var(--cyan);top:40%;left:50%;animation:float3 22s ease-in-out infinite}
+        @keyframes float1{0%,100%{transform:translate(0,0)}25%{transform:translate(80px,-50px)}50%{transform:translate(-40px,70px)}75%{transform:translate(50px,30px)}}
+        @keyframes float2{0%,100%{transform:translate(0,0)}33%{transform:translate(-60px,-40px)}66%{transform:translate(40px,50px)}}
+        @keyframes float3{0%,100%{transform:translate(0,0)}50%{transform:translate(-70px,-60px)}}
+
+        /* NAV */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 clamp(20px,4vw,48px);height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,14,26,.7);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border)}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:var(--fs-md);color:var(--text);letter-spacing:-0.5px}
+        .logo .mark{width:34px;height:34px;border-radius:var(--r-sm);background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:900;color:#fff;position:relative}
+        .logo .mark::after{content:'';position:absolute;inset:0;border-radius:var(--r-sm);background:linear-gradient(135deg,rgba(255,255,255,.25),transparent)}
+        .nav-links{display:flex;align-items:center;gap:2px}
+        .nav-links a{padding:8px 16px;font-size:var(--fs-sm);font-weight:500;color:var(--text3);border-radius:var(--r-sm);transition:all .25s}
+        .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+        .nav-links a.on{color:var(--violet-light)}
+        .nav-btn{padding:10px 24px!important;background:var(--grad1)!important;color:#fff!important;border-radius:var(--r-md)!important;font-weight:700!important;font-size:var(--fs-sm)!important;box-shadow:0 4px 20px rgba(124,58,237,.3)}
+        .nav-btn:hover{transform:translateY(-1px);box-shadow:0 6px 28px rgba(124,58,237,.45)!important}
+        .mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
+
+        /* NAV DROPDOWN */
+        .nav-dropdown{position:relative}
+        .nav-dropdown .drop-btn{cursor:pointer;display:flex;align-items:center;gap:4px}
+        .nav-dropdown .drop-btn i{font-size:.6rem;transition:transform .2s}
+        .nav-dropdown.open .drop-btn i{transform:rotate(180deg)}
+        .nav-dropdown .drop-menu{position:absolute;top:100%;left:0;min-width:180px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+        .nav-dropdown.open .drop-menu{opacity:1;visibility:visible;transform:translateY(0)}
+        .nav-dropdown .drop-menu a{display:block;padding:10px 14px;font-size:var(--fs-sm);border-radius:var(--r-sm);white-space:nowrap}
+        .nav-dropdown .drop-menu a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+
+        /* REVEAL */
+        .r{opacity:0;transform:translateY(50px);transition:all .9s var(--ease)}.r.v{opacity:1;transform:translateY(0)}.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}.rd5{transition-delay:.5s}
+
+        /* CONTAINER */
+        .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+        .sec{padding:clamp(80px,10vw,140px) 0}
+        .tag{font-size:var(--fs-xs);font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--violet-light);margin-bottom:14px}
+        .h2{font-weight:800;font-size:var(--fs-2xl);color:var(--text);letter-spacing:-1.5px;line-height:1.12;margin-bottom:14px}
+        .desc{font-size:var(--fs-base);color:var(--text3);max-width:500px;line-height:1.8}
+
+        /* HERO */
+        .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;position:relative}
+        .hero-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 18px 6px 10px;border-radius:var(--r-full);background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);font-size:var(--fs-sm);font-weight:600;color:var(--violet-light);margin-bottom:28px}
+        .hero-chip .pulse{width:8px;height:8px;background:var(--lime);border-radius:50%;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(132,204,22,.4)}50%{box-shadow:0 0 0 8px rgba(132,204,22,0)}}
+        .hero h1{font-weight:900;font-size:var(--fs-3xl);line-height:1.02;letter-spacing:-3px;color:var(--text);max-width:950px}
+        .hero h1 .g1{background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero p{margin-top:24px;font-size:var(--fs-md);color:var(--text3);max-width:600px;line-height:1.8}
+        .hero-btns{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:var(--r-md);font-weight:700;font-size:var(--fs-sm);transition:all .3s var(--ease);border:none;cursor:pointer}
+        .btn-fill{background:var(--grad1);color:#fff;box-shadow:0 4px 24px rgba(124,58,237,.25)}
+        .btn-fill:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(124,58,237,.4)}
+        .btn-out{background:transparent;color:var(--text);border:1.5px solid rgba(255,255,255,.12)}
+        .btn-out:hover{border-color:var(--violet);background:rgba(124,58,237,.06);transform:translateY(-3px)}
+        .hero-bottom{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text3);font-size:var(--fs-xs);letter-spacing:3px;text-transform:uppercase}
+        .hero-bottom .bar{width:1px;height:36px;background:linear-gradient(to bottom,var(--violet),transparent);animation:barPulse 2s ease-in-out infinite}
+        @keyframes barPulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+        /* MARQUEE */
+        .marquee{padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+        .marquee-track{display:flex;gap:48px;animation:scroll 25s linear infinite;width:max-content}
+        .marquee-track span{font-size:var(--fs-base);font-weight:600;color:var(--text3);white-space:nowrap;display:flex;align-items:center;gap:16px}
+        .marquee-track .dot{width:5px;height:5px;border-radius:50%;background:var(--violet)}
+        @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+        /* BENTO */
+        .bento{display:grid;gap:16px;margin-top:56px}
+        .bento-4{grid-template-columns:repeat(2,1fr)}
+        .bc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px;position:relative;overflow:hidden;transition:all .5s var(--ease)}
+        .bc::before{content:'';position:absolute;inset:0;border-radius:var(--r-lg);padding:1px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),var(--violet),transparent 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .5s;pointer-events:none}
+        .bc:hover::before{opacity:1}
+        .bc:hover{border-color:rgba(124,58,237,.2);transform:translateY(-3px)}
+        .bc .ico{width:48px;height:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:18px}
+        .ico-v{background:rgba(124,58,237,.1);color:var(--violet-light)}
+        .ico-p{background:rgba(236,72,153,.1);color:var(--pink-light)}
+        .ico-c{background:rgba(6,182,212,.1);color:var(--cyan-light)}
+        .ico-a{background:rgba(245,158,11,.1);color:var(--amber)}
+        .ico-l{background:rgba(132,204,22,.1);color:var(--lime)}
+        .bc h3{font-weight:700;font-size:var(--fs-md);color:var(--text);margin-bottom:8px}
+        .bc p{font-size:var(--fs-sm);color:var(--text3);line-height:1.75}
+        .bc .tags{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+        .bc .tags span{padding:4px 12px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-full);font-size:var(--fs-xs);color:var(--text3)}
+
+        /* PORTFOLIO */
+        .port-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+        .port-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:40px;position:relative;overflow:hidden;transition:all .5s var(--ease);text-decoration:none;display:block}
+        .port-card::before{content:'';position:absolute;inset:0;border-radius:var(--r-lg);padding:1px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),var(--pink),transparent 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .5s;pointer-events:none}
+        .port-card:hover::before{opacity:1}
+        .port-card:hover{border-color:rgba(236,72,153,.2);transform:translateY(-4px)}
+        .port-card .badge{display:inline-block;padding:4px 14px;border-radius:var(--r-full);font-size:var(--fs-xs);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px;background:rgba(124,58,237,.12);color:var(--violet-light);border:1px solid rgba(124,58,237,.2)}
+        .port-card h2{font-weight:800;font-size:var(--fs-lg);color:var(--text);margin-bottom:10px;transition:color .3s}
+        .port-card:hover h2{color:var(--pink-light)}
+        .port-card p{font-size:var(--fs-base);color:var(--text3);line-height:1.8}
+        .port-card .tags{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+        .port-card .tags span{padding:5px 14px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-full);font-size:var(--fs-sm);color:var(--text2);font-weight:500}
+        .port-card .link{display:inline-flex;align-items:center;gap:6px;margin-top:22px;font-size:var(--fs-sm);font-weight:700;color:var(--pink-light);transition:gap .3s}
+        .port-card:hover .link{gap:12px}
+
+        /* TECH STACK */
+        .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+        .tech-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 20px;text-align:center;transition:all .4s var(--ease);position:relative;overflow:hidden}
+        .tech-item:hover{border-color:rgba(124,58,237,.2);transform:translateY(-3px)}
+        .tech-item .ico{width:56px;height:56px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 16px}
+        .tech-item h3{font-weight:700;font-size:var(--fs-base);color:var(--text);margin-bottom:4px}
+        .tech-item p{font-size:var(--fs-sm);color:var(--text3)}
+
+        /* PROCESS */
+        .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+        .step{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:28px 20px;text-align:center;position:relative;transition:all .4s var(--ease)}
+        .step:hover{border-color:rgba(124,58,237,.2);transform:translateY(-4px)}
+        .step .num{font-size:2.8rem;font-weight:900;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:14px}
+        .step h3{font-weight:700;font-size:var(--fs-base);color:var(--text);margin-bottom:6px}
+        .step p{font-size:var(--fs-sm);color:var(--text3);line-height:1.7}
+        .step::after{content:'';position:absolute;top:50%;right:-10px;width:20px;height:2px;background:var(--border)}
+        .step:last-child::after{display:none}
+
+        /* STATS */
+        .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--r-lg);overflow:hidden;margin:clamp(80px,10vw,140px) 0}
+        .stat{background:var(--bg);padding:48px 20px;text-align:center}
+        .stat .n{font-size:var(--fs-2xl);font-weight:900;color:var(--text);line-height:1}
+        .stat .l{font-size:var(--fs-xs);color:var(--text3);margin-top:8px;text-transform:uppercase;letter-spacing:1.5px}
+
+        /* CTA */
+        .cta{padding:80px 40px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);text-align:center;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:var(--grad1);border-radius:50%;filter:blur(120px);opacity:.08}
+        .cta .h2{margin-bottom:12px}
+        .cta .desc{margin:0 auto 32px;text-align:center}
+
+        /* FOOTER */
+        footer{padding:64px 24px 32px;border-top:1px solid var(--border)}
+        .f-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+        .f-brand .f-logo{font-weight:800;font-size:var(--fs-md);color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .f-brand .f-mark{width:28px;height:28px;border-radius:var(--r-sm);background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:var(--fs-xs);font-weight:900;color:#fff}
+        .f-brand p{font-size:var(--fs-sm);color:var(--text3);max-width:280px;line-height:1.7}
+        .f-col h3{font-size:var(--fs-xs);font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+        .f-col a{display:block;font-size:var(--fs-sm);color:var(--text3);padding:4px 0;transition:color .2s}
+        .f-col a:hover{color:var(--violet-light)}
+        .f-col-contact .f-email{display:block;font-size:var(--fs-sm);color:var(--violet-light);font-weight:600;margin-top:8px;transition:color .2s}
+        .f-col-contact .f-email:hover{color:var(--pink-light)}
+        .f-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+        .f-bottom p{font-size:var(--fs-sm);color:var(--text3)}
+        .f-bottom a{color:var(--text3);transition:color .2s}.f-bottom a:hover{color:var(--violet-light)}
+
+        /* RESPONSIVE */
+        @media(max-width:1024px){.bento-4{grid-template-columns:1fr}.port-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.step::after{display:none}.f-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.mobile-toggle{display:block}.hero{padding:120px 20px 60px}.hero h1{letter-spacing:-1.5px}.tech-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.sec{padding:60px 0}.f-grid{grid-template-columns:1fr;gap:32px}.f-bottom{flex-direction:column;text-align:center}}
+        @media(max-width:480px){.stats{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<div class="cur" id="cur"></div>
+<div class="shapes"><div class="shape s1"></div><div class="shape s2"></div><div class="shape s3"></div></div>
+
+<nav>
+    <a href="index.html" class="logo"><div class="mark">0D</div>0D Technologies</a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <div class="nav-dropdown" id="prodDrop">
+            <a class="drop-btn" onclick="document.getElementById('prodDrop').classList.toggle('open')">Products <i class="fas fa-chevron-down"></i></a>
+            <div class="drop-menu">
+                <a href="zdt-billing.html">0D Billing</a>
+                <a href="zdt-tailor.html">0D Tailor</a>
+                <a href="work.html">Our Work</a>
+            </div>
+        </div>
+        <a href="hire-us.html">Hire Us</a>
+        <a href="hire-us.html" class="nav-btn">Get a Quote</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-chip r"><span class="pulse"></span>Custom Website Developer</div>
+    <h1 class="r rd1">We Build Modern, Fast, <span class="g1">Responsive Websites</span></h1>
+    <p class="r rd2">0D Technologies is a custom website developer delivering high-performance web development — from sleek landing pages to full-scale web applications and e-commerce stores.</p>
+    <div class="hero-btns r rd3">
+        <a href="#services" class="btn btn-fill">Our Web Services <i class="fas fa-arrow-right"></i></a>
+        <a href="hire-us.html" class="btn btn-out">Start Your Project</a>
+    </div>
+    <div class="hero-bottom"><span>Scroll</span><div class="bar"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+    <div class="marquee-track">
+        <span><span class="dot"></span>Landing Pages</span>
+        <span><span class="dot"></span>Business Websites</span>
+        <span><span class="dot"></span>Web Applications</span>
+        <span><span class="dot"></span>E-Commerce</span>
+        <span><span class="dot"></span>Custom Web Development</span>
+        <span><span class="dot"></span>Responsive Design</span>
+        <span><span class="dot"></span>SEO Optimized</span>
+        <span><span class="dot"></span>Fast Performance</span>
+        <span><span class="dot"></span>Landing Pages</span>
+        <span><span class="dot"></span>Business Websites</span>
+        <span><span class="dot"></span>Web Applications</span>
+        <span><span class="dot"></span>E-Commerce</span>
+        <span><span class="dot"></span>Custom Web Development</span>
+        <span><span class="dot"></span>Responsive Design</span>
+        <span><span class="dot"></span>SEO Optimized</span>
+        <span><span class="dot"></span>Fast Performance</span>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="sec">
+    <div class="wrap">
+        <p class="tag r">Web Development Services</p>
+        <h2 class="h2 r rd1">Custom websites that<br>drive results</h2>
+        <p class="desc r rd2">From concept to deployment, we build websites that look stunning, load fast, and convert visitors into customers.</p>
+        <div class="bento bento-4">
+            <div class="bc r">
+                <div class="ico ico-v"><i class="fas fa-rocket"></i></div>
+                <h3>Landing Pages</h3>
+                <p>High-converting, pixel-perfect landing pages designed to capture leads and drive action. Optimized for speed and mobile-first experience.</p>
+                <div class="tags"><span>Conversion Focused</span><span>A/B Ready</span><span>Mobile First</span></div>
+            </div>
+            <div class="bc r rd1">
+                <div class="ico ico-p"><i class="fas fa-building"></i></div>
+                <h3>Business Websites</h3>
+                <p>Professional corporate and small business websites that establish credibility, showcase services, and generate inbound leads.</p>
+                <div class="tags"><span>Corporate</span><span>SME</span><span>Service-Based</span></div>
+            </div>
+            <div class="bc r rd2">
+                <div class="ico ico-c"><i class="fas fa-code"></i></div>
+                <h3>Web Applications</h3>
+                <p>Dynamic, interactive web apps built with modern JavaScript — dashboards, SaaS tools, portals, and real-time platforms.</p>
+                <div class="tags"><span>SPA</span><span>Dashboard</span><span>SaaS</span><span>Real-Time</span></div>
+            </div>
+            <div class="bc r rd3">
+                <div class="ico ico-a"><i class="fas fa-shopping-cart"></i></div>
+                <h3>E-Commerce</h3>
+                <p>Custom online stores with product management, secure checkout, inventory tracking, and a seamless shopping experience.</p>
+                <div class="tags"><span>Shop</span><span>Payments</span><span>Inventory</span><span>Catalog</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="sec" style="padding-top:0">
+    <div class="wrap">
+        <p class="tag r">Our Work</p>
+        <h2 class="h2 r rd1">Websites we've built</h2>
+        <p class="desc r rd2">Real projects, real results. Here are some websites we've delivered for our clients.</p>
+        <div class="port-grid">
+            <a href="work-creatorbridge.html" class="port-card r">
+                <span class="badge">Website</span>
+                <h2>CreatorBridge India</h2>
+                <p>Full-service influencer marketing agency website. Creator-brand matching, campaign management, UGC production, and pan-India creator network — all built from scratch.</p>
+                <div class="tags"><span>HTML5</span><span>CSS3</span><span>Vanilla JS</span><span>Forms</span><span>Vercel</span></div>
+                <span class="link">View Case Study <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="work-caapify.html" class="port-card r rd1">
+                <span class="badge">Web App</span>
+                <h2>Caapify</h2>
+                <p>AI-powered social media content generator. Upload a photo, get viral captions, hashtags, and song recommendations in seconds. 100% free, no login required.</p>
+                <div class="tags"><span>AI/ML</span><span>Image Analysis</span><span>NLP</span><span>React</span><span>Vercel</span></div>
+                <span class="link">View Case Study <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="sec" style="padding-top:0">
+    <div class="wrap">
+        <p class="tag r">Tech Stack</p>
+        <h2 class="h2 r rd1">Tools we use to build</h2>
+        <p class="desc r rd2">Modern, proven technologies for fast, reliable web development.</p>
+        <div class="tech-grid">
+            <div class="tech-item r">
+                <div class="ico ico-a"><i class="fab fa-html5"></i></div>
+                <h3>HTML5</h3>
+                <p>Semantic markup & structure</p>
+            </div>
+            <div class="tech-item r rd1">
+                <div class="ico ico-c"><i class="fab fa-css3-alt"></i></div>
+                <h3>CSS3</h3>
+                <p>Responsive layouts & animations</p>
+            </div>
+            <div class="tech-item r rd2">
+                <div class="ico ico-v"><i class="fab fa-js-square"></i></div>
+                <h3>JavaScript</h3>
+                <p>Interactive UI & logic</p>
+            </div>
+            <div class="tech-item r rd3">
+                <div class="ico ico-p"><i class="fas fa-cloud"></i></div>
+                <h3>Vercel</h3>
+                <p>Instant deploy & global CDN</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" style="padding-top:0">
+    <div class="wrap">
+        <p class="tag r">Our Process</p>
+        <h2 class="h2 r rd1">From idea to live website</h2>
+        <p class="desc r rd2">A proven workflow that delivers results, every time.</p>
+        <div class="steps">
+            <div class="step r"><div class="num">01</div><h3>Discover</h3><p>We understand your goals, audience, and requirements in detail.</p></div>
+            <div class="step r rd1"><div class="num">02</div><h3>Design</h3><p>Wireframes, mockups, and a pixel-perfect UI tailored to your brand.</p></div>
+            <div class="step r rd2"><div class="num">03</div><h3>Develop</h3><p>Clean, semantic code with modern web standards and best practices.</p></div>
+            <div class="step r rd3"><div class="num">04</div><h3>Launch</h3><p>Testing, optimization, deployment, and ongoing support.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="wrap">
+    <div class="stats r">
+        <div class="stat"><div class="n">100%</div><div class="l">Responsive</div></div>
+        <div class="stat"><div class="n">&lt;1s</div><div class="l">Load Time</div></div>
+        <div class="stat"><div class="n">SEO</div><div class="l">Optimized</div></div>
+        <div class="stat"><div class="n">24/7</div><div class="l">Support</div></div>
+    </div>
+</div>
+
+<!-- CTA -->
+<section class="sec" style="padding-bottom:140px">
+    <div class="wrap">
+        <div class="cta r">
+            <p class="tag" style="text-align:center">Ready to Start?</p>
+            <h2 class="h2">Let's build your<br>dream website</h2>
+            <p class="desc" style="margin:0 auto 32px;text-align:center">Whether you need a landing page or a full web application, we're ready to bring your vision to life.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                <a href="hire-us.html" class="btn btn-fill"><i class="fas fa-handshake"></i> Hire Us</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="f-grid">
+        <div class="f-brand">
+            <div class="f-logo"><div class="f-mark">0D</div>0D Technologies</div>
+            <p>Crafting digital excellence through custom software, intelligent applications, and modern web solutions.</p>
+        </div>
+        <div class="f-col"><h3>Company</h3><a href="about.html">About Us</a><a href="work.html">Our Work</a><a href="services.html">Services</a><a href="hire-us.html">Hire Us</a></div>
+        <div class="f-col"><h3>Products</h3><a href="zdt-billing.html">0D Billing</a><a href="zdt-tailor.html">0D Tailor</a></div>
+        <div class="f-col f-col-contact">
+            <h3>Contact</h3>
+            <a href="contact.html">Contact Page</a>
+            <a class="f-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank">shampanchal66@gmail.com</a>
+            <h3 style="margin-top:20px">Legal</h3>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="zdt-billing-privacy.html">Billing Privacy</a>
+            <a href="zdt-tailor-privacy.html">Tailor Privacy</a>
+        </div>
+    </div>
+    <div class="f-bottom">
+        <p>&copy; 2026 0D Technologies. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// Cursor
+const c=document.getElementById('cur');let cx=0,cy=0,ux=0,uy=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY});
+(function anim(){ux+=(cx-ux)*.1;uy+=(cy-uy)*.1;c.style.left=ux+'px';c.style.top=uy+'px';requestAnimationFrame(anim)})();
+document.querySelectorAll('a,button,.bc,.port-card,.tech-item,.step,.stat').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('big'));el.addEventListener('mouseleave',()=>c.classList.remove('big'))});
+
+// Reveal
+document.querySelectorAll('.r').forEach(el=>new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'}).observe(el));
+
+// Mouse glow
+document.querySelectorAll('.bc,.port-card').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')})});
+
+// Nav scroll
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.background=scrollY>50?'rgba(10,14,26,.92)':'rgba(10,14,26,.7)'});
+
+// Close dropdown on outside click
+document.addEventListener('click',e=>{if(!e.target.closest('.nav-dropdown'))document.querySelectorAll('.nav-dropdown').forEach(d=>d.classList.remove('open'))});
+</script>
+<script src="parth.js"></script>
+</body>
+</html>
