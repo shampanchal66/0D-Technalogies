@@ -39,6 +39,7 @@
         .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
         .nav-links a.on{color:var(--violet-light)}
         .nav-btn{padding:10px 24px!important;background:var(--grad1)!important;color:#fff!important;border-radius:10px!important;font-weight:700!important;font-size:.82rem!important}
+        .dropdown{position:relative}.dropdown .dd-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:8px;min-width:180px;opacity:0;visibility:hidden;transition:all .25s;z-index:200;backdrop-filter:blur(20px)}.dropdown:hover .dd-menu{opacity:1;visibility:visible}.dd-menu a{display:block;padding:10px 16px;font-size:.82rem;border-radius:8px;transition:all .2s}.dd-menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
         .mobile-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.4rem;cursor:pointer}
         .r{opacity:0;transform:translateY(50px);transition:all .9s var(--ease)}.r.v{opacity:1;transform:translateY(0)}.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
         .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
@@ -108,8 +109,12 @@
     <a href="index.html" class="logo"><div class="mark">0D</div> 0D Technologies</a>
     <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="work.html" class="on">Our Work</a>
+        <a href="about.html">About</a>
+        <div class="dropdown"><a href="#" onclick="return false">Products <i class="fas fa-chevron-down" style="font-size:.6rem;margin-left:4px"></i></a><div class="dd-menu"><a href="work.html" class="on">Our Work</a><a href="zdt-billing.html">0D Billing</a><a href="zdt-tailor.html">0D Tailor</a></div></div>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
         <a href="hire-us.html">Hire Us</a>
+        <a href="contact.html">Contact</a>
         <a href="hire-us.html" class="nav-btn">Get a Quote</a>
     </div>
     <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"><i class="fas fa-bars"></i></button>
@@ -223,5 +228,6 @@
 const cur=document.getElementById('cursor');if(window.innerWidth>768){document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});document.querySelectorAll('a,button,.feat').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))})}
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 </script>
+<script src="parth.js"></script>
 </body>
 </html>

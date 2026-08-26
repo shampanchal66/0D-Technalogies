@@ -94,6 +94,7 @@ document.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth)*2-1;my=-(e.c
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
 (function animate(){requestAnimationFrame(animate);scene.children[0].rotation.x+=.0001;scene.children[0].rotation.y+=.0003;scene.children[0].rotation.y+=(mx*.3-scene.children[0].rotation.y)*.02;scene.children[0].rotation.x+=(my*.2-scene.children[0].rotation.x)*.02;renderer.render(scene,camera)})();
 </script>
+<script src="parth.js"></script>
 </body>
 </html>
 
