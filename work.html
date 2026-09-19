@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -159,7 +159,7 @@
         .f-brand .f-logo{font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
         .f-brand .f-mark{width:28px;height:28px;border-radius:7px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:#fff}
         .f-brand p{font-size:.85rem;color:var(--text3);max-width:280px;line-height:1.7}
-        .f-col h4{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+        .f-col h3{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
         .f-col a{display:block;font-size:.85rem;color:var(--text3);padding:4px 0;transition:color .2s}
         .f-col a:hover{color:var(--violet-light)}
         .f-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--text3)}
@@ -178,7 +178,17 @@
             .f-grid{grid-template-columns:1fr}
             .stats{grid-template-columns:1fr 1fr}
         }
-    </style>
+            /* â”€â”€ MOBILE NAV FIX â”€â”€ */
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+            .nav-links .nav-btn{width:100%;text-align:center;justify-content:center;margin-top:12px}
+            .dropdown .dd-menu,.nav-dropdown .drop-menu{position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:none;box-shadow:none!important;border:none!important;background:rgba(255,255,255,.04)!important;margin:4px 0 8px 12px;width:calc(100% - 12px)}
+            .dropdown.open .dd-menu,.nav-dropdown.open .drop-menu{display:block!important}
+        }
+        </style>
 </head>
 <body>
 
@@ -354,7 +364,7 @@
             <p class="desc">Have an idea for an app, website, or tool? We'll turn it into reality.</p>
             <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
                 <a href="hire-us.html" class="btn btn-fill"><i class="fas fa-handshake"></i> Hire Us</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="mailto:shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
             </div>
         </div>
     </section>
@@ -366,20 +376,14 @@
             <div class="f-logo"><div class="f-mark">0D</div> 0D Technologies</div>
             <p>Crafting custom software, apps, and websites that solve real problems.</p>
         </div>
-        <div class="f-col">
-            <h4>Products</h4>
-            <a href="zdt-billing.html">0D Billing</a>
+        <div class="f-col"><h3>Products</h3><a href="zdt-billing.html">0D Billing</a>
             <a href="zdt-tailor.html">0D Tailor</a>
         </div>
-        <div class="f-col">
-            <h4>Company</h4>
-            <a href="about.html">About</a>
+        <div class="f-col"><h3>Company</h3><a href="about.html">About</a>
             <a href="work.html">Our Work</a>
             <a href="hire-us.html">Hire Us</a>
         </div>
-        <div class="f-col">
-            <h4>Legal</h4>
-            <a href="privacy.html">Privacy Policy</a>
+        <div class="f-col"><h3>Legal</h3><a href="privacy.html">Privacy Policy</a>
             <a href="zdt-billing-privacy.html">Billing Privacy</a>
             <a href="zdt-tailor-privacy.html">Tailor Privacy</a>
         </div>
@@ -387,7 +391,7 @@
     <div class="f-bottom">
         <p>&copy; 2026 0D Technologies. All rights reserved.</p>
         <div class="f-social">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:shampanchal66@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/shampanchal66/0D-Technalogies"><i class="fab fa-github"></i></a>
         </div>
     </div>
@@ -437,7 +441,25 @@
         });
     });
 </script>
+<script>
+// Mobile nav: close on link click, handle dropdowns
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.querySelectorAll('.nav-dropdown .drop-btn, .dropdown > a').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){
+      e.preventDefault();
+      const dd = btn.closest('.nav-dropdown, .dropdown');
+      dd.classList.toggle('open');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
+</script>
 <script src="parth.js"></script>
 
 </body>
 </html>
+
+

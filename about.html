@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,7 +69,17 @@
         footer{text-align:center;padding:32px 20px;border-top:1px solid var(--border);color:var(--text3);font-size:.85rem}
         footer a{color:var(--text3);transition:color .2s}footer a:hover{color:var(--violet-light)}
         @media(max-width:768px){.vals,.team{grid-template-columns:1fr}nav{padding:0 20px}.nav-links{display:none}.hero-mini{padding:140px 20px 40px}.hero-mini h1{font-size:2rem}}
-    </style>
+            /* â”€â”€ MOBILE NAV FIX â”€â”€ */
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+            .nav-links .nav-btn{width:100%;text-align:center;justify-content:center;margin-top:12px}
+            .dropdown .dd-menu,.nav-dropdown .drop-menu{position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:none;box-shadow:none!important;border:none!important;background:rgba(255,255,255,.04)!important;margin:4px 0 8px 12px;width:calc(100% - 12px)}
+            .dropdown.open .dd-menu,.nav-dropdown.open .drop-menu{display:block!important}
+        }
+        </style>
 </head>
 <body>
 <div class="cur" id="cur"></div>
@@ -98,6 +108,23 @@ const c=document.getElementById('cur');let cx=0,cy=0,ux=0,uy=0;document.addEvent
 document.querySelectorAll('a,.val-card,.tm').forEach(el=>{el.addEventListener('mouseenter',()=>c.classList.add('big'));el.addEventListener('mouseleave',()=>c.classList.remove('big'))});
 document.querySelectorAll('.r').forEach(el=>new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.1}).observe(el));
 </script>
+<script>
+// Mobile nav: close on link click, handle dropdowns
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.querySelectorAll('.nav-dropdown .drop-btn, .dropdown > a').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){
+      e.preventDefault();
+      const dd = btn.closest('.nav-dropdown, .dropdown');
+      dd.classList.toggle('open');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
+</script>
 <script src="parth.js"></script>
 </body>
 </html>
+

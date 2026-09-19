@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -244,7 +244,17 @@
         @media(max-width:1024px){.bento-5{grid-template-columns:1fr 1fr}.bento-5 .bc:nth-child(1){grid-column:auto;grid-row:auto}.bento-5 .bc:nth-child(4){grid-column:auto}.bento-5 .bc:nth-child(5){grid-column:auto}.about-row{grid-template-columns:1fr;gap:40px}.steps{grid-template-columns:repeat(2,1fr)}.step::after{display:none}.f-grid{grid-template-columns:1fr 1fr}}
         @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.mobile-toggle{display:block}.hero{padding:120px 20px 60px}.hero h1{letter-spacing:-1.5px}.bento-5{grid-template-columns:1fr}.prods{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.sec{padding:60px 0}.f-grid{grid-template-columns:1fr;gap:32px}.f-bottom{flex-direction:column;text-align:center}}
         @media(max-width:480px){.stats{grid-template-columns:1fr}.about-left .nums{grid-template-columns:1fr}}
-    </style>
+            /* â”€â”€ MOBILE NAV FIX â”€â”€ */
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+            .nav-links .nav-btn{width:100%;text-align:center;justify-content:center;margin-top:12px}
+            .dropdown .dd-menu,.nav-dropdown .drop-menu{position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:none;box-shadow:none!important;border:none!important;background:rgba(255,255,255,.04)!important;margin:4px 0 8px 12px;width:calc(100% - 12px)}
+            .dropdown.open .dd-menu,.nav-dropdown.open .drop-menu{display:block!important}
+        }
+        </style>
 </head>
 <body>
 <div class="cur" id="cur"></div>
@@ -363,8 +373,8 @@
                 <p class="desc r rd2">0D Technologies (0th Dimension Technologies) creates practical, high-quality digital solutions. From billing apps to custom business software — we bring ideas to life with clean code and thoughtful design.</p>
                 <p class="desc r rd3" style="margin-top:10px">Our mission is to simplify workflows for businesses of all sizes through modern, reliable technology.</p>
                 <div class="nums r rd4">
-                    <div class="n"><div class="val" data-c="3">0</div><div class="lbl">Products</div></div>
-                    <div class="n"><div class="val" data-c="3">0</div><div class="lbl">Platforms</div></div>
+                    <div class="n"><div class="val" data-c="3">3+</div><div class="lbl">Products</div></div>
+                    <div class="n"><div class="val" data-c="3">3+</div><div class="lbl">Platforms</div></div>
                     <div class="n"><div class="val">100%</div><div class="lbl">Quality</div></div>
                 </div>
             </div>
@@ -426,9 +436,9 @@
 <!-- STATS (#4: single stats section, removed duplicate) -->
 <div class="wrap">
     <div class="stats r">
-        <div class="stat"><div class="n" data-c="3">0</div><div class="l">Products Shipped</div></div>
+        <div class="stat"><div class="n" data-c="3">3+</div><div class="l">Products Shipped</div></div>
         <div class="stat"><div class="n">100%</div><div class="l">Quality Focus</div></div>
-        <div class="stat"><div class="n" data-c="3">0</div><div class="l">Platforms</div></div>
+        <div class="stat"><div class="n" data-c="3">3+</div><div class="l">Platforms</div></div>
         <div class="stat"><div class="n">24/7</div><div class="l">Dedication</div></div>
     </div>
 </div>
@@ -442,7 +452,7 @@
             <p class="desc" style="margin:0 auto 32px;text-align:center">Have a project in mind? We're always open to conversations that matter.</p>
             <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
                 <a href="hire-us.html" class="btn btn-fill"><i class="fas fa-handshake"></i> Hire Us</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="mailto:shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
             </div>
         </div>
     </div>
@@ -461,7 +471,7 @@
         <div class="f-col f-col-contact">
             <h3>Contact</h3>
             <a href="contact.html">Contact Page</a>
-            <a class="f-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank">shampanchal66@gmail.com</a>
+            <a class="f-email" href="mailto:shampanchal66@gmail.com" target="_blank">shampanchal66@gmail.com</a>
             <h3 style="margin-top:20px">Legal</h3>
             <a href="privacy.html">Privacy Policy</a>
             <a href="zdt-billing-privacy.html">Billing Privacy</a>
@@ -486,8 +496,24 @@ document.querySelectorAll('.r').forEach(el=>new IntersectionObserver(e=>{e.forEa
 // Mouse glow
 document.querySelectorAll('.bc,.prod').forEach(card=>{card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')})});
 
-// Counter
-document.querySelectorAll('[data-c]').forEach(el=>new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){const t=+el.dataset.c;let cur=0;const inc=t/30;const tm=setInterval(()=>{cur+=inc;if(cur>=t){cur=t;clearInterval(tm)}el.textContent=Math.floor(cur)+'+'},40);new IntersectionObserver(()=>{},{}).unobserve(el)}})},{threshold:.5}).observe(el));
+// Counter - fixed: correct unobserve + fallback shows 3+ even without JS
+document.querySelectorAll('[data-c]').forEach(el=>{
+  const target = +el.dataset.c;
+  let done = false;
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !done){
+        done = true;
+        let cur = 0;
+        const inc = target/30;
+        el.textContent = '0';
+        const tm = setInterval(()=>{ cur+=inc; if(cur>=target){ cur=target; clearInterval(tm); } el.textContent = Math.floor(cur)+'+'; },40);
+        obs.unobserve(el);
+      }
+    });
+  },{threshold:0.2});
+  obs.observe(el);
+});
 
 // Nav scroll
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.background=scrollY>50?'rgba(10,14,26,.92)':'rgba(10,14,26,.7)'});
@@ -495,6 +521,24 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').style.backgr
 // Close dropdown on outside click
 document.addEventListener('click',e=>{if(!e.target.closest('.nav-dropdown'))document.querySelectorAll('.nav-dropdown').forEach(d=>d.classList.remove('open'))});
 </script>
+<script>
+// Mobile nav: close on link click, handle dropdowns
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.querySelectorAll('.nav-dropdown .drop-btn, .dropdown > a').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){
+      e.preventDefault();
+      const dd = btn.closest('.nav-dropdown, .dropdown');
+      dd.classList.toggle('open');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
+</script>
 <script src="parth.js"></script>
 </body>
 </html>
+
+

@@ -22,7 +22,7 @@ Why clients choose me:
 - On-time delivery with transparent communication
 - Post-launch support included
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 Email: shampanchal66@gmail.com
 
 Ready to start? Send me a message.
@@ -60,7 +60,7 @@ TECH STACK:
 Flutter, React Native, JavaScript, Node.js, Python, Firebase, HTML/CSS
 
 PORTFOLIO:
-Check my work: https://0thdimensiontechnaloies.vercel.app/work.html
+Check my work: https://0dtechnologies.com/work.html
 
 Ready to start? Message me!
 ```
@@ -102,7 +102,7 @@ What sets me apart:
 - SEO-optimized structure
 - Fast loading speeds
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 Let's build something great together.
 
@@ -220,7 +220,7 @@ I build custom software for businesses like yours — billing apps, management t
 
 If you're looking to digitize your operations, I'd love to help.
 
-Here's my work: https://0thdimensiontechnaloies.vercel.app/work.html
+Here's my work: https://0dtechnologies.com/work.html
 
 Let me know if you'd like to discuss.
 
@@ -254,7 +254,7 @@ Rates: Starting at $499 depending on scope
 Availability: Open for new projects
 Timezone: IST (flexible for global clients)
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 Email: shampanchal66@gmail.com
 
 DM me or email to discuss your project.
@@ -266,7 +266,7 @@ Great idea! I build custom apps and software at 0D Technologies.
 
 If you need help with the technical side — mobile app, web platform, billing system — happy to discuss.
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 ```
 
 ### r/smallbusiness Comment Template
@@ -277,7 +277,7 @@ I built 0D Billing — an invoicing app specifically for small businesses. It ha
 
 If you need something similar or want a custom tool built, I can help.
 
-DM me or check: https://0thdimensiontechnaloies.vercel.app/hire-us.html
+DM me or check: https://0dtechnologies.com/hire-us.html
 ```
 
 ---
@@ -319,7 +319,7 @@ What I offer:
 - Billing software
 - Custom websites
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 DMs open for projects.
 ```
@@ -355,7 +355,7 @@ I build custom apps and software — recently shipped a billing app for business
 
 Would love to chat about how I could help with [specific thing].
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 ```
 
 ---
@@ -436,7 +436,7 @@ Best,
 Sham
 0D Technologies
 shampanchal66@gmail.com
-https://0thdimensiontechnaloies.vercel.app
+https://0dtechnologies.com
 ```
 
 ---
@@ -460,7 +460,7 @@ If you need a technical co-founder or developer to build your MVP, I can help.
 
 Starting at $499 for an MVP.
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 Worth a quick chat?
 
@@ -492,7 +492,7 @@ If you're looking to digitize your operations or build a custom tool, I'd love t
 
 Starting at $499.
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 Best,
 Sham
@@ -513,7 +513,7 @@ Features I can build:
 - Admin dashboard
 - Mobile app
 
-Recent work: https://0thdimensiontechnaloies.vercel.app/work.html
+Recent work: https://0dtechnologies.com/work.html
 
 Would you like to discuss your e-commerce needs?
 
@@ -585,7 +585,7 @@ I understand you're busy. If now isn't the right time, no worries.
 
 But if you're still looking for a developer, I'd love to help.
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 Best,
 Sham
@@ -601,7 +601,7 @@ One last follow-up. If you need a developer for your project, I'm available.
 
 Starting at $499 for MVPs.
 
-Portfolio: https://0thdimensiontechnaloies.vercel.app/work.html
+Portfolio: https://0dtechnologies.com/work.html
 
 If now isn't the right time, I understand. Feel free to reach out anytime.
 

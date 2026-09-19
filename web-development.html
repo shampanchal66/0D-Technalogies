@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -187,7 +187,17 @@
         @media(max-width:1024px){.bento-4{grid-template-columns:1fr}.port-grid{grid-template-columns:1fr}.tech-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.step::after{display:none}.f-grid{grid-template-columns:1fr 1fr}}
         @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.mobile-toggle{display:block}.hero{padding:120px 20px 60px}.hero h1{letter-spacing:-1.5px}.tech-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.sec{padding:60px 0}.f-grid{grid-template-columns:1fr;gap:32px}.f-bottom{flex-direction:column;text-align:center}}
         @media(max-width:480px){.stats{grid-template-columns:1fr}}
-    </style>
+            /* â”€â”€ MOBILE NAV FIX â”€â”€ */
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+            .nav-links .nav-btn{width:100%;text-align:center;justify-content:center;margin-top:12px}
+            .dropdown .dd-menu,.nav-dropdown .drop-menu{position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:none;box-shadow:none!important;border:none!important;background:rgba(255,255,255,.04)!important;margin:4px 0 8px 12px;width:calc(100% - 12px)}
+            .dropdown.open .dd-menu,.nav-dropdown.open .drop-menu{display:block!important}
+        }
+        </style>
 </head>
 <body>
 <div class="cur" id="cur"></div>
@@ -372,7 +382,7 @@
             <p class="desc" style="margin:0 auto 32px;text-align:center">Whether you need a landing page or a full web application, we're ready to bring your vision to life.</p>
             <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
                 <a href="hire-us.html" class="btn btn-fill"><i class="fas fa-handshake"></i> Hire Us</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
+                <a href="mailto:shampanchal66@gmail.com" target="_blank" class="btn btn-out"><i class="fas fa-envelope"></i> Email Us</a>
             </div>
         </div>
     </div>
@@ -390,7 +400,7 @@
         <div class="f-col f-col-contact">
             <h3>Contact</h3>
             <a href="contact.html">Contact Page</a>
-            <a class="f-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank">shampanchal66@gmail.com</a>
+            <a class="f-email" href="mailto:shampanchal66@gmail.com" target="_blank">shampanchal66@gmail.com</a>
             <h3 style="margin-top:20px">Legal</h3>
             <a href="privacy.html">Privacy Policy</a>
             <a href="zdt-billing-privacy.html">Billing Privacy</a>
@@ -421,6 +431,24 @@ window.addEventListener('scroll',()=>{document.querySelector('nav').style.backgr
 // Close dropdown on outside click
 document.addEventListener('click',e=>{if(!e.target.closest('.nav-dropdown'))document.querySelectorAll('.nav-dropdown').forEach(d=>d.classList.remove('open'))});
 </script>
+<script>
+// Mobile nav: close on link click, handle dropdowns
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.querySelectorAll('.nav-dropdown .drop-btn, .dropdown > a').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){
+      e.preventDefault();
+      const dd = btn.closest('.nav-dropdown, .dropdown');
+      dd.classList.toggle('open');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
+</script>
 <script src="parth.js"></script>
 </body>
 </html>
+
+

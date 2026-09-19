@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -192,7 +192,7 @@
         .f-brand .f-logo{font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
         .f-brand .f-mark{width:28px;height:28px;border-radius:7px;background:var(--grad1);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:#fff}
         .f-brand p{font-size:.85rem;color:var(--text3);max-width:280px;line-height:1.7}
-        .f-col h4{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+        .f-col h3{font-size:.7rem;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
         .f-col a{display:block;font-size:.85rem;color:var(--text3);padding:4px 0;transition:color .2s}
         .f-col a:hover{color:var(--violet-light)}
         .f-bottom{max-width:1200px;margin:0 auto;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--text3)}
@@ -213,7 +213,17 @@
             .steps{grid-template-columns:1fr}
             .f-grid{grid-template-columns:1fr}
         }
-    </style>
+            /* â”€â”€ MOBILE NAV FIX â”€â”€ */
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+            .nav-links .nav-btn{width:100%;text-align:center;justify-content:center;margin-top:12px}
+            .dropdown .dd-menu,.nav-dropdown .drop-menu{position:static!important;transform:none!important;opacity:1!important;visibility:visible!important;display:none;box-shadow:none!important;border:none!important;background:rgba(255,255,255,.04)!important;margin:4px 0 8px 12px;width:calc(100% - 12px)}
+            .dropdown.open .dd-menu,.nav-dropdown.open .drop-menu{display:block!important}
+        }
+        </style>
 </head>
 <body>
 
@@ -266,19 +276,19 @@
                 <div class="icon icon-v"><i class="fas fa-globe"></i></div>
                 <h3>Websites</h3>
                 <p>Landing pages, business sites, e-commerce — fast, responsive, and designed to convert visitors into customers.</p>
-                <div class="price">From $300</div>
+                <div class="price">From $499</div>
             </div>
             <div class="svc r rd2">
                 <div class="icon icon-p"><i class="fas fa-mobile-alt"></i></div>
                 <h3>Mobile Apps</h3>
                 <p>Android & iOS apps built with Flutter or native. Clean UI, smooth performance, Play Store ready.</p>
-                <div class="price">From $1,500</div>
+                <div class="price">From $1,499</div>
             </div>
             <div class="svc r rd3">
                 <div class="icon icon-c"><i class="fas fa-cogs"></i></div>
                 <h3>Custom Software</h3>
                 <p>Billing systems, inventory tools, CRM, dashboards — tailored to how your business actually works.</p>
-                <div class="price">From $2,000</div>
+                <div class="price">From $1,499</div>
             </div>
             <div class="svc r rd1">
                 <div class="icon icon-a"><i class="fas fa-paint-brush"></i></div>
@@ -408,42 +418,43 @@
         <div class="pricing">
             <div class="price-card r rd1">
                 <div class="tier">Starter</div>
-                <div class="amount">$300+</div>
-                <div class="period">one-time</div>
+                <div class="amount">$499</div>
+                <div class="period">one-time project</div>
                 <ul>
                     <li><i class="fas fa-check"></i> Single page landing site</li>
                     <li><i class="fas fa-check"></i> Responsive design</li>
                     <li><i class="fas fa-check"></i> Contact form</li>
                     <li><i class="fas fa-check"></i> 1 revision round</li>
-                    <li><i class="fas fa-check"></i> Delivered in 3-5 days</li>
+                    <li><i class="fas fa-check"></i> Delivered in 3-7 days</li>
                 </ul>
                 <a href="#contact-form" class="btn btn-out">Get Started</a>
             </div>
             <div class="price-card featured r rd2">
-                <div class="tier">Business</div>
-                <div class="amount">$1,000+</div>
-                <div class="period">one-time</div>
+                <div class="tier">Growth</div>
+                <div class="amount">$1,499</div>
+                <div class="period">one-time project</div>
                 <ul>
                     <li><i class="fas fa-check"></i> Multi-page website (up to 8)</li>
+                    <li><i class="fas fa-check"></i> Mobile app (Android/iOS)</li>
+                    <li><i class="fas fa-check"></i> Billing/inventory software</li>
                     <li><i class="fas fa-check"></i> Custom design & branding</li>
-                    <li><i class="fas fa-check"></i> SEO optimized</li>
-                    <li><i class="fas fa-check"></i> CMS integration</li>
-                    <li><i class="fas fa-check"></i> Delivered in 2-4 weeks</li>
+                    <li><i class="fas fa-check"></i> Backend API & deployment</li>
+                    <li><i class="fas fa-check"></i> 2 revision rounds + 30d support</li>
                 </ul>
                 <a href="#contact-form" class="btn btn-fill">Get Started</a>
             </div>
             <div class="price-card r rd3">
-                <div class="tier">App / Custom</div>
-                <div class="amount">$2,000+</div>
-                <div class="period">project-based</div>
+                <div class="tier">Enterprise</div>
+                <div class="amount">Custom Quote</div>
+                <div class="period">tailored to scope</div>
                 <ul>
-                    <li><i class="fas fa-check"></i> Mobile app (Android/iOS)</li>
+                    <li><i class="fas fa-check"></i> Full-stack web applications</li>
                     <li><i class="fas fa-check"></i> Custom software/dashboard</li>
                     <li><i class="fas fa-check"></i> Backend & database</li>
                     <li><i class="fas fa-check"></i> Play Store deployment</li>
-                    <li><i class="fas fa-check"></i> 30 days free support</li>
+                    <li><i class="fas fa-check"></i> Dedicated PM + SLA</li>
                 </ul>
-                <a href="#contact-form" class="btn btn-out">Get Started</a>
+                <a href="#contact-form" class="btn btn-out">Contact Us</a>
             </div>
         </div>
     </section>
@@ -544,7 +555,7 @@
                 <textarea name="message" rows="4" placeholder="Tell us about your project — features, timeline, budget..." required style="width:100%;padding:14px 18px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-family:var(--font);font-size:.88rem;outline:none;resize:vertical;margin-bottom:16px"></textarea>
                 <button type="submit" class="btn btn-fill" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Message via Gmail</button>
             </form>
-            <p style="margin-top:16px;font-size:.8rem;color:var(--text3)">Or email us directly at <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank" style="color:var(--violet-light)">shampanchal66@gmail.com</a></p>
+            <p style="margin-top:16px;font-size:.8rem;color:var(--text3)">Or email us directly at <a href="mailto:shampanchal66@gmail.com" target="_blank" style="color:var(--violet-light)">shampanchal66@gmail.com</a></p>
         </div>
     </section>
 </div>
@@ -555,20 +566,14 @@
             <div class="f-logo"><div class="f-mark">0D</div> 0D Technologies</div>
             <p>Crafting custom software, apps, and websites that solve real problems.</p>
         </div>
-        <div class="f-col">
-            <h4>Products</h4>
-            <a href="zdt-billing.html">0D Billing</a>
+        <div class="f-col"><h3>Products</h3><a href="zdt-billing.html">0D Billing</a>
             <a href="zdt-tailor.html">0D Tailor</a>
         </div>
-        <div class="f-col">
-            <h4>Company</h4>
-            <a href="about.html">About</a>
+        <div class="f-col"><h3>Company</h3><a href="about.html">About</a>
             <a href="services.html">Services</a>
             <a href="hire-us.html">Hire Us</a>
         </div>
-        <div class="f-col">
-            <h4>Legal</h4>
-            <a href="privacy.html">Privacy Policy</a>
+        <div class="f-col"><h3>Legal</h3><a href="privacy.html">Privacy Policy</a>
             <a href="zdt-billing-privacy.html">Billing Privacy</a>
             <a href="zdt-tailor-privacy.html">Tailor Privacy</a>
         </div>
@@ -576,7 +581,7 @@
     <div class="f-bottom">
         <p>&copy; 2026 0D Technologies. All rights reserved.</p>
         <div class="f-social">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:shampanchal66@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/shampanchal66/0D-Technalogies"><i class="fab fa-github"></i></a>
         </div>
     </div>
@@ -628,10 +633,29 @@
         const message=fd.get('message');
         const subject=encodeURIComponent('New Project Inquiry from '+name);
         const body=encodeURIComponent('Hi, I\'m '+name+' ('+email+').\n\nService needed: '+service+'\n\nProject details:\n'+message);
-        window.location.href='https://mail.google.com/mail/?view=cm&fs=1&to=shampanchal66@gmail.com&su='+subject+'&body='+body;
+        window.location.href='mailto:shampanchal66@gmail.com&su='+subject+'&body='+body;
         this.reset();
     });
+</script>
+<script>
+// Mobile nav: close on link click, handle dropdowns
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.querySelectorAll('.nav-dropdown .drop-btn, .dropdown > a').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){
+      e.preventDefault();
+      const dd = btn.closest('.nav-dropdown, .dropdown');
+      dd.classList.toggle('open');
+    }
+  });
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
 </script>
 <script src="parth.js"></script>
 </body>
 </html>
+
+
+

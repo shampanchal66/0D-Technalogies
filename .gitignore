@@ -4,3 +4,11 @@ node_modules/
 Thumbs.db
 *.log
 apk/
+# local RAG / python temp - not for deploy
+rag_*.py
+extract_pdf*.py
+kill_server.py
+start_rag.bat
+test_rag.py
+__pycache__/
+*.pyc
