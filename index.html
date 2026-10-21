@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -193,7 +193,7 @@
         .step:last-child::after{display:none}
 
         /* ── PRODUCTS (#6: unified badge) ── */
-        .prods{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+        .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
         .prod{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:40px;position:relative;overflow:hidden;transition:all .5s var(--ease);text-decoration:none;display:block}
         .prod::before{content:'';position:absolute;inset:0;border-radius:var(--r-lg);padding:1px;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),var(--pink),transparent 40%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;-webkit-mask-composite:xor;opacity:0;transition:opacity .5s;pointer-events:none}
         .prod:hover::before{opacity:1}
@@ -242,6 +242,7 @@
 
         /* ── RESPONSIVE ── */
         @media(max-width:1024px){.bento-5{grid-template-columns:1fr 1fr}.bento-5 .bc:nth-child(1){grid-column:auto;grid-row:auto}.bento-5 .bc:nth-child(4){grid-column:auto}.bento-5 .bc:nth-child(5){grid-column:auto}.about-row{grid-template-columns:1fr;gap:40px}.steps{grid-template-columns:repeat(2,1fr)}.step::after{display:none}.f-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:1024px){.prods{grid-template-columns:1fr 1fr}}
         @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.mobile-toggle{display:block}.hero{padding:120px 20px 60px}.hero h1{letter-spacing:-1.5px}.bento-5{grid-template-columns:1fr}.prods{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:1fr}.sec{padding:60px 0}.f-grid{grid-template-columns:1fr;gap:32px}.f-bottom{flex-direction:column;text-align:center}}
         @media(max-width:480px){.stats{grid-template-columns:1fr}.about-left .nums{grid-template-columns:1fr}}
             /* â”€â”€ MOBILE NAV FIX â”€â”€ */
@@ -272,6 +273,7 @@
             <div class="drop-menu">
                 <a href="zdt-billing.html">0D Billing</a>
                 <a href="zdt-tailor.html">0D Tailor</a>
+                <a href="aura.html">AURA (Free)</a>
                 <a href="work.html">Our Work</a>
             </div>
         </div>
@@ -373,7 +375,7 @@
                 <p class="desc r rd2">0D Technologies (0th Dimension Technologies) creates practical, high-quality digital solutions. From billing apps to custom business software — we bring ideas to life with clean code and thoughtful design.</p>
                 <p class="desc r rd3" style="margin-top:10px">Our mission is to simplify workflows for businesses of all sizes through modern, reliable technology.</p>
                 <div class="nums r rd4">
-                    <div class="n"><div class="val" data-c="3">3+</div><div class="lbl">Products</div></div>
+                    <div class="n"><div class="val" data-c="4">4+</div><div class="lbl">Products</div></div>
                     <div class="n"><div class="val" data-c="3">3+</div><div class="lbl">Platforms</div></div>
                     <div class="n"><div class="val">100%</div><div class="lbl">Quality</div></div>
                 </div>
@@ -429,6 +431,13 @@
                 <div class="plat"><span><i class="fab fa-android"></i> Android</span></div>
                 <span class="link">Discover the app <i class="fas fa-arrow-right"></i></span>
             </a>
+            <a href="aura.html" class="prod r rd2">
+                <span class="badge badge-v">Free Download</span>
+                <h2>AURA</h2>
+                <p>AI safety guard for Windows. Detects cyberbullying, threats and harmful content on screen in real time — fully on-device.</p>
+                <div class="plat"><span><i class="fab fa-windows"></i> Windows</span></div>
+                <span class="link">Download free <i class="fas fa-arrow-right"></i></span>
+            </a>
         </div>
     </div>
 </section>
@@ -436,7 +445,7 @@
 <!-- STATS (#4: single stats section, removed duplicate) -->
 <div class="wrap">
     <div class="stats r">
-        <div class="stat"><div class="n" data-c="3">3+</div><div class="l">Products Shipped</div></div>
+        <div class="stat"><div class="n" data-c="4">4+</div><div class="l">Products Shipped</div></div>
         <div class="stat"><div class="n">100%</div><div class="l">Quality Focus</div></div>
         <div class="stat"><div class="n" data-c="3">3+</div><div class="l">Platforms</div></div>
         <div class="stat"><div class="n">24/7</div><div class="l">Dedication</div></div>
@@ -466,7 +475,7 @@
             <p>Crafting digital excellence through custom software, intelligent applications, and modern web solutions.</p>
         </div>
         <div class="f-col"><h3>Company</h3><a href="about.html">About Us</a><a href="work.html">Our Work</a><a href="services.html">Services</a><a href="hire-us.html">Hire Us</a></div>
-        <div class="f-col"><h3>Products</h3><a href="zdt-billing.html">0D Billing</a><a href="zdt-tailor.html">0D Tailor</a></div>
+        <div class="f-col"><h3>Products</h3><a href="zdt-billing.html">0D Billing</a><a href="zdt-tailor.html">0D Tailor</a><a href="aura.html">AURA (Free)</a></div>
         <!-- #12: Contact column with email + legal grouped -->
         <div class="f-col f-col-contact">
             <h3>Contact</h3>

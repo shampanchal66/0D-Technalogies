@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA - Free AI Cyberbullying &amp; Harmful Content Detector for Windows | 0D Technologies</title>
+    <meta name="description" content="AURA is a free Windows app that watches on-screen text in real time and warns you about cyberbullying, threats and harmful content. 100% on-device, no cloud, no account.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://0dtechnologies.com/aura.html">
+    <meta property="og:title" content="AURA - Free AI Cyberbullying Detector for Windows">
+    <meta property="og:description" content="Real-time on-device detection of bullying, threats and harmful content. Free download for Windows 10/11.">
+    <meta property="og:url" content="https://0dtechnologies.com/aura.html">
+    <meta property="og:image" content="https://0dtechnologies.com/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://0dtechnologies.com/og-image.svg">
+    <meta name="twitter:title" content="AURA - Free AI Cyberbullying Detector for Windows">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AURA Cyberbullying Detector","operatingSystem":"Windows 10, Windows 11","applicationCategory":"SecurityApplication","description":"AURA watches on-screen text and images in real time and detects cyberbullying, threats and harmful content on-device.","softwareVersion":"1.0.0","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"0D Technologies"}}
+    </script>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',sans-serif;background:#0a0e1a;color:#e2e8f0;line-height:1.7;overflow-x:hidden}
+        :root{--primary:#0a0e1a;--accent:#7c3aed;--accent-light:#a78bfa;--pink:#ec4899;--cyan:#06b6d4;--amber:#f59e0b;--card:rgba(15,23,42,0.6);--border:rgba(124,58,237,0.15);--text-muted:#94a3b8}
+
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(10,14,26,0.85);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+        nav .logo{display:flex;align-items:center;gap:10px;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;color:#fff;text-decoration:none}
+        nav .logo img{width:26px;height:26px;border-radius:7px}
+        nav .nav-links{display:flex;align-items:center;gap:22px}
+        nav .nav-links a{color:var(--text-muted);text-decoration:none;font-size:0.86rem;font-weight:500;transition:color 0.2s}
+        nav .nav-links a:hover{color:#fff}
+        .mobile-toggle{display:none;background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer}
+
+        .hero{padding:150px 20px 70px;text-align:center;position:relative;overflow:hidden}
+        .hero:before{content:'';position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:760px;height:760px;background:radial-gradient(circle,rgba(124,58,237,0.22),transparent 62%);filter:blur(30px);pointer-events:none}
+        .hero .content{position:relative;max-width:760px;margin:0 auto}
+        .hero .icon-top{width:78px;height:78px;margin:0 auto 20px;border-radius:22px;background:linear-gradient(135deg,var(--accent),var(--pink));display:flex;align-items:center;justify-content:center;font-size:1.9rem;color:#fff;box-shadow:0 12px 40px rgba(124,58,237,0.4)}
+        .hero .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;background:rgba(6,182,212,0.12);border:1px solid rgba(6,182,212,0.35);color:#67e8f9;font-size:0.7rem;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:18px}
+        .hero h1{font-family:'Outfit',sans-serif;font-size:3.2rem;font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px}
+        .hero h1 span{background:linear-gradient(135deg,var(--accent-light),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero .tagline{color:var(--text-muted);font-size:1.05rem;max-width:560px;margin:0 auto 34px}
+        .hero .downloads{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+        .hero .download-btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;color:#fff;text-decoration:none;border-radius:14px;font-weight:600;font-size:0.9rem;transition:all 0.3s;position:relative;border:1px solid transparent}
+        .hero .download-btn i{font-size:1.2rem}
+        .hero .download-btn .dlabel{display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+        .hero .download-btn .dlabel small{font-size:0.6rem;font-weight:400;opacity:0.6;letter-spacing:0.5px;text-transform:uppercase}
+        .hero .download-btn.windows{background:var(--accent);border-color:rgba(124,58,237,0.4);box-shadow:0 4px 25px rgba(124,58,237,0.3)}
+        .hero .download-btn.windows:hover{background:#6d28d9;transform:translateY(-2px);box-shadow:0 8px 35px rgba(124,58,237,0.4)}
+        .hero .download-btn.source{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15)}
+        .hero .download-btn.source:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px)}
+
+        .container{max-width:1100px;margin:0 auto;padding:40px 20px 80px}
+        .section-title{text-align:center;margin-bottom:50px}
+        .section-title h2{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;margin-bottom:6px}
+        .section-title h2 span{background:linear-gradient(135deg,var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .section-title p{color:var(--text-muted);font-size:0.95rem}
+
+        .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+        .f-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px 24px;text-align:center;transition:transform 0.3s,border-color 0.3s;backdrop-filter:blur(10px)}
+        .f-card:hover{transform:translateY(-4px);border-color:rgba(124,58,237,0.4)}
+        .f-card .ficon{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--pink));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:#fff;font-size:1.3rem}
+        .f-card h3{font-family:'Outfit',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:6px}
+        .f-card p{font-size:0.85rem;color:var(--text-muted)}
+
+        .steps-list{max-width:760px;margin:0 auto;display:grid;gap:14px}
+        .step-row{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 22px}
+        .step-row .num{flex-shrink:0;width:34px;height:34px;border-radius:10px;background:rgba(124,58,237,0.18);border:1px solid rgba(124,58,237,0.35);color:var(--accent-light);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem}
+        .step-row h3{font-size:0.95rem;color:#fff;margin-bottom:3px}
+        .step-row p{font-size:0.85rem;color:var(--text-muted)}
+
+        .privacy-notice{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 32px;margin:60px auto 0;max-width:760px;display:flex;align-items:flex-start;gap:16px;backdrop-filter:blur(10px)}
+        .privacy-notice .p-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px;color:var(--accent)}
+        .privacy-notice .p-content h3{color:#e2e8f0;font-size:0.85rem;font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+        .privacy-notice .p-content p{color:var(--text-muted);font-size:0.85rem;line-height:1.6}
+        .privacy-notice .p-content a{color:var(--accent);text-decoration:none;font-weight:600}
+        .privacy-notice .p-content a:hover{text-decoration:underline}
+
+        .contact-section{text-align:center;padding:70px 20px 0}
+        .contact-section h2{font-family:'Outfit',sans-serif;font-size:1.6rem;margin-bottom:8px}
+        .contact-section h2 span{background:linear-gradient(135deg,var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .contact-section p{color:var(--text-muted);margin-bottom:24px}
+        .contact-section .email{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--accent);color:#fff;text-decoration:none;border-radius:14px;font-weight:600;transition:all 0.3s;box-shadow:0 4px 25px rgba(124,58,237,0.3)}
+        .contact-section .email:hover{background:#6d28d9;transform:translateY(-2px);box-shadow:0 8px 35px rgba(124,58,237,0.4)}
+
+        footer{text-align:center;padding:28px 20px;border-top:1px solid var(--border);color:var(--text-muted);font-size:0.85rem;margin-top:60px}
+        footer a{color:var(--accent);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+        footer .links{margin-bottom:8px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+
+        @media(max-width:768px){
+            .features-grid{grid-template-columns:1fr 1fr}
+            .hero h1{font-size:2.2rem}
+            nav{padding:14px 20px}
+            nav .nav-links{display:none}
+        }
+        @media(max-width:480px){
+            .features-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:900px){
+            .mobile-toggle{display:block!important}
+            .nav-links{display:none!important;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(10,14,26,0.98);backdrop-filter:blur(20px);flex-direction:column;align-items:flex-start!important;padding:24px;gap:4px!important;overflow-y:auto;z-index:99}
+            .nav-links.show{display:flex!important}
+            .nav-links a{width:100%;padding:14px 16px!important;font-size:.95rem!important}
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo"><img src="favicon.svg" alt="0D"> 0D Technologies</a>
+    <button class="mobile-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#products">Products</a>
+        <a href="work.html">Our Work</a>
+        <a href="hire-us.html">Hire Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="zdt-billing.html">0D Billing</a>
+        <a href="zdt-tailor.html">0D Tailor</a>
+        <a href="#features">Features</a>
+        <a href="#install">Install</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="content">
+        <div class="icon-top"><i class="fas fa-shield-halved"></i></div>
+        <div class="badge"><i class="fas fa-circle-check"></i> Free &middot; Available Now</div>
+        <h1><span>AURA</span></h1>
+        <p class="tagline">Real-time AI protection that spots cyberbullying, threats and harmful content on your screen — before it costs someone.</p>
+        <div class="downloads">
+            <a href="https://github.com/shampanchal66/0D-Technalogies/releases/download/v1.0.0/AURA_Setup_Windows.exe" class="download-btn windows" download>
+                <i class="fab fa-windows"></i>
+                <span class="dlabel"><small>Windows &mdash; 266 MB &middot; FREE</small> Download for Windows <small style="opacity:.8">v1.0.0 &bull; Windows 10/11</small></span>
+            </a>
+            <a href="#install" class="download-btn source">
+                <i class="fas fa-circle-info"></i>
+                <span class="dlabel"><small>Setup guide</small> Install steps &amp; requirements <small style="opacity:.8">60 seconds</small></span>
+            </a>
+        </div>
+        <div style="margin-top:14px;font-size:.78rem;color:#94a3b8">
+            <span style="display:inline-flex;gap:12px;flex-wrap:wrap;justify-content:center"><span><i class="fas fa-tag"></i> v1.0.0</span><span>&bull; Windows 10/11 64-bit</span><span>&bull; <a href="https://github.com/shampanchal66/0D-Technalogies/releases/tag/v1.0.0" style="color:#a78bfa;text-decoration:underline">All releases &amp; mirrors</a></span></span>
+            <div style="margin-top:8px;opacity:.7">If the download doesn't start, open the <a href="https://github.com/shampanchal66/0D-Technalogies/releases/tag/v1.0.0" style="color:#a78bfa">Releases page</a> and pick the <code>AURA_Setup_Windows.exe</code> file.</div>
+        </div>
+        <div style="margin-top:18px;max-width:620px;margin-left:auto;margin-right:auto;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.15);border-radius:12px;padding:14px 16px;text-align:left;font-size:.82rem;color:#cbd5e1">
+            <strong style="color:#fff">How to install (Windows):</strong> 1) Click Download &rarr; 2) Run <code>AURA_Setup_Windows.exe</code> &rarr; 3) If Windows SmartScreen appears, choose <em>More info &rarr; Run anyway</em> &rarr; 4) Install and launch AURA. No account, no serial key. <a href="#install" style="color:#a78bfa">Full steps</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section id="features">
+        <div class="section-title">
+            <h2><span>What AURA does</span></h2>
+            <p>Text and image analysis running entirely on your own machine</p>
+        </div>
+        <div class="features-grid">
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-eye"></i></div>
+                <h3>Live Screen Watch</h3>
+                <p>Monitors the window or screen area you choose and reads new text as it appears.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-brain"></i></div>
+                <h3>Toxicity Detection</h3>
+                <p>An on-device toxic-bert model scores messages for insults, threats, obscenity and hate.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-image"></i></div>
+                <h3>Harmful Image Guard</h3>
+                <p>An NSFW classifier flags risky visuals, so screenshots and media aren't missed.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-bell"></i></div>
+                <h3>Instant Alerts</h3>
+                <p>Audible warnings and on-screen risk levels the moment content crosses the line.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-lock"></i></div>
+                <h3>100% On-Device</h3>
+                <p>No cloud, no account, no uploads. Everything is processed locally and discarded.</p>
+            </div>
+            <div class="f-card">
+                <div class="ficon"><i class="fas fa-window-restore"></i></div>
+                <h3>Tray &amp; Autostart</h3>
+                <p>Runs quietly in the system tray, with optional start-with-Windows protection.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="install" style="margin-top:80px">
+        <div class="section-title">
+            <h2><span>Install in 60 seconds</span></h2>
+            <p>No Python, no dependencies, nothing else to download</p>
+        </div>
+        <div class="steps-list">
+            <div class="step-row"><div class="num">1</div><div><h3>Download the installer</h3><p>Grab <code>AURA_Setup_Windows.exe</code> (v1.0.0) using the button above.</p></div></div>
+            <div class="step-row"><div class="num">2</div><div><h3>Run it</h3><p>Double-click the file. If SmartScreen warns about an unknown publisher, click <em>More info</em> then <em>Run anyway</em> — the app is unsigned but open source.</p></div></div>
+            <div class="step-row"><div class="num">3</div><div><h3>Pick what to watch</h3><p>Choose a window or screen region inside AURA. Optionally enable "Start with Windows" for always-on protection.</p></div></div>
+            <div class="step-row"><div class="num">4</div><div><h3>Use it as normal</h3><p>AURA stays in the tray and alerts you when harmful content shows up. Uninstall anytime from Windows Settings &rarr; Apps.</p></div></div>
+        </div>
+        <div style="text-align:center;margin-top:26px;font-size:.8rem;color:#94a3b8">
+            Requirements: Windows 10 or 11 (64-bit), ~4&nbsp;GB RAM, ~350&nbsp;MB free disk. Works offline after install.
+        </div>
+    </section>
+
+    <div class="privacy-notice">
+        <div class="p-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="p-content">
+            <h3>Privacy by design</h3>
+            <p>AURA never sends your screen, text or images anywhere. All detection models are bundled with the app and run locally on your CPU. Nothing is logged to a server and no account is required.</p>
+        </div>
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2><span>Questions or feedback?</span></h2>
+        <p>Found a false positive, need help installing, or want AURA in your school or office?</p>
+        <a href="mailto:shampanchal66@gmail.com" class="email"><i class="fas fa-envelope"></i> shampanchal66@gmail.com</a>
+    </section>
+</div>
+
+<footer>
+    <div class="links">
+        <a href="index.html">0D Home</a>
+        <a href="index.html#products">All Products</a>
+        <a href="zdt-billing.html">0D Billing</a>
+        <a href="zdt-tailor.html">0D Tailor</a>
+        <a href="mailto:shampanchal66@gmail.com">Contact</a>
+    </div>
+    <p>&copy; 2026 0D Technologies. AURA is free to download and use.</p>
+</footer>
+<script>
+document.querySelector('.mobile-toggle')?.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.toggle('show'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav-links')?.classList.remove('show')}));
+document.addEventListener('click',e=>{
+  if(!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('show');
+});
+</script>
+<script src="parth.js"></script>
+</body>
+</html>
