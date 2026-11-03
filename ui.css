@@ -1,0 +1,259 @@
+/* ============================================================
+   0D Technologies — shared UI layer
+   Loaded after each page's inline styles so it can refine and
+   fix responsive behaviour without touching page markup.
+   ============================================================ */
+
+:root{
+    --ui-gutter: clamp(16px, 4vw, 24px);
+    --ui-nav-h: 68px;
+    --ui-radius: 18px;
+    --ui-border: rgba(255,255,255,.08);
+    --ui-border-hover: rgba(167,139,250,.32);
+    --ui-surface: rgba(255,255,255,.035);
+    --ui-surface-2: rgba(255,255,255,.06);
+    --ui-shadow: 0 24px 60px -24px rgba(0,0,0,.8);
+}
+
+html{-webkit-text-size-adjust:100%}
+body{overflow-x:hidden}
+img,svg,video,canvas{max-width:100%;height:auto}
+::selection{background:rgba(124,58,237,.45);color:#fff}
+:focus-visible{outline:2px solid #a78bfa;outline-offset:3px;border-radius:8px}
+
+/* ---------- typography ---------- */
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+.hero h1{letter-spacing:-.035em}
+.h2{letter-spacing:-.03em;line-height:1.1}
+.tag{letter-spacing:.28em}
+.desc{line-height:1.75}
+
+/* ---------- layout ---------- */
+.wrap,.container{width:100%}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:var(--ui-gutter)}
+.sec{padding-block:clamp(64px,8vw,120px)}
+section[id],div[id]{scroll-margin-top:calc(var(--ui-nav-h) + 24px)}
+
+/* ---------- nav ---------- */
+nav{
+    padding-inline:var(--ui-gutter);
+    gap:16px;
+    background:rgba(8,11,20,.78);
+    -webkit-backdrop-filter:blur(20px) saturate(1.5);
+    backdrop-filter:blur(20px) saturate(1.5);
+    border-bottom:1px solid var(--ui-border);
+}
+nav .nav-links{gap:2px}
+nav .nav-links a{border-radius:10px;transition:color .2s,background .2s}
+nav .nav-links a.on{color:#a78bfa}
+nav .logo{letter-spacing:-.02em}
+
+/* mobile drawer */
+.mobile-toggle{
+    display:none;
+    width:44px;height:44px;
+    align-items:center;justify-content:center;
+    border-radius:12px;
+    background:rgba(255,255,255,.05);
+    border:1px solid var(--ui-border);
+    color:#f8fafc;
+    font-size:1.1rem;
+    cursor:pointer;
+    line-height:1;
+}
+.mobile-toggle:hover{background:rgba(255,255,255,.09)}
+
+body.ui-lock{overflow:hidden}
+
+@media (max-width:900px){
+    :root{--ui-nav-h:60px}
+    nav{
+        height:var(--ui-nav-h)!important;
+        min-height:var(--ui-nav-h);
+        /* backdrop-filter creates a containing block for fixed children and
+           would trap the drawer inside the 60px bar — drop it on mobile. */
+        -webkit-backdrop-filter:none!important;
+        backdrop-filter:none!important;
+        background:rgba(7,10,19,.97)!important;
+    }
+    .mobile-toggle{display:inline-flex!important}
+    nav .nav-links{
+        position:fixed!important;
+        top:var(--ui-nav-h)!important;
+        left:0;right:0;bottom:0;
+        display:none!important;
+        flex-direction:column!important;
+        align-items:stretch!important;
+        gap:6px!important;
+        padding:20px var(--ui-gutter) calc(28px + env(safe-area-inset-bottom))!important;
+        background:rgba(7,10,19,.97);
+        -webkit-backdrop-filter:blur(24px);
+        backdrop-filter:blur(24px);
+        overflow-y:auto;
+        overscroll-behavior:contain;
+        z-index:98;
+        border-top:1px solid var(--ui-border);
+    }
+    nav .nav-links.show{display:flex!important}
+    nav .nav-links > a,
+    nav .nav-links .nav-dropdown > .drop-btn{
+        display:flex!important;
+        align-items:center;
+        justify-content:space-between;
+        width:100%!important;
+        padding:15px 16px!important;
+        font-size:1rem!important;
+        font-weight:600!important;
+        color:#e2e8f0!important;
+        border-radius:12px;
+        background:rgba(255,255,255,.03);
+        border:1px solid rgba(255,255,255,.05);
+    }
+    nav .nav-links > a:hover,
+    nav .nav-links .nav-dropdown > .drop-btn:hover{background:rgba(124,58,237,.12);color:#fff!important}
+    nav .nav-links .nav-btn{
+        margin-top:10px;
+        justify-content:center!important;
+        background:linear-gradient(135deg,#7c3aed,#ec4899)!important;
+        border:none!important;
+        color:#fff!important;
+    }
+    nav .nav-links .nav-dropdown{width:100%}
+    nav .nav-links .drop-menu{
+        position:static!important;
+        display:none;
+        width:100%!important;
+        min-width:0!important;
+        margin:6px 0 4px!important;
+        padding:6px!important;
+        transform:none!important;
+        opacity:1!important;
+        visibility:visible!important;
+        background:rgba(255,255,255,.03)!important;
+        border:1px solid rgba(255,255,255,.05)!important;
+        box-shadow:none!important;
+    }
+    nav .nav-links .nav-dropdown.open .drop-menu{display:block!important}
+    nav .nav-links .drop-menu a{padding:12px 14px!important;font-size:.95rem!important}
+}
+
+/* ---------- hero ---------- */
+@media (max-width:900px){
+    .hero{min-height:auto!important;padding-bottom:64px!important;padding-inline:var(--ui-gutter)!important}
+    .nav-fixed .hero{padding-top:calc(var(--ui-nav-h) + 56px)!important}
+    .hero h1{font-size:clamp(2.15rem,10vw,3rem)!important;letter-spacing:-.03em!important;line-height:1.08!important}
+    .hero p{font-size:1rem!important;margin-top:18px!important}
+    .hero-btns{margin-top:30px!important;width:100%}
+    .hero-btns .btn{flex:1 1 100%;justify-content:center;min-height:52px}
+    .hero-bottom{display:none!important}
+    .hero-chip{margin-bottom:22px}
+}
+@media (max-width:420px){
+    .hero h1{font-size:clamp(1.95rem,9.5vw,2.6rem)!important}
+}
+
+/* ---------- grids: kill desktop placements on small screens ---------- */
+@media (max-width:1024px){
+    .bento-5{grid-template-columns:repeat(2,1fr)!important;grid-template-rows:auto!important}
+    .bento-5 .bc{grid-column:auto!important;grid-row:auto!important}
+    .prods{grid-template-columns:repeat(2,1fr)!important}
+    .steps{grid-template-columns:repeat(2,1fr)!important}
+    .step::after{display:none}
+    .about-row{grid-template-columns:1fr!important;gap:40px!important}
+    .f-grid{grid-template-columns:1fr 1fr!important}
+}
+@media (max-width:768px){
+    .bento-5{grid-template-columns:1fr!important}
+    .prods{grid-template-columns:1fr!important}
+    .steps{grid-template-columns:1fr!important}
+    .stats{grid-template-columns:repeat(2,1fr)!important}
+    .f-grid{grid-template-columns:1fr!important;gap:30px!important}
+    .about-left .nums{grid-template-columns:repeat(3,1fr)!important;gap:12px!important}
+    .about-card{padding:32px 24px!important}
+    .about-card .big{font-size:clamp(3rem,16vw,4.5rem)!important}
+    .cta{padding:52px 22px!important;border-radius:20px!important}
+    .sec{padding-block:64px!important}
+    .prods,.bento,.steps{margin-top:36px!important}
+    .prod{padding:28px 24px!important}
+    .bc{padding:26px 22px!important}
+    .stat{padding:30px 14px!important}
+    .stat .n{font-size:clamp(1.6rem,8vw,2.2rem)!important}
+    footer{padding:48px var(--ui-gutter) 88px!important}
+    .f-bottom{flex-direction:column!important;text-align:center;gap:8px!important}
+    .f-brand p{max-width:none!important}
+}
+@media (max-width:480px){
+    .stats{grid-template-columns:1fr!important}
+    .about-left .nums{grid-template-columns:1fr!important}
+    .about-pill{grid-template-columns:1fr!important}
+}
+
+/* ---------- cards ---------- */
+.bc,.prod,.step,.f-card,.pill{
+    border-radius:var(--ui-radius)!important;
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015))!important;
+    border:1px solid var(--ui-border)!important;
+    box-shadow:0 1px 0 rgba(255,255,255,.04) inset;
+}
+.bc:hover,.prod:hover,.step:hover,.f-card:hover{
+    border-color:var(--ui-border-hover)!important;
+    box-shadow:0 18px 44px -22px rgba(124,58,237,.55);
+}
+.prod .link{color:#f9a8d4}
+.badge-v{letter-spacing:.12em}
+
+/* ---------- stats ---------- */
+.stats{background:var(--ui-border)!important;border:1px solid var(--ui-border);border-radius:var(--ui-radius)!important}
+.stat{background:#0a0e1a!important}
+.stat .n{letter-spacing:-.03em}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--ui-border)}
+.f-col h3{letter-spacing:.14em;color:#cbd5e1}
+.f-col a{padding:5px 0}
+.f-col-contact .f-email{word-break:break-word}
+
+/* ---------- buttons ---------- */
+.btn{min-height:48px;border-radius:14px;letter-spacing:.01em}
+.btn-fill{background:linear-gradient(135deg,#7c3aed,#ec4899)!important;box-shadow:0 10px 30px -12px rgba(124,58,237,.8)!important}
+.btn-fill:hover{transform:translateY(-2px)}
+.btn-out{border-color:rgba(255,255,255,.16)!important}
+.btn-out:hover{background:rgba(255,255,255,.05)!important}
+
+/* ---------- product / landing pages ---------- */
+.hero .downloads{width:100%}
+.hero .download-btn{border-radius:14px}
+@media (max-width:640px){
+    .hero{padding:calc(var(--ui-nav-h) + 40px) var(--ui-gutter) 48px!important}
+    .hero .downloads{flex-direction:column;align-items:stretch}
+    .hero .download-btn{width:100%;justify-content:center;padding:15px 18px!important}
+    .features-grid{grid-template-columns:1fr!important}
+    .gallery{grid-template-columns:1fr!important;max-width:420px!important}
+    .section-title{margin-bottom:34px}
+    .container{padding:48px var(--ui-gutter)!important}
+    .contact-section{padding:56px 0 0!important}
+    .privacy-notice{padding:22px 20px!important;flex-direction:column!important;gap:10px!important}
+}
+@media (max-width:768px){
+    .features-grid{grid-template-columns:repeat(2,1fr)!important}
+}
+@media (max-width:560px){
+    .features-grid{grid-template-columns:1fr!important}
+}
+
+/* ---------- long words / links never overflow ---------- */
+a,code,p,li,td{overflow-wrap:anywhere}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: reduce){
+    .r{opacity:1!important;transform:none!important;transition:none!important}
+    .shapes .shape,.marquee-track,.hero .pulse{animation:none!important}
+    html{scroll-behavior:auto}
+}
+
+/* ---------- chat widget breathing room ---------- */
+@media (max-width:600px){
+    .chat-fab{bottom:calc(16px + env(safe-area-inset-bottom))!important;right:16px!important}
+    .f-bottom{padding-bottom:64px}
+}
